@@ -1,3 +1,4 @@
+```js
 {
   session: {
 
@@ -21,7 +22,7 @@
 
   entities: {
     <!-- Entities will only have food/exercise diaries and loggings that belong to currentUser -->
-    <!-- But will have all the foods and exercises -->
+    But will have all the foods and exercises
 
     foodDiaries: {
       byId: {
@@ -94,3 +95,4 @@
     }
   }
 }
+```
