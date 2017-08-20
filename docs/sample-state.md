@@ -20,8 +20,8 @@
     },
 
   entities: {
-    // Entities will only have food/exercise diaries and loggings that belong to currentUser
-    // But will have all the foods and exercises
+    <!-- Entities will only have food/exercise diaries and loggings that belong to currentUser -->
+    <!-- But will have all the foods and exercises -->
 
     foodDiaries: {
       byId: {
