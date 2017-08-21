@@ -5,11 +5,11 @@
 [Trello link][trello]
 
 [heroku]: http://www.herokuapp.com
-[trello]:
+[trello]: https://trello.com/b/iF4HIIVo/kylefitnesspal
 
 ## Minimum Viable Product
 
-MyFitnessPalClone (name TBD) is a web application inspired by myFitnessPal
+KyleFitnessPal (name TBD) is a web application inspired by myFitnessPal
 built using Ruby on Rails and React/Redux.  By the end of Week 9, this app will,
 at a minimum, satisfy the following criteria with smooth, bug-free
 navigation, adequate seed data and sufficient CSS styling:
@@ -29,11 +29,11 @@ navigation, adequate seed data and sufficient CSS styling:
 * [DB schema][schema]
 * [Sample State][sample-state]
 
-[wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+[wireframes]: wireframes
+[components]: component-hierarchy.md
+[sample-state]: sample-state.md
+[api-endpoints]: api-endpoints.md
+[schema]: schema.md
 
 ## Implementation Timeline
 
