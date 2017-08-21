@@ -1,4 +1,4 @@
-# FresherNote
+# KyleFitnessPal
 
 [Heroku link][heroku]
 
@@ -41,20 +41,25 @@ navigation, adequate seed data and sufficient CSS styling:
 
 **Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: Models for Foods, Food Diaries, & Food Loggings, API, and components (4 days)
+### Phase 2: Sign Up Phase 2: Add Goals (1 day)
+
+**Objective:** User can add fitness goals on signup, which determines daily
+calorie allowance
+
+### Phase 3: Models for Foods, Food Diaries, & Food Loggings, API, and components (3 days)
 
 **Objective:** Food diaries can be created, and foods can be added, edited,
 and deleted through the API.
 
-### Phase 3: New Foods (1 day)
+### Phase 4: New Foods (1 day)
 
 **Objective:** New foods can be added to the database through the API.
 
-### Phase 4: Home Page (1 day)
+### Phase 5: Home Page (1 day)
 
 **Objective:** Home page has progress bar showing remaining calories for the day.
 
-### Phase 5: Models for Exercises, Exercise Diaries, & Exercise Loggings, API, and components (1 day)
+### Phase 6: Models for Exercises, Exercise Diaries, & Exercise Loggings, API, and components (1 day)
 
 **Objective:** Exercise diaries can be created, and exercises can be added, edited,
 and deleted through the API.

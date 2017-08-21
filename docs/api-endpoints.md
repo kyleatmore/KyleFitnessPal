@@ -36,12 +36,10 @@
 
 - `GET /api/exercises` - Get all exercises for adding exercise to diary
 - `GET /api/exercises/:exerciseId` - Get data for one exercise
-- `POST /api/exercises` - Add a new exercise to the database
-- `PATCH /api/exercises/:exerciseId` - Edit a exercises calorie burn info
 
 ### Exercise Diaries
 
 - `GET /api/exercise_diaries/:exerciseDiaryID` - Get diary data for one day
 - `PATCH /api/exercise_diaries/:exerciseDiaryID` - Update diary with exercise
 - `POST /api/exercise_diaries/` - Add new diary
-- `GET /api/exercise_diaries/:exerciseDiaryID/foods` - Get all exercise data for a diary
+- `GET /api/exercise_diaries/:exerciseDiaryID/exercises` - Get all exercise data for a diary
