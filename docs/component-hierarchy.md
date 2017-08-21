@@ -6,8 +6,8 @@
 
 **AuthFormContainer**
  - AuthForm
-  - Three steps to login
-  - State of AuthForm determines which part step of form is shown
+  + Three steps to login
+    - State of AuthForm determines which part step of form is shown
 
 **HomePageContainer**
  - Daily Summary
@@ -15,18 +15,18 @@
 **FoodDiaryContainer**
  - FoodDiaryHeader
  - FoodDiaryIndex
-  - FoodDiaryIndexItem
-  - FoodDiaryTotal
+  + FoodDiaryIndexItem
+  + FoodDiaryTotal
 
 **ExerciseDiaryContainer**
  - ExerciseDiaryHeader
  - ExerciseDiaryIndex
-  - ExerciseDiaryIndexItem
-  - ExerciseDiaryTotal
+  + ExerciseDiaryIndexItem
+  + ExerciseDiaryTotal
 
 **SearchContainer**
  - Search
-  - SearchResultsIndex
+  + SearchResultsIndex
     - SearchResultsIndexItem
 
 **AddFoodContainer**
