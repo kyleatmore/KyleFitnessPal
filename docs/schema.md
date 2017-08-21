@@ -8,6 +8,9 @@ username        | string    | not null, indexed, unique
 email           | string    | not null
 password_digest | string    | not null
 session_token   | string    | not null
+height          | integer   | not null
+gender          | string    | limit: 1, not null
+birth_date      | date      | not null
 
 ## goals
 column name     | data type | details
@@ -15,11 +18,8 @@ column name     | data type | details
 id              | integer   | not null, primary key
 current_weight  | integer   | not null
 goal_weight     | integer   | not null
-height          | integer   | not null
-gender          | string    | limit: 1, not null
-birth_date      | date      | not null
 activity_level  | string    | not null
-goal            | string    | not null
+goal_description| string    | not null
 user_id         | integer   | not null, foreign key (references users), indexed
 
 ## food_diaries
