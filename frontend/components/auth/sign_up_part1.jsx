@@ -2,10 +2,10 @@ import React from 'react';
 
 const SignUpPart1 = ({ handleInput, handleSubmit, email, password}) => {
   return (
-    <div>
+    <div className="signup-container">
 
-      <h3>Your Account Information</h3>
-      <form>
+      <h2>Your Account Information</h2>
+      <form className="signup-form">
         <label>Email:
           <input
             type="text"

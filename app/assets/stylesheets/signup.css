@@ -1,0 +1,26 @@
+.signup-container {
+  width: 599px;
+  height: 306px;
+  margin: 0 auto;
+  border: 1px solid #0072BC;
+  margin-top: 70px;
+  padding: 10px 70px 30px 40px;
+}
+
+.signup-container h2 {
+  font-size: 18px;
+  color: #0a5282;
+  margin-top: 18px;
+}
+
+.signup-form {
+  margin-top: 20px;
+  padding-left: 110px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.signup-form > label {
+
+}

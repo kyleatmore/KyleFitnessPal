@@ -2,10 +2,11 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: blue;
+  color: #0072BC;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
   padding: 0 50px;
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid #0072BC;
 }
 
 .header-links {
