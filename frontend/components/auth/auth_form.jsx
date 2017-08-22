@@ -49,16 +49,23 @@ class AuthForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state.user);
-    if (this.props.formType === "login" || this.state.step === 2) {
-      debugger
+    if (this.props.formType === "login") {
       this.props.processForm(user)
-      .then(
-        () => this.props.history.push("/")
-      );
+        .then(
+          () => this.props.history.push("/")
+        );
+    } else if (this.state.step === 2) {
+      this.props.processForm(user)
+        .then(
+          () => {
+            const nextState = merge({}, this.state, { step: this.state.step + 1 });
+            this.setState(nextState);
+          }
+        );
     } else {
-      const nextState = merge({}, this.state, { step: this.state.step + 1 });
-      this.setState(nextState);
-    }
+        const nextState = merge({}, this.state, { step: this.state.step + 1 });
+        this.setState(nextState);
+      }
   }
 
   render() {
@@ -190,6 +197,15 @@ class AuthForm extends React.Component {
             />
           </form>
 
+        </div>
+      );
+    } else if (step === 3) {
+      return (
+        <div>
+          <h3>What is your goal?</h3>
+          <h3>Nutritional Goals Component Goes Here</h3>
+          <h3>Fitness Goals Component Goes Here</h3>
+          <input type="submit" value="Get Started Now!"/>
         </div>
       );
     }
