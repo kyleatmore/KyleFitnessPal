@@ -16,7 +16,7 @@ class Header extends React.Component {
 
     if (currentUser) {
       return (
-        <div>
+        <div className="header">
           <h3>Kyle Fitness Pal</h3>
           <h3>Hi, {currentUser.username}</h3>
           <button onClick={this.handleClick}>Log Out</button>
@@ -24,7 +24,7 @@ class Header extends React.Component {
       );
     } else {
       return (
-        <div>
+        <div className="header">
           <h3>Kyle Fitness Pal</h3>
           <h3>Create Account</h3>
           <Link to="/signup">Sign Up</Link>
