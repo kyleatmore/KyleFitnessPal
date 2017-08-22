@@ -20,7 +20,7 @@ const initialState = {
   step: 1,
 };
 
-class AuthForm extends React.Component {
+class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = initialState;
@@ -38,7 +38,7 @@ class AuthForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state.user);
-
+    
     if (this.state.step === 1) {
       const nextState = merge({}, this.state, { step: this.state.step + 1 });
       this.setState(nextState);
@@ -83,4 +83,4 @@ class AuthForm extends React.Component {
 
 }
 
-export default AuthForm;
+export default SignupForm;

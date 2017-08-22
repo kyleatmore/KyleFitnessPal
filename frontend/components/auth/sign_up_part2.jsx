@@ -92,27 +92,27 @@ const SignUpPart2 = (
         <br />
 
         <h3>How would you describe your normal daily activities?</h3>
-          <input type="radio" id="1" name="activity" value={SEDENTARY} onChange={handleInput('activity_level')}/>
+          <input type="radio" id="1" name="activity" value="1" onChange={handleInput('activity_level')}/>
           <label htmlFor="1">{SEDENTARY}</label>
 
-          <input type="radio" id="2" name="activity" value={LIGHTLY_ACTIVE} onChange={handleInput('activity_level')}/>
+          <input type="radio" id="2" name="activity" value="2" onChange={handleInput('activity_level')}/>
           <label htmlFor="2">{LIGHTLY_ACTIVE}</label>
 
-          <input type="radio" id="3" name="activity" value={ACTIVE} onChange={handleInput('activity_level')}/>
+          <input type="radio" id="3" name="activity" value="3" onChange={handleInput('activity_level')}/>
           <label htmlFor="3">{ACTIVE}</label>
 
-          <input type="radio" id="4" name="activity" value={VERY_ACTIVE} onChange={handleInput('activity_level')}/>
+          <input type="radio" id="4" name="activity" value="4" onChange={handleInput('activity_level')}/>
           <label htmlFor="4">{VERY_ACTIVE}</label>
 
         <h3>What is your goal?</h3>
-          <select name="goal_description" defaultValue={GOAL_3} onChange={handleInput('goal_description')}>
-            <option value={GOAL_1}>{GOAL_1}</option>
-            <option value={GOAL_2}>{GOAL_2}</option>
-            <option value={GOAL_3}>{GOAL_3}</option>
-            <option value={GOAL_4}>{GOAL_4}</option>
-            <option value={GOAL_5}>{GOAL_5}</option>
-            <option value={GOAL_6}>{GOAL_6}</option>
-            <option value={GOAL_7}>{GOAL_7}</option>
+          <select name="goal_description" defaultValue="-1.0" onChange={handleInput('goal_description')}>
+            <option value="-2.0">{GOAL_1}</option>
+            <option value="-1.5">{GOAL_2}</option>
+            <option value="-1.0">{GOAL_3}</option>
+            <option value="0.5">{GOAL_4}</option>
+            <option value="0">{GOAL_5}</option>
+            <option value="0.5">{GOAL_6}</option>
+            <option value="1">{GOAL_7}</option>
           </select>
 
         <input
