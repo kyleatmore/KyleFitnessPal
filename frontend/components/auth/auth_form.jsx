@@ -49,7 +49,8 @@ class AuthForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state.user);
-    if (this.props.formType === "login") {
+    if (this.props.formType === "login" || this.state.step === 2) {
+      debugger
       this.props.processForm(user)
       .then(
         () => this.props.history.push("/")
@@ -123,37 +124,60 @@ class AuthForm extends React.Component {
             </label>
 
             <label>Gender:
-              <input type="radio" id="male" name="gender" value="M"/>
               <label htmlFor="male">Male</label>
+              <input
+                type="radio"
+                id="male"
+                name="gender"
+                value="M"
+                onChange={this.handleInput('gender')}
+              />
 
-              <input type="radio" id="female" name="gender" value="F"/>
               <label htmlFor="female">Female</label>
+              <input
+                type="radio"
+                id="female"
+                name="gender"
+                value="F"
+                onChange={this.handleInput('gender')}
+              />
             </label>
 
             <label>Date of Birth:
-              <input type="date"/>
+              <input
+                type="date"
+                onChange={this.handleInput('birth_date')}
+              />
+            </label>
+
+            <label>Username:
+              <input
+                type="text"
+                onChange={this.handleInput('username')}
+                value={this.state.user.username}
+                />
             </label>
 
             <br />
 
             <h3>How would you describe your normal daily activities?</h3>
-              <input type="radio" id="1" name="activity" value={SEDENTARY}/>
+              <input type="radio" id="1" name="activity" value={SEDENTARY} onChange={this.handleInput('activity_level')}/>
               <label htmlFor="1">{SEDENTARY}</label>
 
-              <input type="radio" id="2" name="activity" value={LIGHTLY_ACTIVE}/>
+              <input type="radio" id="2" name="activity" value={LIGHTLY_ACTIVE} onChange={this.handleInput('activity_level')}/>
               <label htmlFor="2">{LIGHTLY_ACTIVE}</label>
 
-              <input type="radio" id="3" name="activity" value={ACTIVE}/>
+              <input type="radio" id="3" name="activity" value={ACTIVE} onChange={this.handleInput('activity_level')}/>
               <label htmlFor="3">{ACTIVE}</label>
 
-              <input type="radio" id="4" name="activity" value={VERY_ACTIVE}/>
+              <input type="radio" id="4" name="activity" value={VERY_ACTIVE} onChange={this.handleInput('activity_level')}/>
               <label htmlFor="4">{VERY_ACTIVE}</label>
 
             <h3>What is your goal?</h3>
-              <select name="goal_description">
+              <select name="goal_description" defaultValue={GOAL_3} onChange={this.handleInput('goal_description')}>
                 <option value={GOAL_1}>{GOAL_1}</option>
                 <option value={GOAL_2}>{GOAL_2}</option>
-                <option value={GOAL_3} defaultValue>{GOAL_3}</option>
+                <option value={GOAL_3}>{GOAL_3}</option>
                 <option value={GOAL_4}>{GOAL_4}</option>
                 <option value={GOAL_5}>{GOAL_5}</option>
                 <option value={GOAL_6}>{GOAL_6}</option>
