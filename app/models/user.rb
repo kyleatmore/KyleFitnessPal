@@ -15,7 +15,6 @@
 #
 
 class User < ApplicationRecord
-  include ActionView::Helpers::DateHelper
 
   validates :username, uniqueness: true
   validates :username, :email, :password_digest, :session_token, :height,
@@ -58,6 +57,7 @@ class User < ApplicationRecord
   end
 
   def age
-    time_ago_in_words(self.birth_date)
+    age = Date.today.year - self.birth_date.year
+    age -= 1 if Date.today < self.birth_date + age.year
   end
 end
