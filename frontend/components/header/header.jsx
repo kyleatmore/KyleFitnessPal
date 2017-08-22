@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
   constructor(props) {
@@ -26,6 +27,8 @@ class Header extends React.Component {
         <div>
           <h3>Kyle Fitness Pal</h3>
           <h3>Create Account</h3>
+          <Link to="/signup">Sign Up</Link>
+          <Link to="/login">Log In</Link>
         </div>
       );
     }
