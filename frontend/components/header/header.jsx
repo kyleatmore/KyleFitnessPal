@@ -16,20 +16,21 @@ class Header extends React.Component {
 
     if (currentUser) {
       return (
-        <div className="header">
+        <header>
           <h3>Kyle Fitness Pal</h3>
           <h3>Hi, {currentUser.username}</h3>
           <button onClick={this.handleClick}>Log Out</button>
-        </div>
+        </header>
       );
     } else {
       return (
-        <div className="header">
-          <h3>Kyle Fitness Pal</h3>
-          <h3>Create Account</h3>
-          <Link to="/signup">Sign Up</Link>
-          <Link to="/login">Log In</Link>
-        </div>
+        <header>
+          <h3>kyleFitnessPal</h3>
+          <ul className='header-links'>
+            <li><Link to="/signup">Sign Up</Link></li>
+            <li><Link to="/login">Log In</Link></li>
+          </ul>
+        </header>
       );
     }
   }
