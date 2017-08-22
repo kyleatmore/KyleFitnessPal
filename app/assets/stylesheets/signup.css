@@ -2,9 +2,11 @@
   width: 599px;
   height: 306px;
   margin: 0 auto;
-  border: 1px solid #0072BC;
+  border: 1px solid gray;
+  border-radius: 7px;
   margin-top: 70px;
   padding: 10px 70px 30px 40px;
+  background-color: #f2f4eb;
 }
 
 .signup-container h2 {
@@ -15,12 +17,43 @@
 
 .signup-form {
   margin-top: 20px;
-  padding-left: 110px;
-  display: flex;
-  flex-direction: column;
+  padding-left: 20px;
   position: relative;
 }
 
-.signup-form > label {
+label, input {
+  display: inline-block;
+}
 
+label {
+  width: 130px;
+  text-align: right;
+  margin-right: 20px;
+}
+
+input {
+  width: 200px;
+  padding: 5px;
+}
+
+input.button {
+  width: 66.5px;
+  background-color: #51a351;
+  border: 1px solid #408140;
+  font-size: 13px;
+  border-radius: 5px;
+  padding: 8px 25px;
+  cursor: pointer;
+  color: white;
+  box-sizing: content-box;
+  margin: 20px 0;
+  margin-left: 150px;
+}
+
+.input-fields {
+  list-style: none;
+}
+
+.field {
+  margin: 3px 0;
 }
