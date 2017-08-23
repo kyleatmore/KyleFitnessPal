@@ -29,7 +29,7 @@ class LoginForm extends React.Component {
   }
 
   render() {
-    const { errors, headerText, footerText, linkText, linkPath } = this.props;
+    const { errors, headerText, footerText, linkText, linkPath, buttonText } = this.props;
     const { email, password } = this.state;
     const errorItems = errors.map((error, idx) => {
       return(<li key={idx}>{error}</li>);
@@ -46,6 +46,7 @@ class LoginForm extends React.Component {
         footerText={footerText}
         linkText={linkText}
         linkPath={linkPath}
+        buttonText={buttonText}
         />
     );
   }

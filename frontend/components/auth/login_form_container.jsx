@@ -12,6 +12,7 @@ const mapStateToProps = (state, ownProps) => {
     footerText: "Not a member yet?",
     linkText: " Sign up now!",
     linkPath: "/signup",
+    buttonText: "Log In",
   };
 };
 

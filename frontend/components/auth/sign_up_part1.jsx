@@ -1,7 +1,8 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SignUpPart1 = ({ handleInput, handleSubmit, email, password, errorItems, headerText, footerText, linkText, linkPath }) => {
+const SignUpPart1 = ({ handleInput, handleSubmit, email, password, errorItems, headerText, footerText, linkText, linkPath, buttonText }) => {
   return (
     <div className="signup-container">
 
@@ -33,7 +34,7 @@ const SignUpPart1 = ({ handleInput, handleSubmit, email, password, errorItems, h
         <input
           className="button"
           type="submit"
-          value="Continue »"
+          value={buttonText}
           onClick={handleSubmit}
         />
       </form>

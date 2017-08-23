@@ -12,7 +12,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const { currentUser } = this.props;
+    const { currentUser, location } = this.props;
 
     if (currentUser) {
       return (
@@ -22,16 +22,23 @@ class Header extends React.Component {
           <button onClick={this.handleClick}>Log Out</button>
         </header>
       );
+    } else if (location.pathname === "/signup") {
+        return (
+          <header>
+            <h1>kyleFitnessPal</h1>
+            <p>Create Your Free Account</p>
+          </header>
+        );
     } else {
-      return (
-        <header>
-          <h1>kyleFitnessPal</h1>
-          <ul className='header-links'>
-            <li><Link to="/signup">Sign Up</Link></li>
-            <li><Link to="/login">Log In</Link></li>
-          </ul>
-        </header>
-      );
+        return (
+          <header>
+            <h1>kyleFitnessPal</h1>
+            <ul className='header-links'>
+              <li><Link to="/signup">Sign Up</Link></li>
+              <li><Link to="/login">Log In</Link></li>
+            </ul>
+          </header>
+        );
     }
   }
 }
