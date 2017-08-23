@@ -24,7 +24,7 @@ header h1 {
   font-size: 14px;
 }
 
-.header-links a {
+a {
   text-decoration: none;
   color: #0072BC;
 }

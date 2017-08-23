@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SignUpPart1 = ({ handleInput, handleSubmit, email, password}) => {
   return (
@@ -23,17 +24,25 @@ const SignUpPart1 = ({ handleInput, handleSubmit, email, password}) => {
               onChange={handleInput('password')}
               value={password}
               />
+            <span>6-255 characters, no space</span>
           </li>
         </ul>
 
         <input
           className="button"
           type="submit"
-          value="Continue"
+          value="Continue »"
           onClick={handleSubmit}
         />
       </form>
 
+      <div className="login-redirect">
+        <ul>
+          <li>
+            Already have an account? <Link to="/login">Click here to log in.</Link>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
