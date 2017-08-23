@@ -12,6 +12,11 @@ class LoginForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    debugger
+    this.props.clearErrors();
+  }
+
   handleInput(field) {
     return (e) => {
       const nextState = merge({}, this.state, { [field]: e.target.value });
