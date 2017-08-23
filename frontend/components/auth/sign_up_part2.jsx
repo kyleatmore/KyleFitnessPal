@@ -15,6 +15,7 @@ const GOAL_7 = "Gain 1 pound per week";
 
 const SignUpPart2 = (
   {
+    errorItems,
     handleInput,
     handleSubmit,
     height,
@@ -29,6 +30,8 @@ const SignUpPart2 = (
   return (
     <div className="signup-container part2">
       <h2>Tell Us About Yourself</h2>
+      <ul className="errors">{errorItems}</ul>
+
       <form className="signup-form">
         <ul className="input-fields">
           <li className="field">

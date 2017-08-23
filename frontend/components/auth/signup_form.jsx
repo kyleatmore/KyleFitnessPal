@@ -88,9 +88,9 @@ class SignupForm extends React.Component {
         <SignUpPart1
           handleInput={this.handleInput}
           handleSubmit={this.handleSubmit}
+          errorItems={errorItems}
           email={email}
           password={password}
-          errorItems={errorItems}
           headerText={headerText}
           footerText={footerText}
           linkText={linkText}
@@ -103,6 +103,7 @@ class SignupForm extends React.Component {
           <SignUpPart2
             handleInput={this.handleInput}
             handleSubmit={this.handleSubmit}
+            errorItems={errorItems}
             height={height}
             current_weight={current_weight}
             goal_weight={goal_weight}

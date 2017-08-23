@@ -16,10 +16,9 @@
 
 class User < ApplicationRecord
 
-  validates :username, uniqueness: true
+  validates :username, :email, uniqueness: true
   validates :username, :email, :password_digest, :session_token, :height,
             :gender, :birth_date, presence: true
-  validates :gender, inclusion: %w(M F)
   validates :password, length: { minimum: 6, allow_nil: true }
 
 
