@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import SignupForm from './signup_form';
-import { signup, clearErrors } from '../../actions/session_actions';
+import { signup, clearErrors, trySignup } from '../../actions/session_actions';
 
 
 
@@ -20,6 +20,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     processForm: (user) => dispatch(signup(user)),
     clearErrors: () => dispatch(clearErrors()),
+    trySignup: (user) => dispatch(trySignup(user)),
   };
 };
 

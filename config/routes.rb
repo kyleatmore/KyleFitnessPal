@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:create]
+    post '/users/try', to: 'users#try'
     resource :session, only: [:create, :destroy]
   end
 end

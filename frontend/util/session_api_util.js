@@ -20,3 +20,11 @@ export const logout = () => {
     url: "/api/session"
   });
 };
+
+export const trySignup = (user) => {
+  return $.ajax({
+    method: "POST",
+    url: "/api/users/try",
+    data: { user }
+  });
+};
