@@ -45,11 +45,9 @@ class SignupForm extends React.Component {
     const user = Object.assign({}, this.state.user);
 
     if (this.state.step === 1) {
-      debugger
       this.props.trySignup(user)
         .then(
           () => {
-            debugger
             const nextState = merge({}, this.state, { step: this.state.step + 1 });
             this.setState(nextState);
           }

@@ -17,7 +17,7 @@ class Header extends React.Component {
     if (currentUser) {
       return (
         <header>
-          <h1>kyleFitnessPal</h1>
+          <Link to="/"><h1>kyleFitnessPal</h1></Link>
           <h3>Hi, {currentUser.username}</h3>
           <button onClick={this.handleClick}>Log Out</button>
         </header>
@@ -25,16 +25,16 @@ class Header extends React.Component {
     } else if (location.pathname === "/signup") {
         return (
           <header>
-            <h1>kyleFitnessPal</h1>
+            <Link to="/"><h1>kyleFitnessPal</h1></Link>
             <p>Create Your Free Account</p>
           </header>
         );
     } else {
         return (
           <header>
-            <h1>kyleFitnessPal</h1>
+            <Link to="/"><h1>kyleFitnessPal</h1></Link>
             <ul className='header-links'>
-              <li><Link to="/signup">Sign Up</Link></li>
+              <li className="login-link"><Link to="/signup">Sign Up</Link></li>
               <li><Link to="/login">Log In</Link></li>
             </ul>
           </header>
