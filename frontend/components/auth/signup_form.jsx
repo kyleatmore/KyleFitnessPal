@@ -18,6 +18,7 @@ const initialState = {
     goal_description: ""
   },
   step: 1,
+  initialErrors: [],
 };
 
 class SignupForm extends React.Component {
@@ -26,6 +27,7 @@ class SignupForm extends React.Component {
     this.state = initialState;
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.checkInitialErrors = this.checkInitialErrors.bind(this);
   }
 
   handleInput(field) {
@@ -40,6 +42,7 @@ class SignupForm extends React.Component {
     const user = Object.assign({}, this.state.user);
 
     if (this.state.step === 1) {
+      this.checkInitialErrors(user);
       const nextState = merge({}, this.state, { step: this.state.step + 1 });
       this.setState(nextState);
     } else {
@@ -47,6 +50,23 @@ class SignupForm extends React.Component {
           .then(
             () => this.props.history.push("/goalsummary")
           );
+    }
+  }
+
+  checkInitialErrors(user) {
+    const nextErrors = [];
+    debugger
+    if (!user.email) {
+      nextErrors.push("Please enter a valid email address.");
+    }
+
+    if (user.password.length < 6) {
+      nextErrors.push("Your password must be at least 6 characters long.");
+    }
+    debugger
+    if (nextErrors.length > 0) {
+      const nextState = merge({}, this.state, { initialErrors: nextErrors });
+      this.setState(nextState);
     }
   }
 
