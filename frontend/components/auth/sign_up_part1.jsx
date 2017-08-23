@@ -7,7 +7,7 @@ const SignUpPart1 = ({ handleInput, handleSubmit, email, password, errorItems, h
     <div className="signup-container">
 
       <h2>{headerText}</h2>
-      <ul>{errorItems}</ul>
+      <ul className="errors">{errorItems}</ul>
 
       <form className="signup-form">
         <ul className="input-fields">
