@@ -29,10 +29,19 @@ header p {
   font-size: 14px;
 }
 
-a {
+a, .logout-button {
   text-decoration: none;
   color: #0072BC;
 }
 .login-link {
   border-right: 1px solid #e6e6e6;
+}
+
+.logout-button {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 14px;
+  -webkit-appearance: none;
+  cursor: pointer;
 }

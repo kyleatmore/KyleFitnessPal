@@ -19,7 +19,10 @@ class Header extends React.Component {
         <header>
           <Link to="/"><h1>kyleFitnessPal</h1></Link>
           <h3>Hi, {currentUser.username}</h3>
-          <button onClick={this.handleClick}>Log Out</button>
+          <button
+            className="header-links logout-button"
+            onClick={this.handleClick}
+          >Log Out</button>
         </header>
       );
     } else if (location.pathname === "/signup") {
