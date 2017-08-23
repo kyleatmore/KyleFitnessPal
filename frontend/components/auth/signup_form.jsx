@@ -27,6 +27,7 @@ class SignupForm extends React.Component {
     this.state = initialState;
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = handleDemo.bind(this);
   }
 
   componentDidMount() {
@@ -60,6 +61,9 @@ class SignupForm extends React.Component {
     }
   }
 
+  handleDemo() {
+    this.props.demoLogin();
+  }
 
   render() {
     const { errors, headerText, footerText, linkText, linkPath, buttonText, demoLogin } = this.props;
@@ -94,7 +98,7 @@ class SignupForm extends React.Component {
           linkText={linkText}
           linkPath={linkPath}
           buttonText={buttonText}
-          demoLogin={demoLogin}
+          handleDemo={this.handleDemo}
         />
       );
     } else {

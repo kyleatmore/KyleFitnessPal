@@ -17,10 +17,12 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
+  const demo = { email: "kyledemo@gmail.com", password: "password" };
+
   return {
     processForm: (user) => dispatch(login(user)),
     clearErrors: () => dispatch(clearErrors()),
-    demoLogin: (user) => dispatch(login(user)),
+    demoLogin: () => dispatch(login(demo)),
   };
 };
 

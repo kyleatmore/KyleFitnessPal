@@ -5,18 +5,13 @@ import { Link } from 'react-router-dom';
 class SignUpPart1 extends React.Component {
   constructor(props) {
     super(props);
-    this.handleDemo = this.handleDemo.bind(this);
-  }
-
-  handleDemo() {
-    const demoUser = { email: "kyledemo@gmail.com", password: "password" };
-    this.props.demoLogin(demoUser);
   }
 
   render() {
     const {
       handleInput,
       handleSubmit,
+      handleDemo,
       email,
       password,
       errorItems,
@@ -66,7 +61,7 @@ class SignUpPart1 extends React.Component {
           className="demo button"
           type="submit"
           value="Demo Log In"
-          onClick={this.handleDemo}
+          onClick={handleDemo}
           />
         </form>
 

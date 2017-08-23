@@ -1,4 +1,5 @@
 import React from 'react';
+import { range } from 'lodash';
 
 const SEDENTARY = "Spend most of the day sitting (e.g. bank teller, desk job)";
 const LIGHTLY_ACTIVE = "Spend a good part of the day on your feet (e.g. teacher, salesperson)";
@@ -12,6 +13,22 @@ const GOAL_4 = "Lose 0.5 pounds per week";
 const GOAL_5 = "Maintain my current weight";
 const GOAL_6 = "Gain 0.5 pounds per week";
 const GOAL_7 = "Gain 1 pound per week";
+
+const MONTHS = ["January", "February", "March", "April", "May", "June", "July",
+                "August", "September", "October", "November", "December"];
+
+const monthOptions = MONTHS.map((month, idx) => {
+  return (
+    <option key={idx+1} value={idx+1}>{month}</option>
+  );
+})
+
+// const DAYS = range(1, 32);
+// const dayOptions = days.map((day, idx) => {
+//   return (
+//     <option key={day} value={day}>{day}</option>
+//   );
+// })
 
 const SignUpPart2 = (
   {
@@ -92,10 +109,11 @@ const SignUpPart2 = (
 
           <li className="field">
             <label>Date of Birth:</label>
-            <input
-            type="date"
-            onChange={handleInput('birth_date')}
-            />
+            <select className="month" defaultValue="7" onChange={handleInput('goal_description')}>
+              {monthOptions}
+            </select>
+
+          
           </li>
 
           <li className="field">
@@ -141,13 +159,13 @@ const SignUpPart2 = (
           <li className="goal-field">
             <label className="goal field-header">What is your goal?</label>
             <select name="goal_description" defaultValue="-1.0" onChange={handleInput('goal_description')}>
-            <option value="-2.0">{GOAL_1}</option>
-            <option value="-1.5">{GOAL_2}</option>
-            <option value="-1.0">{GOAL_3}</option>
-            <option value="0.5">{GOAL_4}</option>
-            <option value="0">{GOAL_5}</option>
-            <option value="0.5">{GOAL_6}</option>
-            <option value="1">{GOAL_7}</option>
+              <option value="-2.0">{GOAL_1}</option>
+              <option value="-1.5">{GOAL_2}</option>
+              <option value="-1.0">{GOAL_3}</option>
+              <option value="0.5">{GOAL_4}</option>
+              <option value="0">{GOAL_5}</option>
+              <option value="0.5">{GOAL_6}</option>
+              <option value="1">{GOAL_7}</option>
             </select>
           </li>
 

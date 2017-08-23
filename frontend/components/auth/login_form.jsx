@@ -10,6 +10,7 @@ class LoginForm extends React.Component {
     this.state = initialState;
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   componentDidMount() {
@@ -32,8 +33,12 @@ class LoginForm extends React.Component {
       );
   }
 
+  handleDemo() {
+    this.props.demoLogin();
+  }
+
   render() {
-    const { errors, headerText, footerText, linkText, linkPath, buttonText, demoLogin } = this.props;
+    const { errors, headerText, footerText, linkText, linkPath, buttonText } = this.props;
     const { email, password } = this.state;
     const errorItems = errors.map((error, idx) => {
       return(<li key={idx}>{error}</li>);
@@ -51,7 +56,7 @@ class LoginForm extends React.Component {
         linkText={linkText}
         linkPath={linkPath}
         buttonText={buttonText}
-        demoLogin={demoLogin}
+        handleDemo={this.handleDemo}
         />
     );
   }

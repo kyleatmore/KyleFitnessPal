@@ -3,7 +3,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const Auth = ({component: Component, path, loggedIn}) => {
-  debugger
   return(
     <Route
       path={path}
@@ -18,7 +17,6 @@ const Auth = ({component: Component, path, loggedIn}) => {
 };
 
 const Protected = ({component: Component, path, loggedIn}) => {
-  debugger
   return(
     <Route
       path={path}
