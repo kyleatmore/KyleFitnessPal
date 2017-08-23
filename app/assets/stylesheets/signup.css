@@ -161,3 +161,13 @@ input.username {
   list-style: none;
   margin-top: 7px;
 }
+
+.part2 p {
+  margin-top: 7px;
+  font-size: 12px;
+}
+
+input.demo {
+  margin: 5px;
+  width: auto;
+}

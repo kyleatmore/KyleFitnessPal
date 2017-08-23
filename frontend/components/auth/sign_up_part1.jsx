@@ -2,53 +2,86 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SignUpPart1 = ({ handleInput, handleSubmit, email, password, errorItems, headerText, footerText, linkText, linkPath, buttonText }) => {
-  return (
-    <div className="signup-container">
+class SignUpPart1 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleDemo = this.handleDemo.bind(this);
+  }
 
-      <h2>{headerText}</h2>
-      <ul className="errors">{errorItems}</ul>
+  handleDemo() {
+    const demoUser = { email: "kyledemo@gmail.com", password: "password" };
+    this.props.demoLogin(demoUser);
+  }
 
-      <form className="signup-form">
-        <ul className="input-fields">
-          <li className="field">
-            <label>Email Address:</label>
-            <input
+  render() {
+    const {
+      handleInput,
+      handleSubmit,
+      email,
+      password,
+      errorItems,
+      headerText,
+      footerText,
+      linkText,
+      linkPath,
+      buttonText
+    } = this.props;
+
+    return (
+      <div className="signup-container">
+
+        <h2>{headerText}</h2>
+        <ul className="errors">{errorItems}</ul>
+
+        <form className="signup-form">
+          <ul className="input-fields">
+            <li className="field">
+              <label>Email Address:</label>
+              <input
               type="text"
               onChange={handleInput('email')}
               value={email}
               />
-          </li>
+            </li>
 
-          <li className="field">
-            <label>Password:</label>
-            <input
+            <li className="field">
+              <label>Password:</label>
+              <input
               type="password"
               onChange={handleInput('password')}
               value={password}
               />
-            <span>6-255 characters, no space</span>
-          </li>
-        </ul>
+              <span>6-255 characters, no space</span>
+            </li>
+          </ul>
 
-        <input
+          <input
           className="button"
           type="submit"
           value={buttonText}
           onClick={handleSubmit}
-        />
-      </form>
+          />
 
-      <div className="login-redirect">
-        <ul>
-          <li>
+          <input
+          className="demo button"
+          type="submit"
+          value="Demo Log In"
+          onClick={this.handleDemo}
+          />
+        </form>
+
+        <div className="login-redirect">
+          <ul>
+            <li>
             {footerText}
             <Link to={linkPath}>{linkText}</Link>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+
+  }
+}
 
 export default SignUpPart1;

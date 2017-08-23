@@ -30,6 +30,8 @@ const SignUpPart2 = (
   return (
     <div className="signup-container part2">
       <h2>Tell Us About Yourself</h2>
+      <p>We will use this information to create a personalized diet and
+      exercise profile for you.</p>
       <ul className="errors">{errorItems}</ul>
 
       <form className="signup-form">

@@ -64,7 +64,7 @@ class SignupForm extends React.Component {
 
 
   render() {
-    const { errors, headerText, footerText, linkText, linkPath, buttonText } = this.props;
+    const { errors, headerText, footerText, linkText, linkPath, buttonText, demoLogin } = this.props;
     const { step } = this.state;
     const {
       email,
@@ -96,6 +96,7 @@ class SignupForm extends React.Component {
           linkText={linkText}
           linkPath={linkPath}
           buttonText={buttonText}
+          demoLogin={demoLogin}
         />
       );
     } else {
