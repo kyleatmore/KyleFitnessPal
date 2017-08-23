@@ -8,6 +8,10 @@ import { signup } from '../../actions/session_actions';
 const mapStateToProps = (state, ownProps) => {
   return {
     errors: state.session.errors,
+    headerText: "Your Account Information",
+    footerText: "Already a member?",
+    linkText: " Click here to log in.",
+    linkPath: "/login",
   };
 };
 

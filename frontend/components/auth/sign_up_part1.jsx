@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SignUpPart1 = ({ handleInput, handleSubmit, email, password, errorItems}) => {
+const SignUpPart1 = ({ handleInput, handleSubmit, email, password, errorItems, headerText, footerText, linkText, linkPath }) => {
   return (
     <div className="signup-container">
 
-      <h2>Your Account Information</h2>
+      <h2>{headerText}</h2>
       <ul>{errorItems}</ul>
 
       <form className="signup-form">
@@ -41,8 +41,8 @@ const SignUpPart1 = ({ handleInput, handleSubmit, email, password, errorItems}) 
       <div className="login-redirect">
         <ul>
           <li>
-            Already have an account?
-            <Link to="/login"> Click here to log in.</Link>
+            {footerText}
+            <Link to={linkPath}>{linkText}</Link>
           </li>
         </ul>
       </div>

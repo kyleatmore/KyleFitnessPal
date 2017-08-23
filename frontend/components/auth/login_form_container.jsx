@@ -8,6 +8,10 @@ import { login } from '../../actions/session_actions';
 const mapStateToProps = (state, ownProps) => {
   return {
     errors: state.session.errors,
+    headerText: "Member Login",
+    footerText: "Not a member yet?",
+    linkText: " Sign up now!",
+    linkPath: "/signup",
   };
 };
 

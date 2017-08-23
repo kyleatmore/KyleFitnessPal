@@ -71,7 +71,7 @@ class SignupForm extends React.Component {
   }
 
   render() {
-    const { errors } = this.props;
+    const { errors, headerText, footerText, linkText, linkPath } = this.props;
     const { step } = this.state;
     const {
       email,
@@ -98,6 +98,10 @@ class SignupForm extends React.Component {
           email={email}
           password={password}
           errorItems={errorItems}
+          headerText={headerText}
+          footerText={footerText}
+          linkText={linkText}
+          linkPath={linkPath}
         />
       );
     } else {
