@@ -1,9 +1,9 @@
 import React from 'react';
 
-const SEDENTARY = "Sedentary: Spend most of the day sitting (e.g. bank teller, desk job)";
-const LIGHTLY_ACTIVE = "Lightly Active: Spend a good part of the day on your feet (e.g. teacher, salesperson)";
-const ACTIVE = "Active: Spend a good part of the day doing some physical activity (e.g. food server, postal carrier)";
-const VERY_ACTIVE = "Very Active: Spend most of the day doing heavy physical activity (e.g. bike messenger, carpenter)";
+const SEDENTARY = "Spend most of the day sitting (e.g. bank teller, desk job)";
+const LIGHTLY_ACTIVE = "Spend a good part of the day on your feet (e.g. teacher, salesperson)";
+const ACTIVE = "Spend a good part of the day doing some physical activity (e.g. food server, postal carrier)";
+const VERY_ACTIVE = "Spend most of the day doing heavy physical activity (e.g. bike messenger, carpenter)";
 
 const GOAL_1 = "Lose 2 pounds per week";
 const GOAL_2 = "Lose 1.5 pounds per week";
@@ -31,6 +31,15 @@ const SignUpPart2 = (
       <h2>Tell Us About Yourself</h2>
       <form className="signup-form">
         <ul className="input-fields">
+          <li className="field">
+            <label>Current Weight:</label>
+            <input
+            type="text"
+            onChange={handleInput('current_weight')}
+            value={current_weight}
+            />
+            <span>lbs</span>
+          </li>
 
           <li className="field">
             <label>Height:</label>
@@ -39,15 +48,7 @@ const SignUpPart2 = (
             onChange={handleInput('height')}
             value={height}
             />
-          </li>
-
-          <li className="field">
-            <label>Current Weight:</label>
-            <input
-            type="text"
-            onChange={handleInput('current_weight')}
-            value={current_weight}
-            />
+            <span>in</span>
           </li>
 
           <li className="field">
@@ -57,6 +58,7 @@ const SignUpPart2 = (
             onChange={handleInput('goal_weight')}
             value={goal_weight}
             />
+            <span>lbs</span>
           </li>
 
           <li className="field">
@@ -70,7 +72,7 @@ const SignUpPart2 = (
             className="radio"
             onChange={handleInput('gender')}
             />
-            <label className="radio" htmlFor="male">Male</label>
+            <label className="radio gender" htmlFor="male">Male</label>
 
             <input
             type="radio"
@@ -80,7 +82,7 @@ const SignUpPart2 = (
             className="radio"
             onChange={handleInput('gender')}
             />
-            <label className="radio" htmlFor="female">Female</label>
+            <label className="radio gender" htmlFor="female">Female</label>
           </li>
 
           <li className="field">
@@ -95,6 +97,7 @@ const SignUpPart2 = (
             <label>Username:</label>
             <input
             type="text"
+            className="username"
             onChange={handleInput('username')}
             value={username}
             />
@@ -104,34 +107,34 @@ const SignUpPart2 = (
           <li className="activity-field">
             <ul className="activity-choices">
               <li>
-                <label className="activity">How would you describe your normal daily activities?</label>
+                <label className="activity field-header">How would you describe your normal daily activities?</label>
               </li>
 
               <li>
                 <input className="radio" type="radio" id="1" name="activity" value="1" onChange={handleInput('activity_level')}/>
-                <label className="activity" htmlFor="1">{SEDENTARY}</label>
+                <label className="activity" htmlFor="1">Sedentary: <span className="notbold">{SEDENTARY}</span></label>
               </li>
 
               <li>
               <input className="radio" type="radio" id="2" name="activity" value="2" onChange={handleInput('activity_level')}/>
-              <label className="activity" htmlFor="2">{LIGHTLY_ACTIVE}</label>
+              <label className="activity" htmlFor="2">Lightly Active: <span className="notbold">{LIGHTLY_ACTIVE}</span></label>
               </li>
 
               <li>
                 <input className="radio" type="radio" id="3" name="activity" value="3" onChange={handleInput('activity_level')}/>
-                <label className="activity" htmlFor="3">{ACTIVE}</label>
+                <label className="activity" htmlFor="3">Active: <span className="notbold">{ACTIVE}</span></label>
               </li>
 
               <li>
                 <input className="radio" type="radio" id="4" name="activity" value="4" onChange={handleInput('activity_level')}/>
-                <label className="activity" htmlFor="4">{VERY_ACTIVE}</label>
+                <label className="activity" htmlFor="4">Very Active: <span className="notbold">{VERY_ACTIVE}</span></label>
               </li>
             </ul>
 
           </li>
 
           <li className="goal-field">
-            <label className="goal">What is your goal?</label>
+            <label className="goal field-header">What is your goal?</label>
             <select name="goal_description" defaultValue="-1.0" onChange={handleInput('goal_description')}>
             <option value="-2.0">{GOAL_1}</option>
             <option value="-1.5">{GOAL_2}</option>

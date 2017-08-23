@@ -12,7 +12,7 @@
 }
 
 .signup-container.part2 {
-  height: 854px;
+  height: 500px;
 }
 
 .signup-container h2 {
@@ -69,16 +69,13 @@ input.button {
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0.26,#62c462),color-stop(0.75,#51a351))
 }
 
-.radio {
-  width: auto;
-}
 
 .input-fields {
   list-style: none;
 }
 
 .field {
-  margin: 3px 0;
+  margin: 5px 0;
 }
 
 .goal-field, .activity-field {
@@ -87,10 +84,39 @@ input.button {
   margin-top: 20px;
 }
 
-label.activity, label.goal {
+.part2 label {
+  color: #343434;
+  font-weight: bold;
+  width: 100px;
+}
+
+.part2 input {
+  width: 50px;
+}
+
+label.radio, input.radio {
+  width: auto;
+}
+
+label.gender {
+  padding: 6px 6px 0 0;
+  font-weight: normal;
+}
+
+label.activity, label.goal, label.gender {
   width: auto;
   text-align: left;
   display: inline-block;
+}
+
+label.activity {
+  padding-bottom: 5px;
+  padding-left: 5px;
+}
+
+label.field-header {
+  padding-left: 0px;
+  margin-bottom: 5px;
 }
 
 .activity-choices {
@@ -115,4 +141,13 @@ select {
 .signup.button {
   margin-left: 0px;
   width: auto;
+}
+
+.notbold {
+  color: #343434;
+  font-weight: normal;
+}
+
+input.username {
+  width: 200px;
 }
