@@ -27,85 +27,112 @@ const SignUpPart2 = (
     goal_description
   }) => {
   return (
-    <div>
-      <h3>Tell Us About Yourself</h3>
-      <form>
-        <label>Height:
-          <input
+    <div className="signup-container part2">
+      <h2>Tell Us About Yourself</h2>
+      <form className="signup-form">
+        <ul className="input-fields">
+
+          <li className="field">
+            <label>Height:</label>
+            <input
             type="text"
             onChange={handleInput('height')}
             value={height}
             />
-        </label>
+          </li>
 
-        <label>Current Weight:
-          <input
+          <li className="field">
+            <label>Current Weight:</label>
+            <input
             type="text"
             onChange={handleInput('current_weight')}
             value={current_weight}
             />
-        </label>
+          </li>
 
-        <label>Goal Weight:
-          <input
+          <li className="field">
+            <label>Goal Weight:</label>
+            <input
             type="text"
             onChange={handleInput('goal_weight')}
             value={goal_weight}
             />
-        </label>
+          </li>
 
-        <label>Gender:
-          <label htmlFor="male">Male</label>
-          <input
+          <li className="field">
+            <label>Gender:</label>
+
+            <input
             type="radio"
             id="male"
             name="gender"
             value="M"
+            className="radio"
             onChange={handleInput('gender')}
-          />
+            />
+            <label className="radio" htmlFor="male">Male</label>
 
-          <label htmlFor="female">Female</label>
-          <input
+            <input
             type="radio"
             id="female"
             name="gender"
             value="F"
+            className="radio"
             onChange={handleInput('gender')}
-          />
-        </label>
+            />
+            <label className="radio" htmlFor="female">Female</label>
+          </li>
 
-        <label>Date of Birth:
-          <input
+          <li className="field">
+            <label>Date of Birth:</label>
+            <input
             type="date"
             onChange={handleInput('birth_date')}
-          />
-        </label>
+            />
+          </li>
 
-        <label>Username:
-          <input
+          <li className="field">
+            <label>Username:</label>
+            <input
             type="text"
             onChange={handleInput('username')}
             value={username}
             />
-        </label>
+            <span>4-30 characters, no space</span>
+          </li>
 
-        <br />
+          <li className="activity-field">
+            <ul className="activity-choices">
+              <li>
+                <label className="activity">How would you describe your normal daily activities?</label>
+              </li>
 
-        <h3>How would you describe your normal daily activities?</h3>
-          <input type="radio" id="1" name="activity" value="1" onChange={handleInput('activity_level')}/>
-          <label htmlFor="1">{SEDENTARY}</label>
+              <li>
+                <input className="radio" type="radio" id="1" name="activity" value="1" onChange={handleInput('activity_level')}/>
+                <label className="activity" htmlFor="1">{SEDENTARY}</label>
+              </li>
 
-          <input type="radio" id="2" name="activity" value="2" onChange={handleInput('activity_level')}/>
-          <label htmlFor="2">{LIGHTLY_ACTIVE}</label>
+              <li>
+              <input className="radio" type="radio" id="2" name="activity" value="2" onChange={handleInput('activity_level')}/>
+              <label className="activity" htmlFor="2">{LIGHTLY_ACTIVE}</label>
+              </li>
 
-          <input type="radio" id="3" name="activity" value="3" onChange={handleInput('activity_level')}/>
-          <label htmlFor="3">{ACTIVE}</label>
+              <li>
+                <input className="radio" type="radio" id="3" name="activity" value="3" onChange={handleInput('activity_level')}/>
+                <label className="activity" htmlFor="3">{ACTIVE}</label>
+              </li>
 
-          <input type="radio" id="4" name="activity" value="4" onChange={handleInput('activity_level')}/>
-          <label htmlFor="4">{VERY_ACTIVE}</label>
+              <li>
+                <input className="radio" type="radio" id="4" name="activity" value="4" onChange={handleInput('activity_level')}/>
+                <label className="activity" htmlFor="4">{VERY_ACTIVE}</label>
+              </li>
+            </ul>
 
-        <h3>What is your goal?</h3>
-          <select name="goal_description" defaultValue="-1.0" onChange={handleInput('goal_description')}>
+          </li>
+
+          <li className="goal-field">
+            <label className="goal">What is your goal?</label>
+            <select name="goal_description" defaultValue="-1.0" onChange={handleInput('goal_description')}>
             <option value="-2.0">{GOAL_1}</option>
             <option value="-1.5">{GOAL_2}</option>
             <option value="-1.0">{GOAL_3}</option>
@@ -113,10 +140,15 @@ const SignUpPart2 = (
             <option value="0">{GOAL_5}</option>
             <option value="0.5">{GOAL_6}</option>
             <option value="1">{GOAL_7}</option>
-          </select>
+            </select>
+          </li>
+
+        </ul>
 
         <input
           type="submit"
+          className="signup button"
+          value="Save And Continue »"
           onClick={handleSubmit}
         />
       </form>

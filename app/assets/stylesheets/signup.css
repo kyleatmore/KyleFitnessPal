@@ -11,6 +11,10 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.signup-container.part2 {
+  height: 854px;
+}
+
 .signup-container h2 {
   font-size: 18px;
   color: #0a5282;
@@ -65,12 +69,32 @@ input.button {
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0.26,#62c462),color-stop(0.75,#51a351))
 }
 
+.radio {
+  width: auto;
+}
+
 .input-fields {
   list-style: none;
 }
 
 .field {
   margin: 3px 0;
+}
+
+.goal-field, .activity-field {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+label.activity, label.goal {
+  width: auto;
+  text-align: left;
+  display: inline-block;
+}
+
+.activity-choices {
+  list-style: none;
 }
 
 .login-redirect {
@@ -82,4 +106,13 @@ input.button {
   font-size: 13px;
   font-weight: bold;
   border: 1px solid #e6e6e6;
+}
+
+select {
+  width: 360px;
+}
+
+.signup.button {
+  margin-left: 0px;
+  width: auto;
 }
