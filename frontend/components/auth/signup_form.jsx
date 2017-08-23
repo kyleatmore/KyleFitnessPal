@@ -38,7 +38,7 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state.user);
-    
+
     if (this.state.step === 1) {
       const nextState = merge({}, this.state, { step: this.state.step + 1 });
       this.setState(nextState);
@@ -53,14 +53,31 @@ class SignupForm extends React.Component {
   render() {
     const { errors } = this.props;
     const { step } = this.state;
+    const {
+      email,
+      password,
+      height,
+      current_weight,
+      goal_weight,
+      gender,
+      birth_date,
+      username,
+      activity_level,
+      goal_description
+    } = this.state.user;
+
+    const errorItems = errors.map((error, idx) => {
+      return(<li key={idx}>{error}</li>);
+    });
 
     if (step === 1) {
       return (
         <SignUpPart1
           handleInput={this.handleInput}
           handleSubmit={this.handleSubmit}
-          email={this.state.user.email}
-          password={this.state.user.password}
+          email={email}
+          password={password}
+          errorItems={errorItems}
         />
       );
     } else {
@@ -68,14 +85,14 @@ class SignupForm extends React.Component {
           <SignUpPart2
             handleInput={this.handleInput}
             handleSubmit={this.handleSubmit}
-            height={this.state.user.height}
-            current_weight={this.state.user.current_weight}
-            goal_weight={this.state.user.goal_weight}
-            gender={this.state.user.gender}
-            birth_date={this.state.user.birth_date}
-            username={this.state.user.username}
-            activity_level={this.state.user.activity_level}
-            goal_description={this.state.user.goal_description}
+            height={height}
+            current_weight={current_weight}
+            goal_weight={goal_weight}
+            gender={gender}
+            birth_date={birth_date}
+            username={username}
+            activity_level={activity_level}
+            goal_description={goal_description}
           />
       );
     }

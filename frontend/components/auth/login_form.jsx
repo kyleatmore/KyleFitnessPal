@@ -29,12 +29,19 @@ class LoginForm extends React.Component {
   }
 
   render() {
+    const { errors } = this.props;
+    const { email, password } = this.state;
+    const errorItems = errors.map((error, idx) => {
+      return(<li key={idx}>{error}</li>);
+    });
+
     return (
       <SignUpPart1
         handleInput={this.handleInput}
         handleSubmit={this.handleSubmit}
-        email={this.state.email}
-        password={this.state.password}
+        email={email}
+        password={password}
+        errorItems={errorItems}
         />
     );
   }
