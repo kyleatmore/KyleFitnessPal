@@ -13,7 +13,6 @@ class Header extends React.Component {
 
   render() {
     const { currentUser, location } = this.props;
-    debugger
     if (currentUser) {
       return (
         <header>

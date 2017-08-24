@@ -5,6 +5,9 @@ import SignUpPart1 from './sign_up_part1';
 import SignUpPart2 from './sign_up_part2';
 
 const TODAY = new Date();
+const inititalYear = TODAY.getFullYear() - 35;
+const initialMonth = TODAY.getMonth();
+const initialDay = TODAY.getDay();
 
 const initialState = {
   user: {
@@ -13,16 +16,16 @@ const initialState = {
     username: "",
     height: "",
     gender: "",
-    birth_date: new Date(TODAY.getFullYear() - 35, TODAY.getMonth(), TODAY.getDate()),
+    birth_date: new Date(inititalYear, initialMonth, initialDay),
     current_weight: "",
     goal_weight: "",
     activity_level: "",
     goal_description: ""
   },
   step: 1,
-  month: TODAY.getMonth(),
-  day: TODAY.getDate(),
-  year: TODAY.getFullYear() - 35,
+  month: initialMonth,
+  day: initialDay,
+  year: inititalYear,
 };
 
 class SignupForm extends React.Component {
@@ -61,8 +64,9 @@ class SignupForm extends React.Component {
           nextDate.setDate(e.target.value);
       }
 
-      const nextState = merge({}, this.state, { user: {birth_date: nextDate}, [field]: e.target.value });
-      debugger
+      const nextState = merge(
+        {}, this.state, { user: {birth_date: nextDate}, [field]: e.target.value }
+      );
       this.setState(nextState);
     };
   }
@@ -93,7 +97,7 @@ class SignupForm extends React.Component {
 
   render() {
     const { errors, headerText, footerText, linkText, linkPath, buttonText, demoLogin } = this.props;
-    const { step } = this.state;
+    const { step, month, day, year } = this.state;
     const {
       email,
       password,
@@ -101,10 +105,9 @@ class SignupForm extends React.Component {
       current_weight,
       goal_weight,
       gender,
-      birth_date,
       username,
       activity_level,
-      goal_description
+      goal_description,
     } = this.state.user;
 
     const errorItems = errors.map((error, idx) => {
@@ -138,10 +141,12 @@ class SignupForm extends React.Component {
             current_weight={current_weight}
             goal_weight={goal_weight}
             gender={gender}
-            birth_date={birth_date}
             username={username}
             activity_level={activity_level}
             goal_description={goal_description}
+            month={month}
+            day={day}
+            year={year}
           />
       );
     }

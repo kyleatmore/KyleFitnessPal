@@ -25,15 +25,12 @@ export const clearErrors = () => {
 };
 
 export const login = (user) => (dispatch) => {
-  debugger
   return APIUtil.login(user)
     .then(
       user => {
-        debugger
         dispatch(receiveCurrentUser(user));
       },
       errors => {
-        debugger
         dispatch(receiveErrors(errors.responseJSON));
       }
     );

@@ -37,8 +37,6 @@ const yearOptions = YEARS.map((year) => {
   );
 })
 
-const TODAY = new Date();
-
 const SignUpPart2 = (
   {
     errorItems,
@@ -49,10 +47,12 @@ const SignUpPart2 = (
     current_weight,
     goal_weight,
     gender,
-    birth_date,
     username,
     activity_level,
-    goal_description
+    goal_description,
+    month,
+    day,
+    year,
   }) => {
   return (
     <div className="signup-container part2">
@@ -119,15 +119,15 @@ const SignUpPart2 = (
 
           <li className="field">
             <label>Date of Birth:</label>
-            <select className="month" defaultValue={TODAY.getMonth()} onChange={handleDate('month')}>
+            <select className="month" value={month} onChange={handleDate('month')}>
               {monthOptions}
             </select>
 
-            <select className="day" defaultValue={TODAY.getDate()} onChange={handleDate('day')}>
+            <select className="day" defaultValue={day} onChange={handleDate('day')}>
               {dayOptions}
             </select>
 
-            <select className="year" defaultValue={TODAY.getFullYear() - 35} onChange={handleDate('year')}>
+            <select className="year" defaultValue={year} onChange={handleDate('year')}>
               {yearOptions}
             </select>
 
