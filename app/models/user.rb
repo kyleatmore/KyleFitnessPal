@@ -65,5 +65,20 @@ class User < ApplicationRecord
   def age
     age = Date.today.year - self.birth_date.year
     age -= 1 if Date.today < self.birth_date + age.year
+    age
+  end
+
+  def harris_benedict_bmr(weight)
+    if self.gender === "M"
+      return 66 + (6.2 * weight) + (12.7 * self.height) - (6.76 * self.age)
+    else
+      return 655.1 + (4.35 * weight) + (4.7 * self.height) - (4.7 * self.age)
+    end
+  end
+
+  def total_daily_energy_expenditure
+    goal = self.goals.last
+    bmr = harris_benedict_bmr(goal.current_weight)
+    (bmr * goal.activity_multiplier).round
   end
 end
