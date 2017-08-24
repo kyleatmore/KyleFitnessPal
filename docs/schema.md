@@ -18,8 +18,8 @@ column name     | data type | details
 id              | integer   | not null, primary key
 current_weight  | integer   | not null
 goal_weight     | integer   | not null
-activity_level  | string    | not null
-goal_description| string    | not null
+activity_level  | integer   | not null (enum in Rails model mapping to string)
+goal_description| integer   | not null (enum in Rails model mapping to string)
 user_id         | integer   | not null, foreign key (references users), indexed
 
 ## food_diaries
