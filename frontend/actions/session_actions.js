@@ -56,6 +56,8 @@ export const trySignup = (user) => (dispatch) => {
   return APIUtil.trySignup(user)
     .then(
       () => dispatch(clearErrors()),
-      errors => dispatch(receiveErrors(errors.responseJSON))
+      errors => {
+        return dispatch(receiveErrors(errors.responseJSON));
+      }
     );
 };

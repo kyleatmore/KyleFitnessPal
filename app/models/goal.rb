@@ -22,7 +22,7 @@ class Goal < ApplicationRecord
     GOAL_5.to_sym, GOAL_6.to_sym,
   ]
 
-  belongs_to :user
+  belongs_to :user, inverse_of: :goals
 
   def activity_multiplier()
     case self.activity_level

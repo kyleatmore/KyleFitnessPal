@@ -5,27 +5,25 @@ import SignUpPart1 from './sign_up_part1';
 import SignUpPart2 from './sign_up_part2';
 
 const TODAY = new Date();
-const inititalYear = TODAY.getFullYear() - 35;
+const initialYear = TODAY.getFullYear() - 35;
 const initialMonth = TODAY.getMonth();
 const initialDay = TODAY.getDate();
 
 const initialState = {
-  user: {
-    email: "",
-    password: "",
-    username: "",
-    height: "",
-    gender: "",
-    birth_date: new Date(inititalYear, initialMonth, initialDay),
-    current_weight: "",
-    goal_weight: "",
-    activity_level: "",
-    goal_description: ""
-  },
+  email: "",
+  password: "",
+  username: "",
+  height: "",
+  gender: "",
+  birth_date: new Date(initialYear, initialMonth, initialDay),
+  current_weight: "",
+  goal_weight: "",
+  activity_level: "",
+  goal_description: "Lose 1 pound per week",
   step: 1,
   month: initialMonth,
   day: initialDay,
-  year: inititalYear,
+  year: initialYear,
   feet: "",
   inches: ""
 };
@@ -38,7 +36,8 @@ class SignupForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
     this.handleDateInput = this.handleDateInput.bind(this);
-    this.handleWeightInput = this.handleWeightInput.bind(this);
+    this.handleHeightInput = this.handleHeightInput.bind(this);
+    this.constructUser = this.constructUser.bind(this);
   }
 
   componentDidMount() {
@@ -47,12 +46,12 @@ class SignupForm extends React.Component {
 
   handleInput(field) {
     return (e) => {
-      const nextState = merge({}, this.state, { user: {[field]: e.target.value} });
+      const nextState = merge({}, this.state, { [field]: e.target.value });
       this.setState(nextState);
     };
   }
 
-  handleWeightInput(field) {
+  handleHeightInput(field) {
     return (e) => {
       let nextHeight;
       switch(field) {
@@ -65,9 +64,7 @@ class SignupForm extends React.Component {
 
       if (nextHeight === 0) { nextHeight = ""; }
       const nextState = merge(
-        {},
-        this.state,
-        { user: {height: nextHeight}, [field]: e.target.value }
+        {}, this.state, { height: nextHeight, [field]: e.target.value }
       );
       this.setState(nextState);
     };
@@ -89,7 +86,7 @@ class SignupForm extends React.Component {
       }
 
       const nextState = merge(
-        {}, this.state, { user: {birth_date: nextDate}, [field]: e.target.value }
+        {}, this.state, { birth_date: nextDate, [field]: e.target.value }
       );
       this.setState(nextState);
     };
@@ -97,8 +94,7 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state.user);
-
+    const user = this.constructUser();
     if (this.state.step === 1) {
       this.props.trySignup(user)
         .then(
@@ -119,9 +115,27 @@ class SignupForm extends React.Component {
     this.props.demoLogin();
   }
 
+  constructUser() {
+    const user_params = {
+      username: this.state.username,
+      password: this.state.password,
+      email: this.state.email,
+      height: this.state.height,
+      gender: this.state.gender,
+      birth_date: this.state.birth_date,
+    };
+
+    user_params.goals_attributes = [{
+      current_weight: this.state.current_weight,
+      goal_weight: this.state.goal_weight,
+      activity_level: this.state.activity_level,
+      goal_description: this.state.goal_description,
+    }];
+    return user_params;
+  }
+
   render() {
     const { errors, headerText, footerText, linkText, linkPath, buttonText, demoLogin } = this.props;
-    const { step, month, day, year, feet, inches } = this.state;
     const {
       email,
       password,
@@ -132,7 +146,13 @@ class SignupForm extends React.Component {
       username,
       activity_level,
       goal_description,
-    } = this.state.user;
+      step,
+      month,
+      day,
+      year,
+      feet,
+      inches,
+    } = this.state;
 
     const errorItems = errors.map((error, idx) => {
       return(<li key={idx}>{error}</li>);
@@ -160,7 +180,7 @@ class SignupForm extends React.Component {
             handleInput={this.handleInput}
             handleSubmit={this.handleSubmit}
             handleDateInput={this.handleDateInput}
-            handleWeightInput={this.handleWeightInput}
+            handleHeightInput={this.handleHeightInput}
             errorItems={errorItems}
             height={height}
             current_weight={current_weight}

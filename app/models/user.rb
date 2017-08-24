@@ -18,16 +18,18 @@ class User < ApplicationRecord
 
   validates :username, :email, uniqueness: true
   validates :username, :email, :password_digest, :session_token, :height,
-            :gender, :birth_date, presence: true
+            :gender, :birth_date, :goals, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
-  validate :birth_date_cant_be_in_the_future
+  before_save :birth_date_cant_be_in_the_future
 
 
   after_initialize :ensure_session_token
 
   attr_reader :password
 
-  has_many :goals
+  has_many :goals, inverse_of: :user
+  accepts_nested_attributes_for :goals
+
   has_many :food_diaries
   has_many :exercise_diaries
 

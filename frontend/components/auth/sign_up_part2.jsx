@@ -43,7 +43,7 @@ const SignUpPart2 = (
     handleInput,
     handleSubmit,
     handleDateInput,
-    handleWeightInput,
+    handleHeightInput,
     height,
     current_weight,
     goal_weight,
@@ -80,14 +80,14 @@ const SignUpPart2 = (
             <label>Height:</label>
             <input
             type="text"
-            onChange={handleWeightInput('feet')}
+            onChange={handleHeightInput('feet')}
             value={feet}
             />
             <span className="unit">ft </span>
 
             <input
             type="text"
-            onChange={handleWeightInput('inches')}
+            onChange={handleHeightInput('inches')}
             value={inches}
             />
             <span className="unit">in</span>
@@ -161,22 +161,22 @@ const SignUpPart2 = (
               </li>
 
               <li>
-                <input className="radio" type="radio" id="1" name="activity" value="0" onChange={handleInput('activity_level')}/>
+                <input className="radio" type="radio" id="1" name="activity" value={SEDENTARY} onChange={handleInput('activity_level')}/>
                 <label className="activity" htmlFor="1">Sedentary: <span className="notbold">{SEDENTARY}</span></label>
               </li>
 
               <li>
-              <input className="radio" type="radio" id="2" name="activity" value="1" onChange={handleInput('activity_level')}/>
+              <input className="radio" type="radio" id="2" name="activity" value={LIGHTLY_ACTIVE} onChange={handleInput('activity_level')}/>
               <label className="activity" htmlFor="2">Lightly Active: <span className="notbold">{LIGHTLY_ACTIVE}</span></label>
               </li>
 
               <li>
-                <input className="radio" type="radio" id="3" name="activity" value="2" onChange={handleInput('activity_level')}/>
+                <input className="radio" type="radio" id="3" name="activity" value={ACTIVE} onChange={handleInput('activity_level')}/>
                 <label className="activity" htmlFor="3">Active: <span className="notbold">{ACTIVE}</span></label>
               </li>
 
               <li>
-                <input className="radio" type="radio" id="4" name="activity" value="3" onChange={handleInput('activity_level')}/>
+                <input className="radio" type="radio" id="4" name="activity" value={VERY_ACTIVE} onChange={handleInput('activity_level')}/>
                 <label className="activity" htmlFor="4">Very Active: <span className="notbold">{VERY_ACTIVE}</span></label>
               </li>
             </ul>
@@ -185,14 +185,14 @@ const SignUpPart2 = (
 
           <li className="goal-field">
             <label className="goal field-header">What is your goal?</label>
-            <select name="goal_description" defaultValue="-1.0" onChange={handleInput('goal_description')}>
-              <option value="0">{GOAL_0}</option>
-              <option value="1">{GOAL_1}</option>
-              <option value="2">{GOAL_2}</option>
-              <option value="3">{GOAL_3}</option>
-              <option value="4">{GOAL_4}</option>
-              <option value="5">{GOAL_5}</option>
-              <option value="6">{GOAL_6}</option>
+            <select name="goal_description" value={goal_description} onChange={handleInput('goal_description')}>
+              <option value={GOAL_0}>{GOAL_0}</option>
+              <option value={GOAL_1}>{GOAL_1}</option>
+              <option value={GOAL_2}>{GOAL_2}</option>
+              <option value={GOAL_3}>{GOAL_3}</option>
+              <option value={GOAL_4}>{GOAL_4}</option>
+              <option value={GOAL_5}>{GOAL_5}</option>
+              <option value={GOAL_6}>{GOAL_6}</option>
             </select>
           </li>
 
