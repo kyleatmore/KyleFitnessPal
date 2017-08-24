@@ -20,6 +20,7 @@ class User < ApplicationRecord
   validates :username, :email, :password_digest, :session_token, :height,
             :gender, :birth_date, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
+  validate :birth_date_cant_be_in_the_future
 
 
   after_initialize :ensure_session_token
@@ -53,6 +54,12 @@ class User < ApplicationRecord
 
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
+  end
+
+  def birth_date_cant_be_in_the_future
+    if self.birth_date > Date.today
+      errors.add(:birth_date, "can't be in the future")
+    end
   end
 
   def age
