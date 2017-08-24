@@ -26,6 +26,8 @@ const initialState = {
   month: initialMonth,
   day: initialDay,
   year: inititalYear,
+  feet: "",
+  inches: ""
 };
 
 class SignupForm extends React.Component {
@@ -35,7 +37,8 @@ class SignupForm extends React.Component {
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
-    this.handleDate = this.handleDate.bind(this);
+    this.handleDateInput = this.handleDateInput.bind(this);
+    this.handleWeightInput = this.handleWeightInput.bind(this);
   }
 
   componentDidMount() {
@@ -49,7 +52,28 @@ class SignupForm extends React.Component {
     };
   }
 
-  handleDate(field) {
+  handleWeightInput(field) {
+    return (e) => {
+      let nextHeight;
+      switch(field) {
+        case 'feet':
+          nextHeight = (12 * e.target.value) + +this.state.inches;
+          break;
+        default:
+          nextHeight = (12 * this.state.feet) + +e.target.value;
+      }
+
+      if (nextHeight === 0) { nextHeight = ""; }
+      const nextState = merge(
+        {},
+        this.state,
+        { user: {height: nextHeight}, [field]: e.target.value }
+      );
+      this.setState(nextState);
+    };
+  }
+
+  handleDateInput(field) {
     return (e) => {
       let nextDate = new Date(this.state.year, this.state.month, this.state.day);
 
@@ -74,7 +98,7 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state.user);
-
+    
     if (this.state.step === 1) {
       this.props.trySignup(user)
         .then(
@@ -97,7 +121,7 @@ class SignupForm extends React.Component {
 
   render() {
     const { errors, headerText, footerText, linkText, linkPath, buttonText, demoLogin } = this.props;
-    const { step, month, day, year } = this.state;
+    const { step, month, day, year, feet, inches } = this.state;
     const {
       email,
       password,
@@ -135,7 +159,8 @@ class SignupForm extends React.Component {
           <SignUpPart2
             handleInput={this.handleInput}
             handleSubmit={this.handleSubmit}
-            handleDate={this.handleDate}
+            handleDateInput={this.handleDateInput}
+            handleWeightInput={this.handleWeightInput}
             errorItems={errorItems}
             height={height}
             current_weight={current_weight}
@@ -147,6 +172,8 @@ class SignupForm extends React.Component {
             month={month}
             day={day}
             year={year}
+            feet={feet}
+            inches={inches}
           />
       );
     }

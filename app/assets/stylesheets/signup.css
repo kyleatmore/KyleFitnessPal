@@ -96,6 +96,10 @@ input.button {
   width: 50px;
 }
 
+.unit {
+  color: #343434;
+}
+
 label.radio, input.radio {
   width: auto;
 }

@@ -42,7 +42,8 @@ const SignUpPart2 = (
     errorItems,
     handleInput,
     handleSubmit,
-    handleDate,
+    handleDateInput,
+    handleWeightInput,
     height,
     current_weight,
     goal_weight,
@@ -53,6 +54,8 @@ const SignUpPart2 = (
     month,
     day,
     year,
+    feet,
+    inches
   }) => {
   return (
     <div className="signup-container part2">
@@ -70,17 +73,24 @@ const SignUpPart2 = (
             onChange={handleInput('current_weight')}
             value={current_weight}
             />
-            <span>lbs</span>
+            <span className="unit">lbs</span>
           </li>
 
           <li className="field">
             <label>Height:</label>
             <input
             type="text"
-            onChange={handleInput('height')}
-            value={height}
+            onChange={handleWeightInput('feet')}
+            value={feet}
             />
-            <span>in</span>
+            <span className="unit">ft </span>
+
+            <input
+            type="text"
+            onChange={handleWeightInput('inches')}
+            value={inches}
+            />
+            <span className="unit">in</span>
           </li>
 
           <li className="field">
@@ -90,7 +100,7 @@ const SignUpPart2 = (
             onChange={handleInput('goal_weight')}
             value={goal_weight}
             />
-            <span>lbs</span>
+            <span className="unit">lbs</span>
           </li>
 
           <li className="field">
@@ -119,15 +129,15 @@ const SignUpPart2 = (
 
           <li className="field">
             <label>Date of Birth:</label>
-            <select className="month" value={month} onChange={handleDate('month')}>
+            <select className="month" value={month} onChange={handleDateInput('month')}>
               {monthOptions}
             </select>
 
-            <select className="day" defaultValue={day} onChange={handleDate('day')}>
+            <select className="day" defaultValue={day} onChange={handleDateInput('day')}>
               {dayOptions}
             </select>
 
-            <select className="year" defaultValue={year} onChange={handleDate('year')}>
+            <select className="year" defaultValue={year} onChange={handleDateInput('year')}>
               {yearOptions}
             </select>
 
