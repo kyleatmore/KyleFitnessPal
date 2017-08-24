@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class Header extends React.Component {
 
   render() {
     const { currentUser, location } = this.props;
-
+    debugger
     if (currentUser) {
       return (
         <header>
@@ -46,4 +46,4 @@ class Header extends React.Component {
   }
 }
 
-export default withRouter(Header);
+export default Header;

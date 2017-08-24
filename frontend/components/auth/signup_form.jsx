@@ -4,6 +4,8 @@ import merge from 'lodash/merge';
 import SignUpPart1 from './sign_up_part1';
 import SignUpPart2 from './sign_up_part2';
 
+const TODAY = new Date();
+
 const initialState = {
   user: {
     email: "",
@@ -11,14 +13,16 @@ const initialState = {
     username: "",
     height: "",
     gender: "",
-    birth_date: "",
+    birth_date: new Date(TODAY.getFullYear() - 35, TODAY.getMonth(), TODAY.getDate()),
     current_weight: "",
     goal_weight: "",
     activity_level: "",
     goal_description: ""
   },
   step: 1,
-  initialErrors: [],
+  month: TODAY.getMonth(),
+  day: TODAY.getDate(),
+  year: TODAY.getFullYear() - 35,
 };
 
 class SignupForm extends React.Component {
@@ -27,7 +31,8 @@ class SignupForm extends React.Component {
     this.state = initialState;
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleDemo = handleDemo.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
+    this.handleDate = this.handleDate.bind(this);
   }
 
   componentDidMount() {
@@ -37,6 +42,27 @@ class SignupForm extends React.Component {
   handleInput(field) {
     return (e) => {
       const nextState = merge({}, this.state, { user: {[field]: e.target.value} });
+      this.setState(nextState);
+    };
+  }
+
+  handleDate(field) {
+    return (e) => {
+      let nextDate = new Date(this.state.year, this.state.month, this.state.day);
+
+      switch(field) {
+        case 'year':
+          nextDate.setFullYear(e.target.value);
+          break;
+        case 'month':
+          nextDate.setMonth(e.target.value);
+          break;
+        default:
+          nextDate.setDate(e.target.value);
+      }
+
+      const nextState = merge({}, this.state, { user: {birth_date: nextDate}, [field]: e.target.value });
+      debugger
       this.setState(nextState);
     };
   }
@@ -106,6 +132,7 @@ class SignupForm extends React.Component {
           <SignUpPart2
             handleInput={this.handleInput}
             handleSubmit={this.handleSubmit}
+            handleDate={this.handleDate}
             errorItems={errorItems}
             height={height}
             current_weight={current_weight}

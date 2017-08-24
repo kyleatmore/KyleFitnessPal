@@ -171,3 +171,15 @@ input.demo {
   margin: 5px;
   width: auto;
 }
+
+.month {
+  width: 100px;
+}
+
+.day {
+  width: 50px;
+  margin: 0 5px;
+}
+.year {
+  width: 70px;
+}

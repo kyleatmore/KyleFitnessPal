@@ -19,22 +19,32 @@ const MONTHS = ["January", "February", "March", "April", "May", "June", "July",
 
 const monthOptions = MONTHS.map((month, idx) => {
   return (
-    <option key={idx+1} value={idx+1}>{month}</option>
+    <option key={idx+1} value={idx}>{month}</option>
   );
 })
 
-// const DAYS = range(1, 32);
-// const dayOptions = days.map((day, idx) => {
-//   return (
-//     <option key={day} value={day}>{day}</option>
-//   );
-// })
+const DAYS = range(1, 32);
+const dayOptions = DAYS.map((day) => {
+  return (
+    <option key={day} value={day}>{day}</option>
+  );
+})
+
+const YEARS = range(1917, 2018);
+const yearOptions = YEARS.map((year) => {
+  return (
+    <option key={year} value={year}>{year}</option>
+  );
+})
+
+const TODAY = new Date();
 
 const SignUpPart2 = (
   {
     errorItems,
     handleInput,
     handleSubmit,
+    handleDate,
     height,
     current_weight,
     goal_weight,
@@ -109,11 +119,18 @@ const SignUpPart2 = (
 
           <li className="field">
             <label>Date of Birth:</label>
-            <select className="month" defaultValue="7" onChange={handleInput('goal_description')}>
+            <select className="month" defaultValue={TODAY.getMonth()} onChange={handleDate('month')}>
               {monthOptions}
             </select>
 
-          
+            <select className="day" defaultValue={TODAY.getDate()} onChange={handleDate('day')}>
+              {dayOptions}
+            </select>
+
+            <select className="year" defaultValue={TODAY.getFullYear() - 35} onChange={handleDate('year')}>
+              {yearOptions}
+            </select>
+
           </li>
 
           <li className="field">
