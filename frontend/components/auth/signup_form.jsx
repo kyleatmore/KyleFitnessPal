@@ -7,7 +7,7 @@ import SignUpPart2 from './sign_up_part2';
 const TODAY = new Date();
 const inititalYear = TODAY.getFullYear() - 35;
 const initialMonth = TODAY.getMonth();
-const initialDay = TODAY.getDay();
+const initialDay = TODAY.getDate();
 
 const initialState = {
   user: {
@@ -98,7 +98,7 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state.user);
-    
+
     if (this.state.step === 1) {
       this.props.trySignup(user)
         .then(

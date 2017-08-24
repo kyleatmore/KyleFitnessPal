@@ -37,4 +37,23 @@ class Goal < ApplicationRecord
     end
   end
 
+  def calorie_modifier()
+    case self.goal_description
+    when GOAL_0
+      return -1000
+    when GOAL_1
+      return -750
+    when GOAL_2
+      return -500
+    when GOAL_3
+      return -250
+    when GOAL_4
+      return 0
+    when GOAL_5
+      return 250
+    when GOAL_6
+      return 500
+    end
+  end
+
 end

@@ -68,6 +68,14 @@ class User < ApplicationRecord
     age
   end
 
+  def calorie_allowance
+    current_goal = self.goals.last
+    tdee = total_daily_energy_expenditure(current_goal)
+    tdee + current_goal.calorie_modifier
+  end
+
+  private
+
   def harris_benedict_bmr(weight)
     if self.gender === "M"
       return 66 + (6.2 * weight) + (12.7 * self.height) - (6.76 * self.age)
@@ -76,8 +84,7 @@ class User < ApplicationRecord
     end
   end
 
-  def total_daily_energy_expenditure
-    goal = self.goals.last
+  def total_daily_energy_expenditure(goal)
     bmr = harris_benedict_bmr(goal.current_weight)
     (bmr * goal.activity_multiplier).round
   end
