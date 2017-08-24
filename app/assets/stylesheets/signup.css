@@ -172,6 +172,10 @@ input.demo {
   width: auto;
 }
 
+select, .radio {
+  cursor: pointer;
+}
+
 .month {
   width: 100px;
 }
