@@ -20,7 +20,7 @@ class User < ApplicationRecord
   validates :username, :email, :password_digest, :session_token, :height,
             :gender, :birth_date, :goals, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
-  before_save :birth_date_cant_be_in_the_future
+  validate :birth_date_cant_be_in_the_future
 
 
   after_initialize :ensure_session_token

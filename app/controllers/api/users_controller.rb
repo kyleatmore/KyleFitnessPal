@@ -1,6 +1,7 @@
 class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
+    
     if @user.save
       login(@user)
       render :show
@@ -10,7 +11,7 @@ class Api::UsersController < ApplicationController
   end
 
   def try
-    @user = User.new(email: params[:user][:email], password: params[:user][:password])
+    @user = User.new(user_params)
     @user.valid?
 
     errors = []
