@@ -5,6 +5,7 @@ import HeaderContainer from './header/header_container';
 import SignupFormContainer from './auth/signup_form_container';
 import LoginFormContainer from './auth/login_form_container';
 import HomePage from './home/home_page.jsx';
+import GoalSummaryContainer from './goals/goal_summary_container';
 
 const App = () => (
   <div>
@@ -12,6 +13,7 @@ const App = () => (
     <Switch>
       <AuthRoute path="/signup" component={SignupFormContainer} />
       <AuthRoute path="/login" component={LoginFormContainer} />
+      <ProtectedRoute path="/goalsummary" component={GoalSummaryContainer} />
       <ProtectedRoute path="/" component={HomePage} />
     </Switch>
   </div>
