@@ -67,8 +67,8 @@ const GoalSummary = ({ currentUser }) => {
 
       <section className="summary">
         <p className="goal-footer">If you follow this plan...</p>
-        <h2>Your projected weight loss is 1 lb/week</h2>
-        <h2>You should lose 5lbs by September 19</h2>
+        <p className="goal-projection">Your projected weight loss is 1 lb/week</p>
+        <p className="goal-projection">You should lose 5lbs by September 19</p>
       </section>
 
       <input
