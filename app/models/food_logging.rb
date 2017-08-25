@@ -13,6 +13,7 @@
 
 class FoodLogging < ApplicationRecord
   validates :servings, :meal, :food, :food_diary, presence: true
+  validates :meal, inclusion: { in: %w(breakfast lunch dinner snack) }
 
   belongs_to :food_diary
   belongs_to :food
