@@ -57,3 +57,7 @@
   text-align: center;
   margin-top: 14px;
 }
+
+.get-started.button {
+  width: auto;
+}

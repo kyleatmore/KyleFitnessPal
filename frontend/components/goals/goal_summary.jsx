@@ -1,7 +1,20 @@
 import React from 'react';
 
 const GoalSummary = ({ currentUser }) => {
-  const { calorie_allowance } = currentUser;
+  const {
+    calorie_allowance,
+    carb_allowance,
+    protein_allowance,
+    fat_allowance
+  } = currentUser;
+
+  const date = new Date();
+  date.setDate(date.getDate() + 35);
+  const months = ["January", "February", "March", "April", "May", "June", "July",
+                  "August", "September", "October", "November", "December"];
+  const month = months[date.getMonth()];
+  const day = date.getDate();
+
   return (
     <div className="signup-container part2 goals">
       <h2>Your Suggested Fitness And Nutrition Goals</h2>
@@ -24,15 +37,15 @@ const GoalSummary = ({ currentUser }) => {
             </tr>
             <tr>
               <td className="goal-row">Carbs / Day</td>
-              <td className="goal-row target">{calorie_allowance * 0.5} g</td>
+              <td className="goal-row target">{carb_allowance} g</td>
             </tr>
             <tr>
               <td className="goal-row">Fat / Day</td>
-              <td className="goal-row target">{calorie_allowance * 0.3} g</td>
+              <td className="goal-row target">{fat_allowance} g</td>
             </tr>
             <tr>
               <td className="goal-row">Protein / Day</td>
-              <td className="goal-row target">{calorie_allowance * 0.2} g</td>
+              <td className="goal-row target">{protein_allowance} g</td>
             </tr>
           </tbody>
         </table>
@@ -67,15 +80,17 @@ const GoalSummary = ({ currentUser }) => {
 
       <section className="summary">
         <p className="goal-footer">If you follow this plan...</p>
-        <p className="goal-projection">Your projected weight loss is 1 lb/week</p>
-        <p className="goal-projection">You should lose 5lbs by September 19</p>
+        <p className="goal-projection">Your projected weight loss/gain is TBD</p>
+        <p className="goal-projection">You should lose/gain xlbs by
+          {` ${month} ${day}`}</p>
+
+        <input
+          className="get-started button"
+          type="submit"
+          value="Get Started Now!"
+          />
       </section>
 
-      <input
-      className="button"
-      type="submit"
-      value="Get Started Now!"
-      />
     </div>
   );
 };
