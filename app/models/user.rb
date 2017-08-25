@@ -70,9 +70,12 @@ class User < ApplicationRecord
     age
   end
 
+  def current_goal
+    self.goals.last
+  end
+
   def calorie_allowance
-    current_goal = self.goals.last
-    tdee = total_daily_energy_expenditure(current_goal)
+    tdee = total_daily_energy_expenditure(self.current_goal)
     tdee + current_goal.calorie_modifier
   end
 
