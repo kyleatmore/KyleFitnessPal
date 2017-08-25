@@ -10,10 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170824143356) do
+ActiveRecord::Schema.define(version: 20170825145447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "food_diaries", force: :cascade do |t|
+    t.date     "date",       null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "date"], name: "index_food_diaries_on_user_id_and_date", unique: true, using: :btree
+  end
+
+  create_table "food_loggings", force: :cascade do |t|
+    t.integer  "servings",      null: false
+    t.string   "meal",          null: false
+    t.integer  "food_id",       null: false
+    t.integer  "food_diary_id", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["food_diary_id"], name: "index_food_loggings_on_food_diary_id", using: :btree
+    t.index ["food_id"], name: "index_food_loggings_on_food_id", using: :btree
+  end
+
+  create_table "foods", force: :cascade do |t|
+    t.string   "brand",         null: false
+    t.string   "name",          null: false
+    t.integer  "calories",      null: false
+    t.integer  "carbohydrates", null: false
+    t.integer  "protein",       null: false
+    t.integer  "fats",          null: false
+    t.string   "serving_size",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "goals", force: :cascade do |t|
     t.integer  "current_weight",   null: false
