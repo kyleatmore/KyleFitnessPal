@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Goal.destroy_all
+
 kyle = {
   email: "kyledemo@gmail.com",
   password: "password",
@@ -12,6 +15,14 @@ kyle = {
   gender: "M",
   birth_date: Date.new(1989, 9, 5),
   username: "Kyle",
+  goals_attributes: [
+    {
+      current_weight: 160,
+      goal_weight: 170,
+      activity_level: "Spend a good part of the day on your feet (e.g. teacher, salesperson)",
+      goal_description: "Gain 1 pound per week"
+    }
+  ]
 }
 
 User.create(kyle)
