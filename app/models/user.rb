@@ -79,6 +79,21 @@ class User < ApplicationRecord
     tdee + current_goal.calorie_modifier
   end
 
+  def carb_allowance
+    cals = (calorie_allowance * 0.5) / 4
+    cals.round
+  end
+
+  def protein_allowance
+    protein = (calorie_allowance * 0.2) / 4
+    protein.round
+  end
+
+  def fat_allowance
+    fat = (calorie_allowance * 0.3) / 9
+    fat.round
+  end
+
   private
 
   def harris_benedict_bmr(weight)
