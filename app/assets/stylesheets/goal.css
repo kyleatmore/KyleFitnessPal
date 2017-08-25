@@ -1,0 +1,52 @@
+.goals table {
+  margin-top: 12px;
+}
+
+.goals p, td {
+  line-height: 18px;
+}
+
+.goal-header {
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #035184;
+  color: white;
+  padding: 10px 20px;
+  width: 500px;
+}
+
+.goal-header.title {
+  text-align: left;
+}
+
+.target {
+  text-align: right;
+}
+
+.collapse-borders {
+  border-collapse: collapse;
+}
+
+.goal-row {
+  font-size: 12px;
+  padding: 6px 20px 6px 30px;
+}
+
+.first.goal-row {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 6px 20px;
+}
+
+.first.goal-row.target {
+  color: red;
+}
+
+.table-footer {
+  margin-top: 10px;
+}
+
+.summary .goal-footer {
+  font-size: 14px;
+  margin-top: 10px;
+}
