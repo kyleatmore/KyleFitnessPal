@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import { signup, login, logout, trySignup } from './actions/session_actions';
+import { requestAllFoods } from './actions/food_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.signup = signup;
   window.trySignup = trySignup;
   window.logout = logout;
+  window.requestAllFoods = requestAllFoods;
   // testing
 
   ReactDOM.render(<Root store={store}/>, root);
