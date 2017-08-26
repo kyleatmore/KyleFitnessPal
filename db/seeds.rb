@@ -26,3 +26,15 @@ kyle = {
 }
 
 User.create(kyle)
+
+40.times do
+  Food.create(
+  brand: Faker::Food.dish,
+  name: Faker::Food.ingredient,
+  calories: (rand * 150).round,
+  carbohydrates: (rand * 50).round,
+  protein: (rand * 25).round,
+  fats: (rand * 40).round,
+  serving_size: Faker::Food.measurement
+  )
+end
