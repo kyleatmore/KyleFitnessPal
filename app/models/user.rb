@@ -31,6 +31,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :goals
 
   has_many :food_diaries
+  has_many :food_loggings, through: :food_diaries
   has_many :foods, through: :food_diaries
   has_many :exercise_diaries
 
