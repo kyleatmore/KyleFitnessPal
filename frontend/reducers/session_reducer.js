@@ -1,4 +1,9 @@
-import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS, CLEAR_ERRORS } from '../actions/session_actions';
+import {
+  RECEIVE_CURRENT_USER,
+  RECEIVE_ERRORS,
+  CLEAR_ERRORS,
+  LOGOUT_CURRENT_USER
+} from '../actions/session_actions';
 
 const initialState = {
   currentUser: null,
@@ -10,8 +15,10 @@ const sessionReducer = (state = initialState, action) => {
   let nextState;
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
-      nextState = { currentUser: action.user, errors: [] };
+      nextState = { currentUser: action.payload.user, errors: [] };
       return nextState;
+    case LOGOUT_CURRENT_USER:
+      return initialState;
     case RECEIVE_ERRORS:
       nextState = { currentUser: null, errors: action.errors };
       return nextState;
