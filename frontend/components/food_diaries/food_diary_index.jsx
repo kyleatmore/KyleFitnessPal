@@ -18,7 +18,7 @@ class FoodDiaryIndex extends React.Component {
 
     return (
       <div>
-        <table className="diary-table">
+        <table>
           <tbody>
             <tr className="meal-category">
               <th className="diary category first">Breakfast</th>
@@ -30,6 +30,10 @@ class FoodDiaryIndex extends React.Component {
             {breakfastItems}
             <tr>
               <td className="diary-item first add-food">Add Food</td>
+              <td className="diary-item diary-row subtotal"></td>
+              <td className="diary-item diary-row subtotal"></td>
+              <td className="diary-item diary-row subtotal"></td>
+              <td className="diary-item diary-row subtotal"></td>
             </tr>
 
             <tr className="meal-category">
@@ -38,6 +42,10 @@ class FoodDiaryIndex extends React.Component {
             {lunchItems}
             <tr>
               <td className="diary-item first add-food">Add Food</td>
+              <td className="diary-item diary-row subtotal"></td>
+              <td className="diary-item diary-row subtotal"></td>
+              <td className="diary-item diary-row subtotal"></td>
+              <td className="diary-item diary-row subtotal"></td>
             </tr>
 
             <tr className="meal-category">
@@ -46,6 +54,14 @@ class FoodDiaryIndex extends React.Component {
             {dinnerItems}
             <tr>
               <td className="diary-item first add-food">Add Food</td>
+              <td className="diary-item diary-row subtotal"></td>
+              <td className="diary-item diary-row subtotal"></td>
+              <td className="diary-item diary-row subtotal"></td>
+              <td className="diary-item diary-row subtotal"></td>
+            </tr>
+
+            <tr>
+              <td className="empty-row"></td>
             </tr>
 
             <tr className="diary-totals">

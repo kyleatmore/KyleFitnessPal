@@ -1,3 +1,28 @@
+.food-diary.header {
+  margin: 20px 0;
+  padding: 3px 0 7px 0;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  border-bottom: 3px solid #e6e6e6;
+}
+
+.food-diary.header h1 {
+  color: #0b5680;
+}
+
+.food-diary.header time {
+  color: white;
+  background: #00548f;
+  padding: 9px 35px;
+  margin-left: 5px;
+}
+
+.food-diary-container {
+  width: 600px;
+  margin: 0 auto;
+}
+
 .meal-category {
   max-width: 350px;
   font-size: 18px;
@@ -34,6 +59,7 @@
 .macro-header {
   background-color: #00548f;
   color: white;
+  font-weight: bold;
   border: 1px solid white;
   vertical-align: middle;
 }
@@ -49,6 +75,10 @@ th > span {
   background-color: #f6f6f6;
 }
 
+.diary-item.subtotal {
+  background-color: white;
+}
+
 .diary-table {
   margin-left: 5px;
   border-collapse: collapse;
@@ -62,7 +92,7 @@ th > span {
   font-weight: bold;
 }
 
-.diary-totals {
+.diary-totals > td.diary-row {
   font-size: 14px;
   font-weight: bold;
   padding: 4px 0;
@@ -72,5 +102,12 @@ th > span {
 .total-category {
   text-align: right;
   background-color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px 10px;
+}
+
+.empty-row {
+  height: 8px;
   padding: 4px 10px;
 }
