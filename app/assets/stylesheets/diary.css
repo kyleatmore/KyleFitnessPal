@@ -1,0 +1,76 @@
+.meal-category {
+  max-width: 350px;
+  font-size: 18px;
+}
+
+.meal-category .first {
+  color: #00548f;
+}
+
+.first.diary {
+  text-align: left;
+  padding: 4px 10px;
+}
+
+.first.diary-item {
+  border-bottom: 1px solid #e6e6e6;
+  border-right: 1px solid white;
+}
+
+.diary.category.first {
+  padding: 15px 0 10px 0;
+  font-weight: bold;
+}
+
+.diary-row {
+  width: 40px;
+  font-size: 12px;
+  text-align: center;
+  padding: 5px 10px;
+  border-bottom: 1px solid #e6e6e6;
+  border-right: 1px solid white;
+}
+
+.macro-header {
+  background-color: #00548f;
+  color: white;
+  border: 1px solid white;
+  vertical-align: middle;
+}
+
+th > span {
+  opacity: 0.7;
+  color: white;
+}
+
+.diary-item {
+  font-size: 12px;
+  padding: 4px 10px;
+  background-color: #f6f6f6;
+}
+
+.diary-table {
+  margin-left: 5px;
+  border-collapse: collapse;
+}
+
+.add-food {
+  border-bottom: 1px solid #e6e6e6;
+  border-right: 1px solid white;
+  background-color: white;
+  color: #00548f;
+  font-weight: bold;
+}
+
+.diary-totals {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px 0;
+  background-color: #f6f6f6;
+}
+
+.total-category {
+  text-align: right;
+  background-color: white;
+  padding: 4px 10px;
+}

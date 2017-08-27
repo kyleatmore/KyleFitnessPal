@@ -6,11 +6,11 @@ class FoodDiaryIndexItem extends React.Component {
 
     return (
       <tr>
-        <td>{`${entry.brand} - ${entry.name}`}</td>
-        <td>{entry.calories}</td>
-        <td>{entry.carbohydrates}</td>
-        <td>{entry.fats}</td>
-        <td>{entry.protein}</td>
+        <td className="diary-item first">{`${entry.brand} - ${entry.name}`}</td>
+        <td className="diary-item diary-row">{entry.calories}</td>
+        <td className="diary-item diary-row">{entry.carbohydrates}</td>
+        <td className="diary-item diary-row">{entry.fats}</td>
+        <td className="diary-item diary-row">{entry.protein}</td>
       </tr>
     );
   }

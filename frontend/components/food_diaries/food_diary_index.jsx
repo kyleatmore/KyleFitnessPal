@@ -13,37 +13,75 @@ class FoodDiaryIndex extends React.Component {
     const dinnerItems = this.props.dinnerEntries.map((entry) => {
       return <FoodDiaryIndexItem key={entry.id} entry={entry} />;
     });
+    const total = this.props.diary.total_macros;
+    const { currentUser } = this.props;
 
     return (
       <div>
-        <table>
+        <table className="diary-table">
           <tbody>
-            <tr>
-              <th className="goal-header title">Breakfast</th>
-              <th className="goal-header target">Calories</th>
-              <th className="goal-header target">Carbs</th>
-              <th className="goal-header target">Fat</th>
-              <th className="goal-header target">Protein</th>
+            <tr className="meal-category">
+              <th className="diary category first">Breakfast</th>
+              <th className="macro-header diary-row">Calories <span className="opaque">kcal</span></th>
+              <th className="macro-header diary-row">Carbs <span className="opaque">kcal</span></th>
+              <th className="macro-header diary-row">Fat <span className="opaque">kcal</span></th>
+              <th className="macro-header diary-row">Protein <span className="opaque">kcal</span></th>
             </tr>
             {breakfastItems}
-
             <tr>
-              <td>Lunch</td>
+              <td className="diary-item first add-food">Add Food</td>
+            </tr>
+
+            <tr className="meal-category">
+              <td className="diary category first">Lunch</td>
             </tr>
             {lunchItems}
-
             <tr>
-              <td>Dinner</td>
+              <td className="diary-item first add-food">Add Food</td>
+            </tr>
+
+            <tr className="meal-category">
+              <td className="diary category first">Dinner</td>
             </tr>
             {dinnerItems}
-            
+            <tr>
+              <td className="diary-item first add-food">Add Food</td>
+            </tr>
+
+            <tr className="diary-totals">
+              <td className="total-category">Totals</td>
+              <td className="diary-row">{total.calories}</td>
+              <td className="diary-row">{total.carbs}</td>
+              <td className="diary-row">{total.fats}</td>
+              <td className="diary-row">{total.protein}</td>
+            </tr>
+
+            <tr className="diary-totals">
+              <td className="total-category">Your Daily Goal</td>
+              <td className="diary-row">{currentUser.calorie_allowance}</td>
+              <td className="diary-row">{currentUser.carb_allowance}</td>
+              <td className="diary-row">{currentUser.fat_allowance}</td>
+              <td className="diary-row">{currentUser.protein_allowance}</td>
+            </tr>
+
+            <tr className="diary-totals">
+              <td className="total-category">Remaining</td>
+              <td className="diary-row">{currentUser.calorie_allowance - total.calories}</td>
+              <td className="diary-row">{currentUser.carb_allowance - total.carbs}</td>
+              <td className="diary-row">{currentUser.fat_allowance - total.fats}</td>
+              <td className="diary-row">{currentUser.protein_allowance - total.protein}</td>
+            </tr>
+
+            <tr className="meal-category">
+              <th className="diary category first"></th>
+              <th className="macro-header diary-row">Calories <span className="opaque">kcal</span></th>
+              <th className="macro-header diary-row">Carbs <span className="opaque">kcal</span></th>
+              <th className="macro-header diary-row">Fat <span className="opaque">kcal</span></th>
+              <th className="macro-header diary-row">Protein <span className="opaque">kcal</span></th>
+            </tr>
+
           </tbody>
         </table>
-
-        <FoodDiaryTotal
-          diary={this.props.diary}
-          currentUser={this.props.currentUser}
-        />
       </div>
     );
   }
