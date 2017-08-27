@@ -3,7 +3,10 @@ import React from 'react';
 class FoodDiaryHeader extends React.Component {
   render() {
     return (
-      <h1>Food Diary Header</h1>
+      <div className="food-diary header">
+        <h1>Your Food Diary For:</h1>
+        <time>{this.props.date}</time>
+      </div>
     );
   }
 }

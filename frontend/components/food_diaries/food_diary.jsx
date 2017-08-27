@@ -8,7 +8,7 @@ class FoodDiary extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestAllFoods();
+    
   }
 
   render() {
