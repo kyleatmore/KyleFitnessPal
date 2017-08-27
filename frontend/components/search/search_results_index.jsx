@@ -29,12 +29,15 @@ class SearchResultsIndex extends React.Component {
     });
 
     return (
-      <div>
-        <h1>Matching Foods:</h1>
+      <div className="search-results-index">
+        <h2>Matching Foods:</h2>
         <div className="search-index">
-          <ul className="search-list">
-            {foodItems}
-          </ul>
+
+          <div className="search-results">
+            <ul className="search-list">
+              {foodItems}
+            </ul>
+          </div>
 
           <AddFoodFormContainer
             selectedFood={this.state.selectedFood}

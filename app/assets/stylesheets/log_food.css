@@ -1,0 +1,94 @@
+.search {
+  width: 760px;
+  margin: 0 auto;
+}
+
+.search li {
+  list-style: none;
+}
+
+.search-index {
+  display: flex;
+}
+
+.search-form {
+  font-weight: bold;
+}
+
+.search h1 {
+  color: #0a5282;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.search h2 {
+  color: #0a5282;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.search-results-index h2 {
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.food-search {
+  padding: 17px 0 7px 0;
+}
+
+.search.button {
+  margin: 0;
+  margin-left: 2px;
+  padding: 8px 10px;
+}
+
+.search-results {
+  height: 250px;
+  width: 400px;
+  border: 1px solid gray;
+  padding: 4px 8px;
+  margin-right: 10px;
+}
+
+.search-result {
+  padding: 5px 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.add-form {
+  background-color: #f6f6f6;
+  height: 250px;
+  width: 330px;
+  padding: 10px 15px 0 15px;
+  text-align: center;
+}
+
+.food-name {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.entry-option {
+  font-size: 14px;
+  color: #0a5282;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 3px;
+}
+
+.food-quantity {
+  width: 20px;
+}
+
+.meal-select {
+  width: 160px;
+}
+
+.add-food.button {
+  margin-left: 0;
+  width: 160px;
+}

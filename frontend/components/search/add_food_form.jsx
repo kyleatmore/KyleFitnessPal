@@ -17,26 +17,34 @@ class AddFoodForm extends React.Component {
 
   render() {
     const { food } = this.props;
-    if (!food) { return null; }
-    return (
-      <div>
-        <form className="search-form">
-          <h1>{`${food.brand} - ${food.name}`}</h1>
+    if (!food) {
+      return(<div className="add-form"></div>);
+    }
 
-          <h1>How much?</h1>
+    return (
+      <div className="add-form">
+        <form>
+          <p className="food-name">{`${food.brand} - ${food.name}`}</p>
+
+          <h3 className="entry-option">How much?</h3>
           <input
           type="text"
           onChange={this.handleInput('servings')}
           value={this.state.servings}
+          className="food-quantity"
           />
           <span>servings of {food.serving_size}</span>
 
-          <h1>To which meal?</h1>
-          <input
-          type="text"
-          onChange={this.handleInput('meal')}
-          value={this.state.meal}
-          />
+          <h3 className="entry-option">To which meal?</h3>
+          <select
+            value={this.state.meal}
+            onChange={this.handleInput('meal')}
+            className="meal-select"
+          >
+            <option value="breakfast">Breakfast</option>
+            <option value="lunch">Lunch</option>
+            <option value="dinner">Dinner</option>
+          </select>
 
           <input
           className="add-food button"

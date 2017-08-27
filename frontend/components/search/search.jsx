@@ -35,22 +35,26 @@ class Search extends React.Component {
 
   render() {
     return (
-      <div>
-        <form className="search-form">
-          <h1>Search our food database by name:</h1>
-          <input
-          type="text"
-          onChange={this.handleInput}
-          value={this.state.inputVal}
-          />
+      <div className="search">
+          <h1>Add Food To Diary</h1>
 
-          <input
-          className="search button"
-          type="submit"
-          value="Search"
-          onClick={this.handleSubmit}
-          />
-        </form>
+          <section className="food-search">
+            <form className="search-form">
+              <h2>Search our food database by name:</h2>
+              <input
+                type="text"
+                onChange={this.handleInput}
+                value={this.state.inputVal}
+              />
+
+              <input
+                className="search button"
+                type="submit"
+                value="Search"
+                onClick={this.handleSubmit}
+              />
+            </form>
+          </section>
 
         <SearchResultsIndex
           foods={this.state.matchedFoods}

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const SearchResultIndexItem = ({ food, selectFood }) => {
   return (
-    <li>
+    <li className="search-result">
       <ul>
         <button onClick={selectFood(food)}>{food.name}</button>
         <li>{`${food.brand}, ${food.serving_size}, ${food.calories} calories`}</li>
