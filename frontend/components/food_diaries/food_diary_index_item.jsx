@@ -9,7 +9,7 @@ class FoodDiaryIndexItem extends React.Component {
         <td>{`${entry.brand} - ${entry.name}`}</td>
         <td>{entry.calories}</td>
         <td>{entry.carbohydrates}</td>
-        <td>{entry.fat}</td>
+        <td>{entry.fats}</td>
         <td>{entry.protein}</td>
       </tr>
     );

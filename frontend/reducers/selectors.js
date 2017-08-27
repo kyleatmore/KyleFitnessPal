@@ -24,6 +24,5 @@ export const selectDiaryEntries = (state, diaryId, meal) => {
       entries.push(entry);
     }
   });
-  debugger
   return entries;
 };
