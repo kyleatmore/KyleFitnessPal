@@ -13,7 +13,7 @@ class FoodDiary extends React.Component {
 
   render() {
     if (!this.props.diary) return null;
-    
+    debugger
     return (
       <div className="food-diary-container">
         <FoodDiaryHeader date={this.props.diary.date}/>
