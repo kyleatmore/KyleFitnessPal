@@ -22,10 +22,24 @@ class FoodDiary < ApplicationRecord
     loggings = self.food_loggings.includes(:food)
 
     loggings.each do |log|
-      macros[:calories] += log.food.calories
-      macros[:carbs] += log.food.carbohydrates
-      macros[:fats] += log.food.fats
-      macros[:protein] += log.food.protein
+      macros[:calories] += log.food.calories * log.servings
+      macros[:carbs] += log.food.carbohydrates * log.servings
+      macros[:fats] += log.food.fats * log.servings
+      macros[:protein] += log.food.protein * log.servings
+    end
+
+    return macros
+  end
+
+  def subtotal(meal)
+    macros = { calories: 0, carbs: 0, fats: 0, protein: 0 }
+    loggings = self.food_loggings.where(meal: meal).includes(:food)
+
+    loggings.each do |log|
+      macros[:calories] += log.food.calories * log.servings
+      macros[:carbs] += log.food.carbohydrates * log.servings
+      macros[:fats] += log.food.fats * log.servings
+      macros[:protein] += log.food.protein * log.servings
     end
 
     return macros

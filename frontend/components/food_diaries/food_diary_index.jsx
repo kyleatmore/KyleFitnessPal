@@ -13,7 +13,7 @@ class FoodDiaryIndex extends React.Component {
     const dinnerItems = this.props.dinnerEntries.map((entry) => {
       return <FoodDiaryIndexItem key={entry.id} entry={entry} />;
     });
-    const total = this.props.diary.total_macros;
+    const { totalMacros, breakfastMacros, lunchMacros, dinnerMacros } = this.props.diary;
     const { currentUser } = this.props;
 
     return (
@@ -30,10 +30,10 @@ class FoodDiaryIndex extends React.Component {
             {breakfastItems}
             <tr>
               <td className="diary-item first add-food">Add Food</td>
-              <td className="diary-item diary-row subtotal"></td>
-              <td className="diary-item diary-row subtotal"></td>
-              <td className="diary-item diary-row subtotal"></td>
-              <td className="diary-item diary-row subtotal"></td>
+              <td className="diary-item diary-row subtotal">{breakfastMacros.calories}</td>
+              <td className="diary-item diary-row subtotal">{breakfastMacros.carbs}</td>
+              <td className="diary-item diary-row subtotal">{breakfastMacros.fats}</td>
+              <td className="diary-item diary-row subtotal">{breakfastMacros.protein}</td>
             </tr>
 
             <tr className="meal-category">
@@ -42,10 +42,10 @@ class FoodDiaryIndex extends React.Component {
             {lunchItems}
             <tr>
               <td className="diary-item first add-food">Add Food</td>
-              <td className="diary-item diary-row subtotal"></td>
-              <td className="diary-item diary-row subtotal"></td>
-              <td className="diary-item diary-row subtotal"></td>
-              <td className="diary-item diary-row subtotal"></td>
+              <td className="diary-item diary-row subtotal">{lunchMacros.calories}</td>
+              <td className="diary-item diary-row subtotal">{lunchMacros.carbs}</td>
+              <td className="diary-item diary-row subtotal">{lunchMacros.fats}</td>
+              <td className="diary-item diary-row subtotal">{lunchMacros.protein}</td>
             </tr>
 
             <tr className="meal-category">
@@ -54,10 +54,10 @@ class FoodDiaryIndex extends React.Component {
             {dinnerItems}
             <tr>
               <td className="diary-item first add-food">Add Food</td>
-              <td className="diary-item diary-row subtotal"></td>
-              <td className="diary-item diary-row subtotal"></td>
-              <td className="diary-item diary-row subtotal"></td>
-              <td className="diary-item diary-row subtotal"></td>
+              <td className="diary-item diary-row subtotal">{dinnerMacros.calories}</td>
+              <td className="diary-item diary-row subtotal">{dinnerMacros.carbs}</td>
+              <td className="diary-item diary-row subtotal">{dinnerMacros.fats}</td>
+              <td className="diary-item diary-row subtotal">{dinnerMacros.protein}</td>
             </tr>
 
             <tr>
@@ -66,10 +66,10 @@ class FoodDiaryIndex extends React.Component {
 
             <tr className="diary-totals">
               <td className="total-category">Totals</td>
-              <td className="diary-row">{total.calories}</td>
-              <td className="diary-row">{total.carbs}</td>
-              <td className="diary-row">{total.fats}</td>
-              <td className="diary-row">{total.protein}</td>
+              <td className="diary-row">{totalMacros.calories}</td>
+              <td className="diary-row">{totalMacros.carbs}</td>
+              <td className="diary-row">{totalMacros.fats}</td>
+              <td className="diary-row">{totalMacros.protein}</td>
             </tr>
 
             <tr className="diary-totals">
@@ -82,10 +82,10 @@ class FoodDiaryIndex extends React.Component {
 
             <tr className="diary-totals">
               <td className="total-category">Remaining</td>
-              <td className="diary-row">{currentUser.calorie_allowance - total.calories}</td>
-              <td className="diary-row">{currentUser.carb_allowance - total.carbs}</td>
-              <td className="diary-row">{currentUser.fat_allowance - total.fats}</td>
-              <td className="diary-row">{currentUser.protein_allowance - total.protein}</td>
+              <td className="diary-row">{currentUser.calorie_allowance - totalMacros.calories}</td>
+              <td className="diary-row">{currentUser.carb_allowance - totalMacros.carbs}</td>
+              <td className="diary-row">{currentUser.fat_allowance - totalMacros.fats}</td>
+              <td className="diary-row">{currentUser.protein_allowance - totalMacros.protein}</td>
             </tr>
 
             <tr className="meal-category">

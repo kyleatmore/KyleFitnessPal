@@ -88,7 +88,12 @@ th > span {
   border-bottom: 1px solid #e6e6e6;
   border-right: 1px solid white;
   background-color: white;
-  color: #00548f;
+  color: #0072bf;
+  font-weight: bold;
+}
+
+.diary-row.subtotal {
+  color: #0072bf;
   font-weight: bold;
 }
 
