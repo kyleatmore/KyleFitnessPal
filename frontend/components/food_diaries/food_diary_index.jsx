@@ -3,7 +3,7 @@ import FoodDiaryIndexItem from './food_diary_index_item';
 
 class FoodDiaryIndex extends React.Component {
   render() {
-    
+
     return (
       <div>
         <table>
@@ -15,21 +15,17 @@ class FoodDiaryIndex extends React.Component {
               <th className="goal-header target">Fat</th>
               <th className="goal-header target">Protein</th>
             </tr>
-            {breakfastItems}
+
 
             <tr>
               <td>Lunch</td>
             </tr>
-            <tr>
-              {lunchItems}
-            </tr>
+
 
             <tr>
               <td>Dinner</td>
             </tr>
-            <tr>
-              {dinnerItems}
-            </tr>
+            
           </tbody>
         </table>
 

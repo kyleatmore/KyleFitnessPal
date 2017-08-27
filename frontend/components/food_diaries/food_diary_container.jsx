@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import FoodDiary from './food_diary';
 import { requestAllFoods } from '../../actions/food_actions';
+import { requestSingleDiary } from '../../actions/food_diary_actions';
 
 const mapStateToProps = (state, ownProps) => {
   debugger
@@ -14,6 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     requestAllFoods: () => dispatch(requestAllFoods()),
+    requestSingleDiary: (diaryId) => dispatch(requestSingleDiary(diaryId)),
   };
 };
 

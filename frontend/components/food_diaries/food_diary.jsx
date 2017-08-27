@@ -8,10 +8,12 @@ class FoodDiary extends React.Component {
   }
 
   componentDidMount() {
-    
+    this.props.requestSingleDiary(this.props.match.params.diaryId);
   }
 
   render() {
+    if (!this.props.diary) return null;
+    
     return (
       <div className="food-diary-container">
         <FoodDiaryHeader date={this.props.diary.date}/>
