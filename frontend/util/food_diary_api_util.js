@@ -5,10 +5,10 @@ export const fetchSingleDiary = (diaryId) => {
   });
 };
 
-export const addFoodEntryToDiary = (diaryId, foodLogging) => {
+export const addFoodEntryToDiary = (diaryId, food_logging) => {
   return $.ajax({
     method: "POST",
     url: `api/food_diaries/${diaryId}/food_loggings`,
-    data: { foodLogging }
+    data: { food_logging }
   });
 };

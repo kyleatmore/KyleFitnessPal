@@ -58,6 +58,7 @@ class Search extends React.Component {
 
         <SearchResultsIndex
           foods={this.state.matchedFoods}
+          diary={this.props.diary}
         />
       </div>
     );

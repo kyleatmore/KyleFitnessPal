@@ -6,6 +6,7 @@ class AddFoodForm extends React.Component {
     super(props);
     this.state = { servings: "1.0", meal: "breakfast" };
     this.handleInput = this.handleInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInput(field) {
@@ -13,6 +14,19 @@ class AddFoodForm extends React.Component {
       const nextState = merge({}, this.state, { [field]: e.target.value });
       this.setState(nextState);
     };
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+
+    const foodLogging = {
+      servings: this.state.servings,
+      meal: this.state.meal,
+      food_id: this.props.food.id,
+      food_diary_id: this.props.diary.id
+    };
+    
+    this.props.addFoodEntry(this.props.diary, foodLogging);
   }
 
   render() {
