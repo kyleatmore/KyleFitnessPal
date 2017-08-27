@@ -17,7 +17,7 @@ class AddFoodForm extends React.Component {
 
   render() {
     const { food } = this.props;
-
+    if (!food) { return null; }
     return (
       <div>
         <form className="search-form">

@@ -4,10 +4,10 @@ import { addFoodEntryToDiary } from '../../actions/food_diary_actions';
 import AddFoodForm from './add_food_form';
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    food: state.entities.foods[state.ui.currentFood],
-    diary: state.entities.foodDiaries[state.ui.currentDiary]
+    food: ownProps.selectedFood,
+    diary: ownProps.diary,
   };
 };
 

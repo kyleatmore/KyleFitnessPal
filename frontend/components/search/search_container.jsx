@@ -5,9 +5,12 @@ import { requestAllFoods } from '../../actions/food_actions';
 import Search from './search';
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+  const diaryId = ownProps.match.params.diaryId;
+
   return {
     foods: selectAllFoods(state),
+    diary: state.entities.foodDiaries[diaryId]
   };
 };
 

@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const SearchResultIndexItem = ({ food }) => {
+const SearchResultIndexItem = ({ food, selectFood }) => {
   return (
     <li>
       <ul>
-        <li>{food.name}</li>
+        <button onClick={selectFood(food)}>{food.name}</button>
         <li>{`${food.brand}, ${food.serving_size}, ${food.calories} calories`}</li>
       </ul>
     </li>
