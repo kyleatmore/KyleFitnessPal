@@ -16,4 +16,18 @@ class FoodDiary < ApplicationRecord
   belongs_to :user
   has_many :food_loggings
   has_many :foods, through: :food_loggings
+
+  def total_macros
+    macros = { calories: 0, carbs: 0, fats: 0, protein: 0 }
+    loggings = self.food_loggings.includes(:food)
+
+    loggings.each do |log|
+      macros[:calories] += log.food.calories
+      macros[:carbs] += log.food.carbohydrates
+      macros[:fats] += log.food.fats
+      macros[:protein] += log.food.protein
+    end
+
+    return macros
+  end
 end

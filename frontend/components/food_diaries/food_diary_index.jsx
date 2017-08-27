@@ -1,5 +1,6 @@
 import React from 'react';
 import FoodDiaryIndexItem from './food_diary_index_item';
+import FoodDiaryTotal from './food_diary_total';
 
 class FoodDiaryIndex extends React.Component {
   render() {
@@ -12,7 +13,7 @@ class FoodDiaryIndex extends React.Component {
     const dinnerItems = this.props.dinnerEntries.map((entry) => {
       return <FoodDiaryIndexItem key={entry.id} entry={entry} />;
     });
-    
+
     return (
       <div>
         <table>
@@ -35,11 +36,14 @@ class FoodDiaryIndex extends React.Component {
               <td>Dinner</td>
             </tr>
             {dinnerItems}
-
+            
           </tbody>
         </table>
 
-        <h1>Food Diary Total Component</h1>
+        <FoodDiaryTotal
+          diary={this.props.diary}
+          currentUser={this.props.currentUser}
+        />
       </div>
     );
   }
