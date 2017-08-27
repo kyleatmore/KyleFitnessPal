@@ -17,3 +17,12 @@ export const requestSingleDiary = (diaryId) => (dispatch) => {
       }
     );
 };
+
+export const addFoodEntryToDiary = (diary, foodLogging) => (dispatch) => {
+  return APIUtil.addFoodEntryToDiary(diary.id, foodLogging)
+    .then(
+      () => {
+        dispatch(receiveSingleDiary(diary));
+      }
+    );
+};

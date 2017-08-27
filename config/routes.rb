@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     post '/users/try', to: 'users#try'
     resource :session, only: [:create, :destroy]
     resources :foods, only: [:index]
-    resources :food_diaries, only: [:show]
+    resources :food_diaries, only: [:show] do
+      resources :food_loggings, only: [:create]
+    end
   end
 end
