@@ -1,5 +1,6 @@
 import React from 'react';
 import merge from 'lodash/merge';
+import SearchResultsIndex from './search_results_index';
 
 class Search extends React.Component {
   constructor(props) {
@@ -33,12 +34,6 @@ class Search extends React.Component {
   }
 
   render() {
-    const foodsList = this.state.matchedFoods.map((food) => {
-      return (
-        <li key={food.id}>{food.name}</li>
-      );
-    });
-
     return (
       <div>
         <form className="search-form">
@@ -57,7 +52,9 @@ class Search extends React.Component {
           />
         </form>
 
-        <ul>{foodsList}</ul>
+        <SearchResultsIndex
+          foods={this.state.matchedFoods}
+        />
       </div>
     );
   }
