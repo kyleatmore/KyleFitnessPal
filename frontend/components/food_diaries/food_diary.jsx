@@ -8,7 +8,16 @@ class FoodDiary extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestSingleDiary(this.props.match.params.diaryId);
+    this.props.requestAllFoods()
+      .then(() => {
+        this.props.requestSingleDiary(this.props.match.params.diaryId);
+      });
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.match.params.diaryId !== newProps.match.params.diaryId) {
+      this.props.requestSingleDiary(newProps.match.params.diaryId);
+    }
   }
 
   render() {

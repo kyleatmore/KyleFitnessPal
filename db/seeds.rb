@@ -7,8 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Goal.destroy_all
+FoodDiary.destroy_all
+FoodLogging.destroy_all
+Food.destroy_all
 
-kyle = {
+kyle = User.new(
   email: "kyledemo@gmail.com",
   password: "password",
   height: 70,
@@ -23,9 +26,9 @@ kyle = {
       goal_description: "Gain 1 pound per week"
     }
   ]
-}
+)
 
-User.create(kyle)
+kyle.save
 
 40.times do
   Food.create(
@@ -36,5 +39,19 @@ User.create(kyle)
   protein: (rand * 25).round,
   fats: (rand * 40).round,
   serving_size: Faker::Food.measurement
+  )
+end
+
+FoodDiary.create(date: Date.today, user_id: kyle.id)
+FoodDiary.create(date: Date.yesterday, user_id: kyle.id)
+
+meals = ["breakfast", "lunch", "dinner"]
+
+10.times do
+  FoodLogging.create(
+  servings: rand(1..3),
+  meal: meals.sample,
+  food_id: Food.all.sample.id,
+  food_diary_id: FoodDiary.all.sample.id
   )
 end
