@@ -13,7 +13,7 @@ const foodDiariesReducer = (state = {}, action) => {
       });
       return nextState;
     case RECEIVE_SINGLE_DIARY:
-      const nextDiary = { [action.diary.id]: action.diary };
+      const nextDiary = { [action.payload.foodDiary.id]: action.payload.foodDiary };
       return merge({}, state, nextDiary);
     default:
       return state;
