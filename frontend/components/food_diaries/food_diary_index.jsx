@@ -1,6 +1,7 @@
 import React from 'react';
 import FoodDiaryIndexItem from './food_diary_index_item';
 import FoodDiaryTotal from './food_diary_total';
+import { Link } from 'react-router-dom';
 
 class FoodDiaryIndex extends React.Component {
   render() {
@@ -29,7 +30,9 @@ class FoodDiaryIndex extends React.Component {
             </tr>
             {breakfastItems}
             <tr>
-              <td className="diary-item first add-food">Add Food</td>
+              <td className="diary-item first add-food">
+                <Link to={`/food-diary/${this.props.diary.id}/log-food`}>Add Food</Link>
+              </td>
               <td className="diary-item diary-row subtotal">{breakfastMacros.calories}</td>
               <td className="diary-item diary-row subtotal">{breakfastMacros.carbs}</td>
               <td className="diary-item diary-row subtotal">{breakfastMacros.fats}</td>
@@ -41,7 +44,9 @@ class FoodDiaryIndex extends React.Component {
             </tr>
             {lunchItems}
             <tr>
-              <td className="diary-item first add-food">Add Food</td>
+              <td className="diary-item first add-food">
+                <Link to={`/food-diary/${this.props.diary.id}/log-food`}>Add Food</Link>
+              </td>
               <td className="diary-item diary-row subtotal">{lunchMacros.calories}</td>
               <td className="diary-item diary-row subtotal">{lunchMacros.carbs}</td>
               <td className="diary-item diary-row subtotal">{lunchMacros.fats}</td>
@@ -53,7 +58,9 @@ class FoodDiaryIndex extends React.Component {
             </tr>
             {dinnerItems}
             <tr>
-              <td className="diary-item first add-food">Add Food</td>
+              <td className="diary-item first add-food">
+                <Link to={`/food-diary/${this.props.diary.id}/log-food`}>Add Food</Link>
+              </td>
               <td className="diary-item diary-row subtotal">{dinnerMacros.calories}</td>
               <td className="diary-item diary-row subtotal">{dinnerMacros.carbs}</td>
               <td className="diary-item diary-row subtotal">{dinnerMacros.fats}</td>

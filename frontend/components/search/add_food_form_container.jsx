@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     addFoodEntry: (diary, foodLogging) => {
-      dispatch(addFoodEntryToDiary(diary, foodLogging));
+      return dispatch(addFoodEntryToDiary(diary, foodLogging));
     }
   };
 };

@@ -2,7 +2,6 @@ import React from 'react';
 import FoodDiaryHeader from './food_diary_header';
 import FoodDiaryIndex from './food_diary_index';
 import SearchContainer from '../search/search_container';
-import { Link } from 'react-router-dom';
 
 class FoodDiary extends React.Component {
   constructor(props) {
@@ -35,7 +34,6 @@ class FoodDiary extends React.Component {
           lunchEntries={this.props.lunchEntries}
           dinnerEntries={this.props.dinnerEntries}
         />
-      <Link to={`/food-diary/${this.props.diary.id}/log-food`}>Add</Link>
       </div>
     );
   }

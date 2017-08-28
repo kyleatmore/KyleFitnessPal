@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import merge from 'lodash/merge';
 
 class AddFoodForm extends React.Component {
@@ -25,8 +26,13 @@ class AddFoodForm extends React.Component {
       food_id: this.props.food.id,
       food_diary_id: this.props.diary.id
     };
-    
-    this.props.addFoodEntry(this.props.diary, foodLogging);
+
+    this.props.addFoodEntry(this.props.diary, foodLogging)
+      .then(
+        () => {
+          this.props.history.push(`/food-diary/${this.props.diary.id}`);
+        }
+      );
   }
 
   render() {
@@ -72,4 +78,4 @@ class AddFoodForm extends React.Component {
   }
 }
 
-export default AddFoodForm;
+export default withRouter(AddFoodForm);
