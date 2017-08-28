@@ -4,7 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 import { signup, login, logout, trySignup } from './actions/session_actions';
 import { requestAllFoods } from './actions/food_actions';
-import { addFoodEntryToDiary } from './actions/food_diary_actions';
+import { findDiary } from './actions/food_diary_actions';
 import merge from 'lodash/merge';
 
 
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.trySignup = trySignup;
   window.logout = logout;
   window.requestAllFoods = requestAllFoods;
-  window.addFoodEntryToDiary = addFoodEntryToDiary;
+  window.findDiary = findDiary;
   window.merge = merge;
   // testing
 

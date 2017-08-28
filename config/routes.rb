@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     resources :food_diaries, only: [:show] do
       resources :food_loggings, only: [:create, :destroy]
     end
+    post '/food_diaries/find_diary', to: 'food_diaries#find_diary'
   end
 end

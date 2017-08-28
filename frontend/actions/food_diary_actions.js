@@ -14,8 +14,8 @@ export const removeFoodEntry = (payload) => {
   return {
     type: REMOVE_FOOD_ENTRY,
     payload
-  }
-}
+  };
+};
 
 export const requestSingleDiary = (diaryId) => (dispatch) => {
   return APIUtil.fetchSingleDiary(diaryId)
@@ -37,6 +37,15 @@ export const addFoodEntryToDiary = (diary, foodLogging) => (dispatch) => {
 
 export const deleteFoodEntry = (diary, foodLogging) => (dispatch) => {
   return APIUtil.deleteFoodEntry(diary, foodLogging)
+    .then(
+      diary => {
+        dispatch(receiveSingleDiary(diary));
+      }
+    );
+};
+
+export const findDiary = (date) => (dispatch) => {
+  return APIUtil.findDiary(date)
     .then(
       diary => {
         dispatch(receiveSingleDiary(diary));
