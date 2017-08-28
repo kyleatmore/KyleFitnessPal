@@ -22,10 +22,10 @@ class FoodDiary < ApplicationRecord
     loggings = self.food_loggings.includes(:food)
 
     loggings.each do |log|
-      macros[:calories] += log.food.calories * log.servings
-      macros[:carbs] += log.food.carbohydrates * log.servings
-      macros[:fats] += log.food.fats * log.servings
-      macros[:protein] += log.food.protein * log.servings
+      macros[:calories] += (log.food.calories * log.servings).round
+      macros[:carbs] += (log.food.carbohydrates * log.servings).round
+      macros[:fats] += (log.food.fats * log.servings).round
+      macros[:protein] += (log.food.protein * log.servings).round
     end
 
     return macros
@@ -36,10 +36,10 @@ class FoodDiary < ApplicationRecord
     loggings = self.food_loggings.where(meal: meal).includes(:food)
 
     loggings.each do |log|
-      macros[:calories] += log.food.calories * log.servings
-      macros[:carbs] += log.food.carbohydrates * log.servings
-      macros[:fats] += log.food.fats * log.servings
-      macros[:protein] += log.food.protein * log.servings
+      macros[:calories] += (log.food.calories * log.servings).round
+      macros[:carbs] += (log.food.carbohydrates * log.servings).round
+      macros[:fats] += (log.food.fats * log.servings).round
+      macros[:protein] += (log.food.protein * log.servings).round
     end
 
     return macros

@@ -48,7 +48,7 @@
 }
 
 .diary-row {
-  width: 40px;
+  max-width: 40px;
   font-size: 12px;
   text-align: center;
   padding: 5px 10px;
