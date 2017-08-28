@@ -9,10 +9,14 @@ class FoodDiary extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestAllFoods()
+    if (Object.keys(this.props.foods).length === 0) {
+      this.props.requestAllFoods()
       .then(() => {
         this.props.requestSingleDiary(this.props.match.params.diaryId);
       });
+    } else {
+      this.props.requestSingleDiary(this.props.match.params.diaryId);
+    }
   }
 
   componentWillReceiveProps(newProps) {
@@ -26,7 +30,12 @@ class FoodDiary extends React.Component {
 
     return (
       <div className="food-diary-container">
-        <FoodDiaryHeader date={this.props.diary.date_string}/>
+        <FoodDiaryHeader
+          diaryDate={this.props.diary.date_string}
+          currentUser={this.props.currentUser}
+          currentDate={this.props.currentDate}
+          foodDiaries={this.props.foodDiaries}
+        />
         <FoodDiaryIndex
           currentUser={this.props.currentUser}
           diary={this.props.diary}

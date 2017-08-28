@@ -14,6 +14,8 @@ const mapStateToProps = (state, ownProps) => {
     breakfastEntries: selectDiaryEntries(state, diaryId, "breakfast"),
     lunchEntries: selectDiaryEntries(state, diaryId, "lunch"),
     dinnerEntries: selectDiaryEntries(state, diaryId, "dinner"),
+    currentDate: state.ui.currentDate,
+    foods: state.entities.foods,
   };
 };
 
