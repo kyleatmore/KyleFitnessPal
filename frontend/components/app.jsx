@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import HeaderContainer from './header/header_container';
+import NavBarContainer from './nav/nav_bar_container';
 import SignupFormContainer from './auth/signup_form_container';
 import LoginFormContainer from './auth/login_form_container';
 import HomePage from './home/home_page.jsx';
@@ -12,6 +13,7 @@ import SearchContainer from './search/search_container';
 const App = () => (
   <div>
     <HeaderContainer />
+    <ProtectedRoute path="/" component={NavBarContainer} />
     <Switch>
       <AuthRoute path="/signup" component={SignupFormContainer} />
       <AuthRoute path="/login" component={LoginFormContainer} />

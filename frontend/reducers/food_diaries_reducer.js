@@ -16,12 +16,6 @@ const foodDiariesReducer = (state = {}, action) => {
       const nextDiary = { [action.payload.foodDiary.id]: action.payload.foodDiary };
       nextState = Object.assign({}, state, nextDiary);
       return nextState
-    // case REMOVE_FOOD_ENTRY:
-    //   const diaryId = action.payload.foodDiary.id;
-    //   const nextLoggings = action.payload.foodDiary.foodLoggingIds;
-    //   nextState = merge({}, state)
-    //   nextState[diaryId].foodLoggingIds = nextLoggings;
-    //   return nextState;
     default:
       return state;
   }
