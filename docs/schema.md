@@ -45,7 +45,7 @@ serving_size    | string    | not null
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-servings        | integer   | not null
+servings        | float     | not null
 meal            | string    | not null
 food_id         | integer   | not null, foreign key (references foods), indexed
 food_diary_id   | integer   | not null, foreign key (references food_diaries), indexed

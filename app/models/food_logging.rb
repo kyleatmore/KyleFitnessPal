@@ -3,7 +3,7 @@
 # Table name: food_loggings
 #
 #  id            :integer          not null, primary key
-#  servings      :integer          not null
+#  servings      :float            not null
 #  meal          :string           not null
 #  food_id       :integer          not null
 #  food_diary_id :integer          not null
