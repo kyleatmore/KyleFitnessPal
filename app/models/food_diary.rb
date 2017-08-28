@@ -17,6 +17,10 @@ class FoodDiary < ApplicationRecord
   has_many :food_loggings
   has_many :foods, through: :food_loggings
 
+  def date_string
+    self.date.strftime('%A, %B %d, %Y')
+  end
+
   def total_macros
     macros = { calories: 0, carbs: 0, fats: 0, protein: 0 }
     loggings = self.food_loggings.includes(:food)

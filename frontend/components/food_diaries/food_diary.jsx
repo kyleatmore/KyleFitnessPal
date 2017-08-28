@@ -26,7 +26,7 @@ class FoodDiary extends React.Component {
 
     return (
       <div className="food-diary-container">
-        <FoodDiaryHeader date={this.props.diary.date}/>
+        <FoodDiaryHeader date={this.props.diary.date_string}/>
         <FoodDiaryIndex
           currentUser={this.props.currentUser}
           diary={this.props.diary}

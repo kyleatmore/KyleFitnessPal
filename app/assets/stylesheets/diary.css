@@ -1,6 +1,6 @@
 .food-diary.header {
   margin: 20px 0;
-  padding: 3px 0 7px 0;
+  padding: 3px 0 17px 0;
   display: flex;
   align-items: center;
   font-weight: bold;
@@ -15,7 +15,24 @@
   color: white;
   background: #00548f;
   padding: 9px 35px;
+  margin: 0 1px;
+}
+
+.prev-diary, .next-diary {
+  color: white;
+  background: #00548f;
+  padding: 9px 7px;
+}
+
+.prev-diary {
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
   margin-left: 5px;
+}
+
+.next-diary {
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
 }
 
 .food-diary-container {
