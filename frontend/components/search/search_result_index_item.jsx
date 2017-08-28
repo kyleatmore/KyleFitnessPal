@@ -3,10 +3,17 @@ import { Link } from 'react-router-dom';
 
 const SearchResultIndexItem = ({ food, selectFood }) => {
   return (
-    <li className="search-result">
+    <li className="search-result" onClick={selectFood(food)}>
       <ul>
-        <button onClick={selectFood(food)}>{food.name}</button>
-        <li>{`${food.brand}, ${food.serving_size}, ${food.calories} calories`}</li>
+        <li className="food-link">
+          <button className="select-food button">
+            {food.name}
+          </button>
+        </li>
+
+        <li className="food-description">
+          {`${food.brand}, ${food.serving_size}, ${food.calories} calories`}
+        </li>
       </ul>
     </li>
   );
