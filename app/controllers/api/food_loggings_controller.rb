@@ -15,6 +15,13 @@ class Api::FoodLoggingsController < ApplicationController
     render :show
   end
 
+  def destroy
+    @food_logging = FoodLogging.find(params[:id])
+    @food_diary = @food_logging.food_diary
+    @food_logging.destroy
+    render "api/food_diaries/show"
+  end
+
   private
   def logging_params
     params.require(:food_logging).permit(:servings, :meal, :food_id, :food_diary_id)

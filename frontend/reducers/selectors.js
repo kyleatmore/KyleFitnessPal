@@ -19,7 +19,8 @@ export const selectDiaryEntries = (state, diaryId, meal) => {
         calories: food.calories * log.servings,
         carbohydrates: food.carbohydrates * log.servings,
         fats: food.fats * log.servings,
-        protein: food.protein * log.servings
+        protein: food.protein * log.servings,
+        foodLogging: log,
       });
       entries.push(entry);
     }

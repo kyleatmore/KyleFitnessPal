@@ -26,3 +26,12 @@ export const addFoodEntryToDiary = (diary, foodLogging) => (dispatch) => {
       }
     );
 };
+
+export const deleteFoodEntry = (diary, foodLogging) => (dispatch) => {
+  return APIUtil.deleteFoodEntry(diary, foodLogging)
+    .then(
+      diary => {
+        dispatch(receiveSingleDiary(diary));
+      }
+    );
+};

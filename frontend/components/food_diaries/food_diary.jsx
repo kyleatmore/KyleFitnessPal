@@ -33,6 +33,7 @@ class FoodDiary extends React.Component {
           breakfastEntries={this.props.breakfastEntries}
           lunchEntries={this.props.lunchEntries}
           dinnerEntries={this.props.dinnerEntries}
+          deleteFoodEntry={this.props.deleteFoodEntry}
         />
       </div>
     );

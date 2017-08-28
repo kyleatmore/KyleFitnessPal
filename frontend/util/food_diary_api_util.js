@@ -12,3 +12,11 @@ export const addFoodEntryToDiary = (diaryId, food_logging) => {
     data: { food_logging }
   });
 };
+
+export const deleteFoodEntry = (diary, food_logging) => {
+  debugger
+  return $.ajax({
+    method: "DELETE",
+    url: `/api/food_diaries/${diary.id}/food_loggings/${food_logging.id}`
+  });
+};

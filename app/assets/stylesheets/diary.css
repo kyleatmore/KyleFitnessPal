@@ -116,3 +116,10 @@ th > span {
   height: 8px;
   padding: 4px 10px;
 }
+
+.delete-entry {
+  width: 14px;
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+}

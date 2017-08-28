@@ -6,13 +6,28 @@ import { Link } from 'react-router-dom';
 class FoodDiaryIndex extends React.Component {
   render() {
     const breakfastItems = this.props.breakfastEntries.map((entry) => {
-      return <FoodDiaryIndexItem key={entry.id} entry={entry} />;
+      return <FoodDiaryIndexItem
+                key={entry.foodLogging.id}
+                entry={entry}
+                diary={this.props.diary}
+                deleteFoodEntry={this.props.deleteFoodEntry}
+              />;
     });
     const lunchItems = this.props.lunchEntries.map((entry) => {
-      return <FoodDiaryIndexItem key={entry.id} entry={entry} />;
+      return <FoodDiaryIndexItem
+                key={entry.foodLogging.id}
+                entry={entry}
+                diary={this.props.diary}
+                deleteFoodEntry={this.props.deleteFoodEntry}
+              />;
     });
     const dinnerItems = this.props.dinnerEntries.map((entry) => {
-      return <FoodDiaryIndexItem key={entry.id} entry={entry} />;
+      return <FoodDiaryIndexItem
+                key={entry.foodLogging.id}
+                entry={entry}
+                diary={this.props.diary}
+                deleteFoodEntry={this.props.deleteFoodEntry}
+              />;
     });
     const { totalMacros, breakfastMacros, lunchMacros, dinnerMacros } = this.props.diary;
     const { currentUser } = this.props;

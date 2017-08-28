@@ -1,8 +1,18 @@
 import React from 'react';
 
 class FoodDiaryIndexItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    debugger
+    this.props.deleteFoodEntry(this.props.diary, this.props.entry.foodLogging);
+  }
+
   render() {
-    const { entry } = this.props;
+    const { entry, deleteEntry } = this.props;
 
     return (
       <tr>
@@ -11,6 +21,12 @@ class FoodDiaryIndexItem extends React.Component {
         <td className="diary-item diary-row">{entry.carbohydrates}</td>
         <td className="diary-item diary-row">{entry.fats}</td>
         <td className="diary-item diary-row">{entry.protein}</td>
+        <td
+          className="diary-item diary-row delete-entry"
+          onClick={this.handleClick}
+        >
+          &#x232b;
+        </td>
       </tr>
     );
   }
