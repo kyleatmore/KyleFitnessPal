@@ -40,7 +40,6 @@ class AddFoodForm extends React.Component {
     if (!food) {
       return(<div className="add-form"></div>);
     }
-
     return (
       <div className="add-form">
         <form>

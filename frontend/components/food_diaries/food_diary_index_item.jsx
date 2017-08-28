@@ -7,7 +7,6 @@ class FoodDiaryIndexItem extends React.Component {
   }
 
   handleClick() {
-    debugger
     this.props.deleteFoodEntry(this.props.diary, this.props.entry.foodLogging);
   }
 

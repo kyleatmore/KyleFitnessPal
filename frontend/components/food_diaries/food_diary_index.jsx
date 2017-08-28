@@ -10,24 +10,21 @@ class FoodDiaryIndex extends React.Component {
                 key={entry.foodLogging.id}
                 entry={entry}
                 diary={this.props.diary}
-                deleteFoodEntry={this.props.deleteFoodEntry}
-              />;
+                deleteFoodEntry={this.props.deleteFoodEntry}/>;
     });
     const lunchItems = this.props.lunchEntries.map((entry) => {
       return <FoodDiaryIndexItem
                 key={entry.foodLogging.id}
                 entry={entry}
                 diary={this.props.diary}
-                deleteFoodEntry={this.props.deleteFoodEntry}
-              />;
+                deleteFoodEntry={this.props.deleteFoodEntry}/>;
     });
     const dinnerItems = this.props.dinnerEntries.map((entry) => {
       return <FoodDiaryIndexItem
                 key={entry.foodLogging.id}
                 entry={entry}
                 diary={this.props.diary}
-                deleteFoodEntry={this.props.deleteFoodEntry}
-              />;
+                deleteFoodEntry={this.props.deleteFoodEntry}/>;
     });
     const { totalMacros, breakfastMacros, lunchMacros, dinnerMacros } = this.props.diary;
     const { currentUser } = this.props;

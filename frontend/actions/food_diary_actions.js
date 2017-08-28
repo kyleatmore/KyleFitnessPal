@@ -1,6 +1,7 @@
 import * as APIUtil from '../util/food_diary_api_util';
 
 export const RECEIVE_SINGLE_DIARY = "RECEIVE_SINGLE_DIARY";
+export const REMOVE_FOOD_ENTRY = "REMOVE_FOOD_ENTRY";
 
 export const receiveSingleDiary = (payload) => {
   return {
@@ -8,6 +9,13 @@ export const receiveSingleDiary = (payload) => {
     payload
   };
 };
+
+export const removeFoodEntry = (payload) => {
+  return {
+    type: REMOVE_FOOD_ENTRY,
+    payload
+  }
+}
 
 export const requestSingleDiary = (diaryId) => (dispatch) => {
   return APIUtil.fetchSingleDiary(diaryId)

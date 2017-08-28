@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
-import { RECEIVE_SINGLE_DIARY } from '../actions/food_diary_actions';
+import { RECEIVE_SINGLE_DIARY, REMOVE_FOOD_ENTRY } from '../actions/food_diary_actions';
 
 import merge from 'lodash/merge';
 
@@ -14,7 +14,14 @@ const foodDiariesReducer = (state = {}, action) => {
       return nextState;
     case RECEIVE_SINGLE_DIARY:
       const nextDiary = { [action.payload.foodDiary.id]: action.payload.foodDiary };
-      return merge({}, state, nextDiary);
+      nextState = Object.assign({}, state, nextDiary);
+      return nextState
+    // case REMOVE_FOOD_ENTRY:
+    //   const diaryId = action.payload.foodDiary.id;
+    //   const nextLoggings = action.payload.foodDiary.foodLoggingIds;
+    //   nextState = merge({}, state)
+    //   nextState[diaryId].foodLoggingIds = nextLoggings;
+    //   return nextState;
     default:
       return state;
   }
