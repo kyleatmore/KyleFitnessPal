@@ -22,7 +22,10 @@ class HomePage extends React.Component {
         </div>
 
         <div className="summary-content">
-          <section className="profile-pic">Pic</section>
+          <section>
+            <img className="profile-pic" src={currentUser.avatar_url}/>
+          </section>
+
           <section className="summary">
             <span>Calories Remaining</span>
               <ul className="cals-remaining">

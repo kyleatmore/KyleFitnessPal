@@ -22,6 +22,9 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
   validate :birth_date_cant_be_in_the_future
 
+  has_attached_file :avatar, default_url: "user-icon.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
 
   after_initialize :ensure_session_token
 

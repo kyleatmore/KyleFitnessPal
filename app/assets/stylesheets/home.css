@@ -85,3 +85,9 @@
   background-color: #85C400;
   height: 12px;
 }
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+}
