@@ -16,7 +16,7 @@ class FoodDiaryHeader extends React.Component {
       if (direction === "next") {
         nextDiaryDate.setDate(currentDiaryDate.getDate() + 2);
       } else {
-        nextDiaryDate.setDate(currentDiaryDate.getDate() - 1);
+        nextDiaryDate.setDate(currentDiaryDate.getDate());
       }
 
       this.props.findDiary(nextDiaryDate);

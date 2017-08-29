@@ -16,6 +16,9 @@
   background: #00548f;
   padding: 9px 35px;
   margin: 0 1px;
+  width: 230px;
+  text-align: center;
+  display: inline-block;
 }
 
 .prev-diary, .next-diary {

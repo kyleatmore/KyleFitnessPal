@@ -4,17 +4,6 @@ import { Link } from 'react-router-dom';
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  componentDidMount() {
-    const today = new Date();
-    this.props.findDiary(today);
-  }
-
-  handleClick(e) {
-    e.preventDefault();
-    this.props.history.push(`/food-diary/${this.props.currentDiary}`);
   }
 
   render() {
@@ -23,8 +12,7 @@ class NavBar extends React.Component {
       <Link className="nav-link" to="/">MY HOME</Link>
       <Link
         className="nav-link"
-        to="/"
-        onClick={this.handleClick}
+        to={`/food-diary/${this.props.currentDiary}`}
       >
         FOOD
       </Link>
