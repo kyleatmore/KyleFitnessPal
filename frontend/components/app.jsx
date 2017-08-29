@@ -9,6 +9,7 @@ import HomePageContainer from './home/home_page_container.jsx';
 import GoalSummaryContainer from './goals/goal_summary_container';
 import FoodDiaryContainer from './food_diaries/food_diary_container';
 import SearchContainer from './search/search_container';
+import NewFoodFormContainer from './new_foods/new_food_form_container';
 
 const App = () => (
   <div>
@@ -19,6 +20,7 @@ const App = () => (
       <AuthRoute path="/login" component={LoginFormContainer} />
       <ProtectedRoute path="/goalsummary" component={GoalSummaryContainer} />
       <ProtectedRoute path="/food-diary/:diaryId/log-food" component={SearchContainer} />
+      <ProtectedRoute path="/food-diary/:diaryId/add-food" component={NewFoodFormContainer} />
       <ProtectedRoute path="/food-diary/:diaryId" component={FoodDiaryContainer} />
       <ProtectedRoute path="/" component={HomePageContainer} />
     </Switch>

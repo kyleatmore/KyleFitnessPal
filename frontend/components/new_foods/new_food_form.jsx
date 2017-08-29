@@ -13,6 +13,7 @@ class NewFoodForm extends React.Component {
       protein: "",
       fats: "",
       serving_size: "",
+      addToDiary: false
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -44,39 +45,121 @@ class NewFoodForm extends React.Component {
   }
 
   render() {
-    const { food } = this.props;
-    if (!food) {
-      return(<div className="add-form"></div>);
-    }
     return (
-      <div className="add-form">
+      <div className="new-form">
         <form>
-          <p className="food-name">{`${food.name}`}</p>
+          <h1>Enter Nutritional Information</h1>
 
-          <h3 className="entry-option">How much?</h3>
-          <input
-          type="text"
-          onChange={this.handleInput('servings')}
-          value={this.state.servings}
-          className="food-quantity"
-          />
-          <span>servings of {food.serving_size}</span>
+          <ul className="name-info">
+            <li>
+              <label>Brand / Restaurant:</label>
+              <input
+                type="text"
+                onChange={this.handleInput('brand')}
+                value={this.props.current_weight}
+                className="long-input"
+                />
+            </li>
 
-          <h3 className="entry-option">To which meal?</h3>
-          <select
-            value={this.state.meal}
-            onChange={this.handleInput('meal')}
-            className="meal-select"
-          >
-            <option value="breakfast">Breakfast</option>
-            <option value="lunch">Lunch</option>
-            <option value="dinner">Dinner</option>
-          </select>
+            <li>
+              <label>Food Description:</label>
+              <input
+                type="text"
+                onChange={this.handleInput('name')}
+                value={this.props.name}
+                className="long-input"
+                />
+            </li>
+          </ul>
+
+          <h2>Nutrition Facts</h2>
+          <section className="nutritional-facts">
+            <label>Serving Size:</label>
+            <input
+            type="text"
+            onChange={this.handleInput('serving_size')}
+            value={this.props.serving_size}
+            placeholder="e.g. 1/2 cup cooked"
+            className="serving-size"
+            />
+
+            <section className="per-serving-info">
+              <h3>Amount Per Serving</h3>
+              <label>Calories:</label>
+              <input
+              type="text"
+              onChange={this.handleInput('calories')}
+              value={this.props.calories}
+              className="macro-input"
+              />
+              <span>g</span>
+
+              <label>Total Fat:</label>
+              <input
+              type="text"
+              onChange={this.handleInput('fats')}
+              value={this.props.fats}
+              className="macro-input"
+              />
+              <span>g</span>
+
+              <label>Total Carbs:</label>
+              <input
+              type="text"
+              onChange={this.handleInput('carbohydrates')}
+              value={this.props.carbohydrates}
+              className="macro-input"
+              />
+              <span>g</span>
+
+              <label>Protein:</label>
+              <input
+              type="text"
+              onChange={this.handleInput('protein')}
+              value={this.props.protein}
+              className="macro-input"
+              />
+              <span>g</span>
+            </section>
+          </section>
+
+          <p>Would you like to add this food to your food diary now?</p>
+
+          <section>
+            <ul className="add-diary-options">
+              <li>
+                <input
+                  type="radio"
+                  name="addToDiary?"
+                  value={true}
+                  className="radio"
+                  onChange={this.handleInput('addToDiary')}
+                  />
+                <label className="radio diary-add">Yes, add blah</label>
+              </li>
+
+              <li>
+                <input
+                  type="radio"
+                  name="addToDiary?"
+                  value={false}
+                  className="radio"
+                  onChange={this.handleInput('addToDiary')}
+                  checked
+                  />
+                <label className="radio diary-add">
+                  No, do not add this food to my food diary at this time.
+                </label>
+              </li>
+            </ul>
+
+          </section>
+
 
           <input
           className="add-food button"
           type="submit"
-          value="Add Food To Diary"
+          value="Save"
           onClick={this.handleSubmit}
           />
         </form>
@@ -85,4 +168,4 @@ class NewFoodForm extends React.Component {
   }
 }
 
-export default withRouter(AddFoodForm);
+export default withRouter(NewFoodForm);

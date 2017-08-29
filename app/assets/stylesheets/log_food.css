@@ -15,7 +15,7 @@
   font-weight: bold;
 }
 
-.search h1 {
+.search h1, .new-form h1 {
   color: #0a5282;
   font-size: 20px;
   font-weight: bold;

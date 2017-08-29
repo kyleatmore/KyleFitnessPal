@@ -1,0 +1,79 @@
+.new-form {
+  width: 670px;
+  margin: 0 auto;
+}
+
+.new-form label {
+  color: black;
+  font-weight: bold;
+}
+
+.new-form li {
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+.new-form h1 {
+  margin-bottom: 20px;
+}
+
+.new-form h2 {
+  padding-bottom: 8px;
+  border-bottom: 2px solid black;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.new-form h3 {
+  padding: 9px 0;
+  border-top: 1px solid black;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.new-form p {
+  margin-top: 20px;
+  margin-bottom: 6px;
+  color: #0a5282;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.name-info label {
+  width: 135px;
+}
+
+.name-info {
+  margin-bottom: 22px;
+}
+
+.long-input {
+  width: 320px;
+}
+
+.macro-input {
+  width: 40px;
+}
+
+.nutritional-facts {
+  border-bottom: 2px solid black;
+  background-color: #f7f7f7;
+}
+
+.serving-size {
+  margin: 10px 0;
+}
+
+.per-serving-info {
+  margin: 0 20px;
+}
+
+.per-serving-info label
+ {
+  padding: 15px 0 15px 10px;
+  width: 70px;
+}
+
+.add-food.button {
+  width: auto;
+}

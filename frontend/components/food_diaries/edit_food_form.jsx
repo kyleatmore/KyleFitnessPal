@@ -52,7 +52,6 @@ class EditFoodForm extends React.Component {
     if (!selectedEntry) {
       return null;
     }
-
     return (
       <div className="add-form edit">
         <section className="add-form modal">
@@ -67,7 +66,7 @@ class EditFoodForm extends React.Component {
               value={this.state.servings}
               className="food-quantity"
               />
-            <span>servings of {selectedEntry.foodLogging.serving_size}</span>
+            <span>servings of {selectedEntry.serving_size}</span>
 
             <h3 className="entry-option">To which meal?</h3>
             <select
