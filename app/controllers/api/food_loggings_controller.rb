@@ -29,7 +29,6 @@ class Api::FoodLoggingsController < ApplicationController
       @food_diary = @food_logging.food_diary
       render "/api/food_diaries/show"
     else
-      debugger
       render json: @food_logging.errors.full_messages, status: 422
     end
   end
