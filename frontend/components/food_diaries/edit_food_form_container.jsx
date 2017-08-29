@@ -4,11 +4,8 @@ import { updateFoodEntry } from '../../actions/food_diary_actions';
 import EditFoodForm from './edit_food_form';
 
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    entry: ownProps.selectedEntry,
-    diary: ownProps.diary,
-  };
+const mapStateToProps = (state) => {
+
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -19,4 +16,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditFoodForm);
+export default connect(null, mapDispatchToProps)(EditFoodForm);

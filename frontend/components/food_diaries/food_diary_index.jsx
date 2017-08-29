@@ -9,12 +9,17 @@ class FoodDiaryIndex extends React.Component {
       super(props);
       this.state = { selectedEntry: "" };
       this.selectEntry = this.selectEntry.bind(this);
+      this.clearSelectedEntry = this.clearSelectedEntry.bind(this);
   }
 
   selectEntry(entry) {
     return (e) => {
       this.setState({ selectedEntry: entry });
     };
+  }
+
+  clearSelectedEntry() {
+    this.setState({ selectedEntry: "" });
   }
 
   render() {
@@ -136,6 +141,7 @@ class FoodDiaryIndex extends React.Component {
 
         <EditFoodFormContainer
           selectedEntry={this.state.selectedEntry}
+          clearSelectedEntry={this.clearSelectedEntry}
           diary={diary}
         />
       </div>

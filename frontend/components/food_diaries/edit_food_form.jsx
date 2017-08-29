@@ -2,13 +2,22 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import merge from 'lodash/merge';
 
-class AddFoodForm extends React.Component {
+class EditFoodForm extends React.Component {
   constructor(props) {
     super(props);
-    debugger
-    this.state = { servings: "1.0", meal: "breakfast" };
+    this.state = { servings: "", meal: "" };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.clearModal = this.clearModal.bind(this);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.selectedEntry) {
+      this.setState({
+        servings: newProps.selectedEntry.foodLogging.servings,
+        meal: newProps.selectedEntry.foodLogging.meal
+      });
+    }
   }
 
   handleInput(field) {
@@ -18,63 +27,71 @@ class AddFoodForm extends React.Component {
     };
   }
 
+  clearModal() {
+    this.props.clearSelectedEntry();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    debugger
-
     const foodLogging = {
-      id: this.props.entry.foodLogging.id,
+      id: this.props.selectedEntry.foodLogging.id,
       servings: this.state.servings,
       meal: this.state.meal,
-      food_id: this.props.entry.foodLogging.food_id,
+      food_id: this.props.selectedEntry.foodLogging.food_id,
       food_diary_id: this.props.diary.id
     };
 
-    this.props.updateFoodEntry(this.props.diary, foodLogging);
+    this.props.updateFoodEntry(this.props.diary, foodLogging)
+      .then(
+        () => this.props.clearSelectedEntry()
+      );
   }
 
   render() {
-    debugger
-    const { entry } = this.props;
-    if (!entry) {
+    const { selectedEntry } = this.props;
+    if (!selectedEntry) {
       return null;
     }
 
     return (
       <div className="add-form">
-        <form>
-          <p className="food-name">{`${entry.brand} - ${entry.name}`}</p>
+        <section className="add-form modal" onClick={this.clearModal}>
+          <span className="modal-close">&times;</span>
+          <form>
+            <p className="food-name">{`${selectedEntry.brand} - ${selectedEntry.name}`}</p>
 
-          <h3 className="entry-option">How much?</h3>
-          <input
-          type="text"
-          onChange={this.handleInput('servings')}
-          value={this.state.servings}
-          className="food-quantity"
-          />
-        <span>servings of {entry.foodLogging.serving_size}</span>
+            <h3 className="entry-option">How much?</h3>
+            <input
+              type="text"
+              onChange={this.handleInput('servings')}
+              value={this.state.servings}
+              className="food-quantity"
+              />
+            <span>servings of {selectedEntry.foodLogging.serving_size}</span>
 
-          <h3 className="entry-option">To which meal?</h3>
-          <select
-            value={this.state.meal}
-            onChange={this.handleInput('meal')}
-            className="meal-select"
-          >
-            <option value="breakfast">Breakfast</option>
-            <option value="lunch">Lunch</option>
-            <option value="dinner">Dinner</option>
-          </select>
+            <h3 className="entry-option">To which meal?</h3>
+            <select
+              value={this.state.meal}
+              onChange={this.handleInput('meal')}
+              className="meal-select"
+              >
+              <option value="breakfast">Breakfast</option>
+              <option value="lunch">Lunch</option>
+              <option value="dinner">Dinner</option>
+            </select>
 
-          <input
-          className="add-food button"
-          type="submit"
-          value="Save"
-          onClick={this.handleSubmit}
-          />
-        </form>
+            <input
+              className="add-food button"
+              type="submit"
+              value="Save"
+              onClick={this.handleSubmit}
+              />
+          </form>
+        </section>
+        <div className="modal-screen" onClick={this.clearModal}></div>
       </div>
     );
   }
 }
 
-export default withRouter(AddFoodForm);
+export default withRouter(EditFoodForm);
