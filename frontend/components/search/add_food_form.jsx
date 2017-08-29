@@ -43,7 +43,7 @@ class AddFoodForm extends React.Component {
     return (
       <div className="add-form">
         <form>
-          <p className="food-name">{`${food.brand} - ${food.name}`}</p>
+          <p className="food-name">{`${food.name}`}</p>
 
           <h3 className="entry-option">How much?</h3>
           <input

@@ -12,7 +12,7 @@ const SearchResultIndexItem = ({ food, selectFood }) => {
         </li>
 
         <li className="food-description">
-          {`${food.brand}, ${food.serving_size}, ${food.calories} calories`}
+          {`${food.serving_size}, ${food.calories} calories`}
         </li>
       </ul>
     </li>

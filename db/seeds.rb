@@ -28,30 +28,20 @@ kyle = User.new(
   ]
 )
 
-kyle.save
+kyle.save!
 
-40.times do
-  Food.create(
-  brand: Faker::Food.dish,
-  name: Faker::Food.ingredient,
-  calories: (rand * 150).round,
-  carbohydrates: (rand * 50).round,
-  protein: (rand * 25).round,
-  fats: (rand * 40).round,
-  serving_size: Faker::Food.measurement
-  )
-end
-
-FoodDiary.create(date: Date.today, user_id: kyle.id)
-FoodDiary.create(date: Date.yesterday, user_id: kyle.id)
-
-meals = ["breakfast", "lunch", "dinner"]
-
-10.times do
-  FoodLogging.create(
-  servings: rand(1..3),
-  meal: meals.sample,
-  food_id: Food.all.sample.id,
-  food_diary_id: FoodDiary.all.sample.id
-  )
+File.open("lib/assets/food_data.txt", "r") do |file|
+  food_data = JSON.parse(file.read)
+  
+  food_data.each do |food|
+    Food.create(
+    brand: "Generic",
+    name: food["name"],
+    calories: food["nutrients"][0]["value"],
+    carbohydrates: food["nutrients"][3]["value"],
+    protein: food["nutrients"][1]["value"],
+    fats: food["nutrients"][2]["value"],
+    serving_size: food["measure"]
+    )
+  end
 end

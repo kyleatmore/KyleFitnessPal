@@ -1,6 +1,7 @@
 import React from 'react';
 import merge from 'lodash/merge';
 import SearchResultsIndex from './search_results_index';
+import { Link } from 'react-router-dom';
 
 class Search extends React.Component {
   constructor(props) {
@@ -60,6 +61,10 @@ class Search extends React.Component {
           foods={this.state.matchedFoods}
           diary={this.props.diary}
         />
+
+      <p>
+        Can't find what you're looking for? <Link to="/">Add a food to the database</Link>
+      </p>
       </div>
     );
   }
