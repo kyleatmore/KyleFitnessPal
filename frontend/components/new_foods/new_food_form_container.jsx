@@ -1,19 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addFoodEntryToDiary } from '../../actions/food_diary_actions';
+import { addNewFood } from '../../actions/food_actions';
 import NewFoodForm from './new_food_form';
 
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
+  const diaryId = state.ui.currentDiary;
+
   return {
-    diary: ownProps.diary,
+    diary: state.entities.foodDiaries[diaryId],
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addFoodEntry: (diary, foodLogging) => {
-      return dispatch(addFoodEntryToDiary(diary, foodLogging));
+    addNewFood: (diary, food) => {
+      return dispatch(addNewFood(diary, food));
     }
   };
 };

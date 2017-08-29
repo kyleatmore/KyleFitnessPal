@@ -13,7 +13,9 @@ class NewFoodForm extends React.Component {
       protein: "",
       fats: "",
       serving_size: "",
-      addToDiary: false
+      addToDiary: false,
+      servings: "1.0",
+      meal: "breakfast"
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,20 +30,26 @@ class NewFoodForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    // const food = {
+    //   servings: this.state.servings,
+    //   meal: this.state.meal,
+    //   food_id: this.props.food.id,
+    //   food_diary_id: this.props.diary.id
+    // };
 
-    const foodLogging = {
-      servings: this.state.servings,
-      meal: this.state.meal,
-      food_id: this.props.food.id,
-      food_diary_id: this.props.diary.id
-    };
+    if (this.state.addToDiary) {
 
-    this.props.addFoodEntry(this.props.diary, foodLogging)
+    } else {
+      this.props.addNewFood(this.props.diary, this.state)
       .then(
         () => {
           this.props.history.push(`/food-diary/${this.props.diary.id}`);
         }
       );
+    }
+
+
+
   }
 
   render() {
@@ -56,7 +64,7 @@ class NewFoodForm extends React.Component {
               <input
                 type="text"
                 onChange={this.handleInput('brand')}
-                value={this.props.current_weight}
+                value={this.state.current_weight}
                 className="long-input"
                 />
             </li>
@@ -66,7 +74,7 @@ class NewFoodForm extends React.Component {
               <input
                 type="text"
                 onChange={this.handleInput('name')}
-                value={this.props.name}
+                value={this.state.name}
                 className="long-input"
                 />
             </li>
@@ -78,7 +86,7 @@ class NewFoodForm extends React.Component {
             <input
             type="text"
             onChange={this.handleInput('serving_size')}
-            value={this.props.serving_size}
+            value={this.state.serving_size}
             placeholder="e.g. 1/2 cup cooked"
             className="serving-size"
             />
@@ -89,7 +97,7 @@ class NewFoodForm extends React.Component {
               <input
               type="text"
               onChange={this.handleInput('calories')}
-              value={this.props.calories}
+              value={this.state.calories}
               className="macro-input"
               />
               <span>g</span>
@@ -98,7 +106,7 @@ class NewFoodForm extends React.Component {
               <input
               type="text"
               onChange={this.handleInput('fats')}
-              value={this.props.fats}
+              value={this.state.fats}
               className="macro-input"
               />
               <span>g</span>
@@ -107,7 +115,7 @@ class NewFoodForm extends React.Component {
               <input
               type="text"
               onChange={this.handleInput('carbohydrates')}
-              value={this.props.carbohydrates}
+              value={this.state.carbohydrates}
               className="macro-input"
               />
               <span>g</span>
@@ -116,7 +124,7 @@ class NewFoodForm extends React.Component {
               <input
               type="text"
               onChange={this.handleInput('protein')}
-              value={this.props.protein}
+              value={this.state.protein}
               className="macro-input"
               />
               <span>g</span>
@@ -135,7 +143,25 @@ class NewFoodForm extends React.Component {
                   className="radio"
                   onChange={this.handleInput('addToDiary')}
                   />
-                <label className="radio diary-add">Yes, add blah</label>
+                <label className="radio diary-add">
+                  {'Yes, add '}
+                  <input
+                    type="text"
+                    onChange={this.handleInput('servings')}
+                    value={this.state.servings}
+                    className="food-quantity"
+                  />
+                  {'serving(s) to '}
+                  <select
+                    value={this.state.meal}
+                    onChange={this.handleInput('meal')}
+                    className="meal-select"
+                  >
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                  </select>
+                </label>
               </li>
 
               <li>
