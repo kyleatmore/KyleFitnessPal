@@ -15,7 +15,12 @@ class FoodDiaryIndexItem extends React.Component {
 
     return (
       <tr>
-        <td className="diary-item first">{`${entry.brand} - ${entry.name}`}</td>
+        <td
+          className="diary-item first"
+          onClick={this.props.selectEntry(entry)}
+        >
+          {`${entry.brand} - ${entry.name}`}
+        </td>
         <td className="diary-item diary-row">{entry.calories}</td>
         <td className="diary-item diary-row">{entry.carbohydrates}</td>
         <td className="diary-item diary-row">{entry.fats}</td>

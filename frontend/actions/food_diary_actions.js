@@ -2,6 +2,7 @@ import * as APIUtil from '../util/food_diary_api_util';
 
 export const RECEIVE_SINGLE_DIARY = "RECEIVE_SINGLE_DIARY";
 export const REMOVE_FOOD_ENTRY = "REMOVE_FOOD_ENTRY";
+export const UPDATE_FOOD_ENTRY = "UPDATE_FOOD_ENTRY";
 
 export const receiveSingleDiary = (payload) => {
   return {
@@ -52,3 +53,12 @@ export const findDiary = (date) => (dispatch) => {
       }
     );
 };
+
+export const updateFoodEntry = (diary, foodLogging) => (dispatch) => {
+  return APIUtil.updateFoodEntry(diary, foodLogging)
+    .then(
+      diary => {
+        dispatch(receiveSingleDiary(diary));
+      }
+    )
+}

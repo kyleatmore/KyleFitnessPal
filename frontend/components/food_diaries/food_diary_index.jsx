@@ -1,33 +1,49 @@
 import React from 'react';
 import FoodDiaryIndexItem from './food_diary_index_item';
 import FoodDiaryTotal from './food_diary_total';
+import EditFoodFormContainer from './edit_food_form_container';
 import { Link } from 'react-router-dom';
 
 class FoodDiaryIndex extends React.Component {
+  constructor(props) {
+      super(props);
+      this.state = { selectedEntry: "" };
+      this.selectEntry = this.selectEntry.bind(this);
+  }
+
+  selectEntry(entry) {
+    return (e) => {
+      this.setState({ selectedEntry: entry });
+    };
+  }
+
   render() {
     const breakfastItems = this.props.breakfastEntries.map((entry) => {
       return <FoodDiaryIndexItem
                 key={entry.foodLogging.id}
                 entry={entry}
                 diary={this.props.diary}
-                deleteFoodEntry={this.props.deleteFoodEntry}/>;
+                deleteFoodEntry={this.props.deleteFoodEntry}
+                selectEntry={this.selectEntry}/>;
     });
     const lunchItems = this.props.lunchEntries.map((entry) => {
       return <FoodDiaryIndexItem
                 key={entry.foodLogging.id}
                 entry={entry}
                 diary={this.props.diary}
-                deleteFoodEntry={this.props.deleteFoodEntry}/>;
+                deleteFoodEntry={this.props.deleteFoodEntry}
+                selectEntry={this.selectEntry}/>;
     });
     const dinnerItems = this.props.dinnerEntries.map((entry) => {
       return <FoodDiaryIndexItem
                 key={entry.foodLogging.id}
                 entry={entry}
                 diary={this.props.diary}
-                deleteFoodEntry={this.props.deleteFoodEntry}/>;
+                deleteFoodEntry={this.props.deleteFoodEntry}
+                selectEntry={this.selectEntry}/>;
     });
     const { totalMacros, breakfastMacros, lunchMacros, dinnerMacros } = this.props.diary;
-    const { currentUser } = this.props;
+    const { currentUser, diary } = this.props;
 
     return (
       <div>
@@ -117,6 +133,11 @@ class FoodDiaryIndex extends React.Component {
 
           </tbody>
         </table>
+
+        <EditFoodFormContainer
+          selectedEntry={this.state.selectedEntry}
+          diary={diary}
+        />
       </div>
     );
   }

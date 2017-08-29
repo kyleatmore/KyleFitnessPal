@@ -6,7 +6,6 @@ import { requestSingleDiary, deleteFoodEntry, findDiary } from '../../actions/fo
 import { selectDiaryEntries } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
-  // const diaryId = ownProps.match.params.diaryId;
   const diaryId = state.ui.currentDiary;
 
   return {

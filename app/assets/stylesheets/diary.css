@@ -60,6 +60,7 @@
 .first.diary-item {
   border-bottom: 1px solid #e6e6e6;
   border-right: 1px solid white;
+  cursor: pointer;
 }
 
 .diary.category.first {
@@ -93,6 +94,7 @@ th > span {
   font-size: 12px;
   padding: 4px 10px;
   background-color: #f6f6f6;
+  vertical-align: middle;
 }
 
 .diary-item.subtotal {

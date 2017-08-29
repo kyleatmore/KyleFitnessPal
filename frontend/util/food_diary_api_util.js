@@ -27,3 +27,11 @@ export const findDiary = (date) => {
     data: { date }
   });
 };
+
+export const updateFoodEntry = (diary, food_logging) => {
+  return $.ajax({
+    method: "PATCH",
+    url: `/api/food_diaries/${diary.id}/food_loggings/${food_logging.id}`,
+    data: { food_logging }
+  });
+};
