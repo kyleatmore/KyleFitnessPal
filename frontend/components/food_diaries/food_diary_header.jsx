@@ -7,9 +7,20 @@ class FoodDiaryHeader extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(e) {
-    e.preventDefault();
-    console.log("Click");
+  handleClick(direction) {
+    return (e) => {
+      e.preventDefault();
+      const currentDiaryDate = new Date(this.props.diary.date);
+      const nextDiaryDate = new Date();
+
+      if (direction === "next") {
+        nextDiaryDate.setDate(currentDiaryDate.getDate() + 2);
+      } else {
+        nextDiaryDate.setDate(currentDiaryDate.getDate() - 1);
+      }
+
+      this.props.findDiary(nextDiaryDate);
+    };
   }
 
   render() {
@@ -18,12 +29,18 @@ class FoodDiaryHeader extends React.Component {
         <h1>Your Food Diary For:</h1>
         <div className="food-diary date">
           <Link
-          className="prev-diary"
-          to="/"
-          onClick={this.handleClick}
+            className="prev-diary"
+            to="/"
+            onClick={this.handleClick("prev")}
           >&#9664;</Link>
+
           <time>{this.props.diaryDate}</time>
-          <Link className="next-diary" to="/">&#9654;</Link>
+
+          <Link
+            className="next-diary"
+            to="/"
+            onClick={this.handleClick("next")}
+          >&#9654;</Link>
         </div>
       </div>
     );

@@ -33,8 +33,9 @@ class FoodDiary extends React.Component {
         <FoodDiaryHeader
           diaryDate={this.props.diary.date_string}
           currentUser={this.props.currentUser}
-          currentDate={this.props.currentDate}
+          diary={this.props.diary}
           foodDiaries={this.props.foodDiaries}
+          findDiary={this.props.findDiary}
         />
         <FoodDiaryIndex
           currentUser={this.props.currentUser}

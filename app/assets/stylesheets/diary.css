@@ -107,6 +107,7 @@ th > span {
   background-color: white;
   color: #0072bf;
   font-weight: bold;
+  width: 200px;
 }
 
 .diary-row.subtotal {
