@@ -63,7 +63,7 @@ class Search extends React.Component {
         />
 
       <p>
-        Can't find what you're looking for? <Link to="/">Add a food to the database</Link>
+        Can't find what you're looking for? <Link to={`/food-diary/${this.props.diary.id}/add-food`}>Add a food to the database</Link>
       </p>
       </div>
     );

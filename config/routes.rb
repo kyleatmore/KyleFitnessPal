@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :foods, only: [:index]
     resources :food_diaries, only: [:show] do
       resources :food_loggings, only: [:create, :update, :destroy]
+      resources :foods, only: [:create]
     end
     post '/food_diaries/find_diary', to: 'food_diaries#find_diary'
   end

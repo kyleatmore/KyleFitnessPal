@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import { signup, login, logout, trySignup } from './actions/session_actions';
-import { requestAllFoods } from './actions/food_actions';
-import { findDiary } from './actions/food_diary_actions';
+import { addNewFood } from './actions/food_actions';
 import merge from 'lodash/merge';
 
 
@@ -23,13 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // For testing
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.login = login;
-  window.signup = signup;
-  window.trySignup = trySignup;
-  window.logout = logout;
-  window.requestAllFoods = requestAllFoods;
-  window.findDiary = findDiary;
   window.merge = merge;
+  window.addNewFood = addNewFood;
   // testing
 
   ReactDOM.render(<Root store={store}/>, root);

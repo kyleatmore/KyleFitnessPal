@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_FOODS } from '../actions/food_actions';
+import { RECEIVE_ALL_FOODS, RECEIVE_SINGLE_FOOD } from '../actions/food_actions';
 import { RECEIVE_SINGLE_DIARY } from '../actions/food_diary_actions';
 import merge from 'lodash/merge';
 
@@ -15,6 +15,9 @@ const foodsReducer = (state = {}, action) => {
         nextFoods[food.id] = food;
       });
       return merge({}, state, nextFoods);
+    case RECEIVE_SINGLE_FOOD:
+      const food = action.food;
+      return merge({}, state, { [food.id]: food });
     default:
       return state;
   }
