@@ -182,3 +182,7 @@ th > span {
   height: 200px;
   padding-bottom: 20px;
 }
+
+.add-form.edit {
+  background-color: white;
+}

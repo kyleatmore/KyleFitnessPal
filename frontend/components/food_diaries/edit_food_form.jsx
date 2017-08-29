@@ -54,7 +54,7 @@ class EditFoodForm extends React.Component {
     }
 
     return (
-      <div className="add-form">
+      <div className="add-form edit">
         <section className="add-form modal">
           <span className="modal-close" onClick={this.clearModal}>&times;</span>
           <form>
