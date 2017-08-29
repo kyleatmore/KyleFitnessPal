@@ -55,8 +55,8 @@ class EditFoodForm extends React.Component {
 
     return (
       <div className="add-form">
-        <section className="add-form modal" onClick={this.clearModal}>
-          <span className="modal-close">&times;</span>
+        <section className="add-form modal">
+          <span className="modal-close" onClick={this.clearModal}>&times;</span>
           <form>
             <p className="food-name">{`${selectedEntry.brand} - ${selectedEntry.name}`}</p>
 
