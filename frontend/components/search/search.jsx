@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 class Search extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { inputVal: "", matchedFoods: [] };
+    this.state = { inputVal: "", matchedFoods: this.props.foods };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
