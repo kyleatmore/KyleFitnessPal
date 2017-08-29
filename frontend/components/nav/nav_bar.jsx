@@ -1,16 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const NavBar = ({ currentUser }) => {
-  const latestDiary = currentUser.foodDiaryIds.slice(-1)[0]
+class NavBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-  return (
-    <nav className="nav-bar">
+  componentDidMount() {
+    const today = new Date();
+    this.props.findDiary(today);
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    this.props.history.push(`/food-diary/${this.props.currentDiary}`);
+  }
+
+  render() {
+    return (
+      <nav className="nav-bar">
       <Link className="nav-link" to="/">MY HOME</Link>
-      <Link className="nav-link" to={`/food-diary/${latestDiary}`}>FOOD</Link>
+      <Link
+        className="nav-link"
+        to="/"
+        onClick={this.handleClick}
+      >
+        FOOD
+      </Link>
       <Link className="nav-link" to="/">EXERCISE</Link>
-    </nav>
-  );
-};
+      </nav>
+    );
+  }
+}
 
 export default NavBar;

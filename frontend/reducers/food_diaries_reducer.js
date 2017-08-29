@@ -15,7 +15,7 @@ const foodDiariesReducer = (state = {}, action) => {
     case RECEIVE_SINGLE_DIARY:
       const nextDiary = { [action.payload.foodDiary.id]: action.payload.foodDiary };
       nextState = Object.assign({}, state, nextDiary);
-      return nextState
+      return nextState;
     default:
       return state;
   }
