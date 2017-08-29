@@ -1,0 +1,87 @@
+.daily-summary {
+  background-color: #f6f6f6;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 620px;
+}
+
+.daily-summary ul {
+  list-style: none;
+}
+
+.summary-header {
+  background-color: #0A5282;
+  color: white;
+  padding: 8px 15px;
+  font-size: 14px;
+}
+
+.summary-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px;
+}
+
+.summary {
+  width: 440px;
+}
+
+.cals-remaining, .net-calories, .add-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary strong {
+  color: #85C400;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.summary a {
+  border: 1px solid #d2d2d2;
+  border-radius: 5px;
+  padding: 8px 25px;
+  color: #666;
+  font-size: 13px;
+  background-color: #ebebeb;
+}
+
+.summary .food {
+  margin-left: 10px;
+}
+
+
+.net-calories {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 2px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e6e6e6;
+}
+
+.net-calories li {
+  display: flex;
+  flex-direction: column;
+}
+
+.net-calories span {
+  width: auto;
+  text-align: left;
+  margin: 0;
+  font-size: 11px;
+  color: #999999;
+}
+
+.progress-bar {
+  background-color: #e6e6e6;
+  border: 1px solid #cdcdcd;
+  height: 12px;
+  margin-top: 20px;
+}
+
+.progress {
+  background-color: #85C400;
+  height: 12px;
+}

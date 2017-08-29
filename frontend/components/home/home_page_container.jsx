@@ -5,6 +5,10 @@ import { requestAllFoods } from '../../actions/food_actions';
 import { findDiary } from '../../actions/food_diary_actions';
 
 const mapStateToProps = (state) => {
+  return {
+    currentUser: state.session.currentUser,
+    diary: state.entities.foodDiaries[state.ui.currentDiary]
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -14,4 +18,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
