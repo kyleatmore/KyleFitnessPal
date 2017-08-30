@@ -28,3 +28,14 @@ export const trySignup = (user) => {
     data: { user }
   });
 };
+
+export const addAvatar = (formData, user) => {
+  return $.ajax({
+    url: `/api/users/${user.id}`,
+    type: 'PATCH',
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData,
+  });
+};

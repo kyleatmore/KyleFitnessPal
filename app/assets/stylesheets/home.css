@@ -91,3 +91,16 @@
   width: 120px;
   height: 120px;
 }
+
+.file-input {
+  width: 100px;
+}
+
+.file-input input {
+  opacity: 0;
+}
+
+.file-input label {
+  cursor: pointer;
+  color: #0072BC
+}

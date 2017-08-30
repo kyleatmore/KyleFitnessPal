@@ -68,3 +68,11 @@ export const trySignup = (user) => (dispatch) => {
       }
     );
 };
+
+export const addAvatar = (formData, user) => (dispatch) => {
+  return APIUtil.addAvatar(formData, user)
+    .then(
+      user => dispatch(receiveCurrentUser(user)),
+      errors => dispatch(receiveErrors(errors.responseJSON))
+    );
+};
