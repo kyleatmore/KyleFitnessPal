@@ -36,7 +36,8 @@ class HomePage extends React.Component {
     const { currentUser, diary, exerciseDiary } = this.props;
 
     if (!diary || !exerciseDiary) { return null; }
-    const caloriesPercent = Math.round((diary.totalMacros.calories / currentUser.calorie_allowance) * 100);
+    const netCalories = diary.totalMacros.calories - exerciseDiary.dailySummary.cals_burned
+    const caloriesPercent = Math.round((netCalories / currentUser.calorie_allowance) * 100);
     const progressStyle = { width: `${caloriesPercent}%` }
 
     return (
@@ -58,7 +59,7 @@ class HomePage extends React.Component {
           <section className="summary-info">
             <span>Calories Remaining</span>
               <ul className="cals-remaining">
-                <li><strong>{currentUser.calorie_allowance - diary.totalMacros.calories}</strong></li>
+                <li><strong>{currentUser.calorie_allowance - netCalories}</strong></li>
 
                 <li>
                   <ul className="add-buttons">
@@ -87,12 +88,12 @@ class HomePage extends React.Component {
               </li>
               <li>-</li>
               <li>
-                0
+                {exerciseDiary.dailySummary.cals_burned}
                 <span>EXERCISE</span>
               </li>
               <li>=</li>
               <li>
-                {diary.totalMacros.calories}
+                {netCalories}
                 <span>NET</span>
               </li>
             </ul>

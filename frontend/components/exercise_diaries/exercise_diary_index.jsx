@@ -1,6 +1,5 @@
 import React from 'react';
-// import ExerciseDiaryIndexItem from './food_diary_index_item';
-// import ExerciseDiaryTotal from './food_diary_total';
+import ExerciseDiaryIndexItem from './exercise_diary_index_item';
 // import EditFoodFormContainer from './edit_food_form_container';
 import { Link } from 'react-router-dom';
 
@@ -23,9 +22,13 @@ class ExerciseDiaryIndex extends React.Component {
   }
 
   render() {
-    debugger
     const exerciseItems = this.props.exerciseEntries.map((entry) => {
-      return <td>{entry.exercise.name}</td>;
+      return <ExerciseDiaryIndexItem
+                key={entry.exerciseLogging.id}
+                entry={entry}
+                diary={this.props.exerciseDiary}
+                deleteExerciseEntry={this.props.deleteExerciseEntry}
+                selectEntry={this.selectEntry}/>;
     });
     const { currentUser, exerciseDiary } = this.props;
     const { dailySummary} = exerciseDiary;
@@ -40,9 +43,7 @@ class ExerciseDiaryIndex extends React.Component {
               <th className="macro-header diary-row">Calories Burned</th>
             </tr>
 
-            <tr>
-              {exerciseItems}
-            </tr>
+            {exerciseItems}
 
             <tr>
               <td className="diary-item first add-food">
@@ -57,13 +58,13 @@ class ExerciseDiaryIndex extends React.Component {
             <tr className="diary-totals">
               <td className="total-category">Daily Total / Goal</td>
               <td className="diary-row">{`${dailySummary.minutes} / 30`}</td>
-              <td className="diary-row">{`${dailySummary.cals_burned} / 600`}</td>
+              <td className="diary-row">{`${dailySummary.cals_burned} / 200`}</td>
             </tr>
 
             <tr className="diary-totals">
               <td className="total-category">Weekly Total / Goal</td>
-              <td className="diary-row">{`TBD`}</td>
-              <td className="diary-row">{`TBD`}</td>
+              <td className="diary-row">{`TBD / 90`}</td>
+              <td className="diary-row">{`TBD / 600`}</td>
             </tr>
           </tbody>
         </table>

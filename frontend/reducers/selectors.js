@@ -38,7 +38,7 @@ export const selectExerciseDiaryEntries = (state, exerciseDiaryId) => {
     const log = exerciseLoggings[logId];
     const exercise = state.entities.exercises[log.exercise_id];
     const entry = {
-      logId,
+      exerciseLogging: log,
       exercise,
       minutes: log.minutes,
       calories: log.total_cals_burned
