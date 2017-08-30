@@ -57,9 +57,9 @@ class FoodDiaryIndex extends React.Component {
             <tr className="meal-category">
               <th className="diary category first">Breakfast</th>
               <th className="macro-header diary-row">Calories <span className="opaque">kcal</span></th>
-              <th className="macro-header diary-row">Carbs <span className="opaque">kcal</span></th>
-              <th className="macro-header diary-row">Fat <span className="opaque">kcal</span></th>
-              <th className="macro-header diary-row">Protein <span className="opaque">kcal</span></th>
+              <th className="macro-header diary-row">Carbs <span className="opaque">g</span></th>
+              <th className="macro-header diary-row">Fat <span className="opaque">g</span></th>
+              <th className="macro-header diary-row">Protein <span className="opaque">g</span></th>
             </tr>
             {breakfastItems}
             <tr>
@@ -131,9 +131,9 @@ class FoodDiaryIndex extends React.Component {
             <tr className="meal-category">
               <th className="diary category first"></th>
               <th className="macro-header diary-row">Calories <span className="opaque">kcal</span></th>
-              <th className="macro-header diary-row">Carbs <span className="opaque">kcal</span></th>
-              <th className="macro-header diary-row">Fat <span className="opaque">kcal</span></th>
-              <th className="macro-header diary-row">Protein <span className="opaque">kcal</span></th>
+              <th className="macro-header diary-row">Carbs <span className="opaque">g</span></th>
+              <th className="macro-header diary-row">Fat <span className="opaque">g</span></th>
+              <th className="macro-header diary-row">Protein <span className="opaque">g</span></th>
             </tr>
 
           </tbody>
