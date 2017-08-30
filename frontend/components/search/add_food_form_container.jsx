@@ -8,6 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     food: ownProps.selectedFood,
     diary: ownProps.diary,
+    errors: state.ui.errors,
   };
 };
 

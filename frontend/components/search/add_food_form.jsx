@@ -36,12 +36,19 @@ class AddFoodForm extends React.Component {
   }
 
   render() {
-    const { food } = this.props;
+    const { food, errors } = this.props;
     if (!food) {
       return(<div className="add-form"></div>);
     }
+    
+    const errorItems = errors.map((error, idx) => {
+      return(<li key={idx}>{error}</li>);
+    });
+
     return (
       <div className="add-form">
+        <ul className="errors">{errorItems}</ul>
+
         <form>
           <p className="food-name">{`${food.name}`}</p>
 

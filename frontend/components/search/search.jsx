@@ -12,7 +12,10 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestAllFoods();
+    this.props.requestAllFoods()
+      .then(() => {
+        this.props.requestSingleDiary(this.props.match.params.diaryId);
+      });
   }
 
   handleInput(e) {
@@ -35,6 +38,8 @@ class Search extends React.Component {
   }
 
   render() {
+    if (!this.props.diary) return null;
+
     return (
       <div className="search">
           <h1>Add Food To Diary</h1>

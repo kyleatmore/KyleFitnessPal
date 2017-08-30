@@ -3,6 +3,7 @@ import * as APIUtil from '../util/food_diary_api_util';
 export const RECEIVE_SINGLE_DIARY = "RECEIVE_SINGLE_DIARY";
 export const REMOVE_FOOD_ENTRY = "REMOVE_FOOD_ENTRY";
 export const UPDATE_FOOD_ENTRY = "UPDATE_FOOD_ENTRY";
+export const RECEIVE_DIARY_ERRORS = "RECEIVE_DIARY_ERRORS";
 
 export const receiveSingleDiary = (payload) => {
   return {
@@ -15,6 +16,13 @@ export const removeFoodEntry = (payload) => {
   return {
     type: REMOVE_FOOD_ENTRY,
     payload
+  };
+};
+
+export const receiveDiaryErrors = (errors) => {
+  return {
+    type: RECEIVE_DIARY_ERRORS,
+    errors
   };
 };
 
@@ -32,7 +40,8 @@ export const addFoodEntryToDiary = (diary, foodLogging) => (dispatch) => {
     .then(
       diary => {
         dispatch(receiveSingleDiary(diary));
-      }
+      },
+      errors => dispatch(receiveDiaryErrors(errors.responseJSON))
     );
 };
 

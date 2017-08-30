@@ -4,7 +4,6 @@ import {
   CLEAR_ERRORS,
   LOGOUT_CURRENT_USER
 } from '../actions/session_actions';
-import { RECEIVE_FOOD_ERRORS } from '../actions/food_actions';
 
 const initialState = {
   currentUser: null,
@@ -25,9 +24,6 @@ const sessionReducer = (state = initialState, action) => {
       return nextState;
     case CLEAR_ERRORS:
       nextState = Object.assign({}, state, { errors: [] });
-      return nextState;
-    case RECEIVE_FOOD_ERRORS:
-      nextState = Object.assign({}, state, { errors: action.errors });
       return nextState;
     default:
       return state;
