@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import ExerciseDiary from './exercise_diary';
 import { requestAllExercises } from '../../actions/exercise_actions';
 import { requestSingleDiary, deleteExerciseEntry, findExerciseDiary } from '../../actions/exercise_diary_actions';
+import { selectExerciseDiaryEntries } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
   const exerciseDiaryId = state.ui.currentExerciseDiary;
@@ -11,6 +12,7 @@ const mapStateToProps = (state, ownProps) => {
     currentUser: state.session.currentUser,
     exerciseDiary: state.entities.exerciseDiaries[exerciseDiaryId],
     exercises: state.entities.exercises,
+    exerciseEntries: selectExerciseDiaryEntries(state, exerciseDiaryId)
   };
 };
 

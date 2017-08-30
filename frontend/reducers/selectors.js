@@ -27,3 +27,24 @@ export const selectDiaryEntries = (state, diaryId, meal) => {
   });
   return entries;
 };
+
+export const selectExerciseDiaryEntries = (state, exerciseDiaryId) => {
+  const exerciseDiary = state.entities.exerciseDiaries[exerciseDiaryId];
+  const exerciseLoggings = state.entities.exerciseLoggings;
+  if (!exerciseDiary) { return []; }
+
+  const entries = [];
+  exerciseDiary.exerciseLoggingIds.forEach((logId) => {
+    const log = exerciseLoggings[logId];
+    const exercise = state.entities.exercises[log.exercise_id];
+    const entry = {
+      logId,
+      exercise,
+      minutes: log.minutes,
+      calories: log.total_cals_burned
+    };
+    entries.push(entry);
+  });
+
+  return entries;
+};

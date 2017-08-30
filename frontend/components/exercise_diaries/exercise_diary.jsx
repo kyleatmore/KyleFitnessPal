@@ -1,6 +1,6 @@
 import React from 'react';
 import DiaryHeader from '../food_diaries/diary_header';
-// import ExerciseDiaryIndex from './exercise_diary_index';
+import ExerciseDiaryIndex from './exercise_diary_index';
 
 class ExerciseDiary extends React.Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class ExerciseDiary extends React.Component {
 
   render() {
     if (!this.props.exerciseDiary) return null;
-
+    debugger
     return (
       <div className="food-diary-container">
         <DiaryHeader
@@ -35,6 +35,12 @@ class ExerciseDiary extends React.Component {
           diary={this.props.exerciseDiary}
           findDiary={this.props.findExerciseDiary}
           type="Exercise"
+        />
+        <ExerciseDiaryIndex
+          currentUser={this.props.currentUser}
+          exerciseDiary={this.props.exerciseDiary}
+          exerciseEntries={this.props.exerciseEntries}
+          deleteExerciseEntry={this.props.deleteExerciseEntry}
         />
       </div>
     );

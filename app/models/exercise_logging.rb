@@ -15,4 +15,8 @@ class ExerciseLogging < ApplicationRecord
 
   belongs_to :exercise_diary
   belongs_to :exercise
+
+  def total_cals_burned
+    minutes * self.exercise.cals_burned_per_min
+  end
 end

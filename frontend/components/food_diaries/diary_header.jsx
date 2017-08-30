@@ -24,7 +24,6 @@ class FoodDiaryHeader extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <div className="food-diary header">
         <h1>{`Your ${this.props.type} Diary For:`}</h1>
