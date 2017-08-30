@@ -40,7 +40,10 @@ class User < ApplicationRecord
   has_many :food_diaries
   has_many :food_loggings, through: :food_diaries
   has_many :foods, through: :food_diaries
+
   has_many :exercise_diaries
+  has_many :exercise_loggings, through: :exercise_diaries
+  has_many :exercises, through: :exercise_diaries
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

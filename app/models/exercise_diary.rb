@@ -26,6 +26,6 @@ class ExerciseDiary < ApplicationRecord
       summary[:cals_burned] += (log.exercise.cals_burned_per_min * log.minutes).round
     end
 
-    return loggings
+    return summary
   end
 end
