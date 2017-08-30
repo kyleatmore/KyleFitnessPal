@@ -2,7 +2,6 @@ import * as APIUtil from '../util/food_diary_api_util';
 
 export const RECEIVE_SINGLE_DIARY = "RECEIVE_SINGLE_DIARY";
 export const REMOVE_FOOD_ENTRY = "REMOVE_FOOD_ENTRY";
-export const UPDATE_FOOD_ENTRY = "UPDATE_FOOD_ENTRY";
 export const RECEIVE_DIARY_ERRORS = "RECEIVE_DIARY_ERRORS";
 
 export const receiveSingleDiary = (payload) => {

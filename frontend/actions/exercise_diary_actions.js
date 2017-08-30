@@ -1,8 +1,7 @@
 import * as APIUtil from '../util/exercise_diary_api_util';
 
-export const RECEIVE_SINGLE_EXERCISE_DIARY = "RECEIVE_SINGLE_DIARY";
+export const RECEIVE_SINGLE_EXERCISE_DIARY = "RECEIVE_SINGLE_EXERCISE_DIARY";
 export const REMOVE_EXERCISE_ENTRY = "REMOVE_EXERCISE_ENTRY";
-export const UPDATE_EXERCISE_ENTRY = "UPDATE_EXERCISE_ENTRY";
 export const RECEIVE_DIARY_ERRORS = "RECEIVE_DIARY_ERRORS";
 
 export const receiveSingleDiary = (payload) => {
