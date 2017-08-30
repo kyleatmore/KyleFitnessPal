@@ -17,6 +17,7 @@ class NavBar extends React.Component {
         FOOD
       </Link>
       <Link className="nav-link" to="/">EXERCISE</Link>
+      <Link className="nav-link" to="/goalsummary">GOALS</Link>
       </nav>
     );
   }
