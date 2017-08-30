@@ -26,7 +26,7 @@ class HomePage extends React.Component {
             <img className="profile-pic" src={currentUser.avatar_url}/>
           </section>
 
-          <section className="summary">
+          <section className="summary-info">
             <span>Calories Remaining</span>
               <ul className="cals-remaining">
                 <li><strong>{currentUser.calorie_allowance - diary.totalMacros.calories}</strong></li>
