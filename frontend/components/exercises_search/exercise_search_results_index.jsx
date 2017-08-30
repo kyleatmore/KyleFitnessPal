@@ -1,6 +1,6 @@
 import React from 'react';
 import ExerciseSearchResultIndexItem from './exercise_search_result_index_item';
-// import AddExerciseFormContainer from './add_exercise_form_container';
+import AddExerciseFormContainer from './add_exercise_form_container';
 
 class ExerciseSearchResultsIndex extends React.Component {
   constructor(props) {
@@ -11,6 +11,7 @@ class ExerciseSearchResultsIndex extends React.Component {
 
   selectExercise(exercise) {
     return (e) => {
+      debugger
       this.setState({ selectedExercise: exercise });
     };
   }
@@ -39,7 +40,10 @@ class ExerciseSearchResultsIndex extends React.Component {
             </ul>
           </div>
 
-
+          <AddExerciseFormContainer
+            selectedExercise={this.state.selectedExercise}
+            diary={diary}
+          />
         </div>
       </div>
     );
