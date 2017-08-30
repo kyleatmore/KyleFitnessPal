@@ -49,6 +49,7 @@
 .summary .goal-footer {
   font-size: 14px;
   margin-top: 10px;
+  text-align: left;
 }
 
 .summary .goal-projection {
@@ -60,4 +61,10 @@
 
 .get-started.button {
   width: auto;
+  margin-left: 0;
+}
+
+.summary strong.red {
+  color: red;
+  font-size: 16px;
 }

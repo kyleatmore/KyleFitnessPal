@@ -57,14 +57,14 @@ class SignUpPart1 extends React.Component {
           onClick={handleSubmit}
           />
 
+        <input
+          className="demo button"
+          type="submit"
+          value="Demo Log In"
+          onClick={handleDemo}
+          />
         </form>
 
-        <input
-        className="demo button"
-        type="submit"
-        value="Demo Log In"
-        onClick={handleDemo}
-        />
 
         <div className="login-redirect">
           <ul>

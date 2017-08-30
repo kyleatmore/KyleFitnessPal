@@ -56,4 +56,23 @@ class Goal < ApplicationRecord
     end
   end
 
+  def goal_details
+    case self.goal_description
+    when GOAL_0
+      return { type: "loss", perWeek: "2.0 lbs per week", longTerm: "10 lbs" }
+    when GOAL_1
+      return { type: "loss", perWeek: "1.5 lbs per week", longTerm: "7.5 lbs" }
+    when GOAL_2
+      return { type: "loss", perWeek: "1 lb per week", longTerm: "5 lbs" }
+    when GOAL_3
+      return { type: "loss", perWeek: "0.5 lbs per week", longTerm: "2.5 lbs" }
+    when GOAL_4
+      return { type: "loss", perWeek: "0 lbs per week", longTerm: "0 lbs" }
+    when GOAL_5
+      return { type: "gain", perWeek: "0.5 lbs per week", longTerm: "2.5 lbs" }
+    when GOAL_6
+      return { type: "gain", perWeek: "1 lb per week", longTerm: "5 lbs" }
+    end
+  end
+
 end

@@ -33,7 +33,8 @@ class LoginForm extends React.Component {
       );
   }
 
-  handleDemo() {
+  handleDemo(e) {
+    e.preventDefault();
     this.props.demoLogin();
   }
 

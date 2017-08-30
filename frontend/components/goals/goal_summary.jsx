@@ -1,19 +1,21 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
-const GoalSummary = ({ currentUser }) => {
+const GoalSummary = ({ currentUser, history }) => {
   const {
     calorie_allowance,
     carb_allowance,
     protein_allowance,
-    fat_allowance
+    fat_allowance,
+    goal_details
   } = currentUser;
-
   const date = new Date();
   date.setDate(date.getDate() + 35);
   const months = ["January", "February", "March", "April", "May", "June", "July",
                   "August", "September", "October", "November", "December"];
   const month = months[date.getMonth()];
   const day = date.getDate();
+  const goalVerb = goal_details.type === "loss" ? "lose" : "gain";
 
   return (
     <div className="signup-container part2 goals">
@@ -80,14 +82,27 @@ const GoalSummary = ({ currentUser }) => {
 
       <section className="summary">
         <p className="goal-footer">If you follow this plan...</p>
-        <p className="goal-projection">Your projected weight loss/gain is TBD</p>
-        <p className="goal-projection">You should lose/gain xlbs by
-          {` ${month} ${day}`}</p>
+        <p className="goal-projection">
+          {`Your projected weight ${goal_details.type} is `}
+          <strong className="red">
+            {`${goal_details.perWeek}`}
+          </strong>
+        </p>
+        <p className="goal-projection">
+          {`You should ${goalVerb} `}
+            <strong className="red">
+              {`${goal_details.longTerm} by ${month} ${day}`}
+            </strong>
+        </p>
 
         <input
           className="get-started button"
           type="submit"
           value="Get Started Now!"
+          onClick={(e) => {
+            e.preventDefault();
+            history.push("/");
+          }}
           />
       </section>
 
@@ -95,4 +110,4 @@ const GoalSummary = ({ currentUser }) => {
   );
 };
 
-export default GoalSummary;
+export default withRouter(GoalSummary);
