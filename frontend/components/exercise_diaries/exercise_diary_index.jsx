@@ -47,7 +47,10 @@ class ExerciseDiaryIndex extends React.Component {
 
             <tr>
               <td className="diary-item first add-food">
-                <Link to={`/`}>Add Exercise</Link>
+                <Link
+                  to={`/exercise-diary/${this.props.exerciseDiary.id}/log-exercise`}>
+                  Add Exercise
+                </Link>
               </td>
             </tr>
 

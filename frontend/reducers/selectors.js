@@ -28,6 +28,10 @@ export const selectDiaryEntries = (state, diaryId, meal) => {
   return entries;
 };
 
+export const selectAllExercises = (state) => {
+  return values(state.entities.exercises);
+};
+
 export const selectExerciseDiaryEntries = (state, exerciseDiaryId) => {
   const exerciseDiary = state.entities.exerciseDiaries[exerciseDiaryId];
   const exerciseLoggings = state.entities.exerciseLoggings;

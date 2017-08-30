@@ -11,6 +11,7 @@ import FoodDiaryContainer from './food_diaries/food_diary_container';
 import SearchContainer from './search/search_container';
 import NewFoodFormContainer from './new_foods/new_food_form_container';
 import ExerciseDiaryContainer from './exercise_diaries/exercise_diary_container';
+import ExerciseSearchContainer from './exercises_search/exercises_search_container';
 
 const App = () => (
   <div>
@@ -23,6 +24,7 @@ const App = () => (
       <ProtectedRoute path="/food-diary/:diaryId/log-food" component={SearchContainer} />
       <ProtectedRoute path="/food-diary/:diaryId/add-food" component={NewFoodFormContainer} />
       <ProtectedRoute path="/food-diary/:diaryId" component={FoodDiaryContainer} />
+      <ProtectedRoute path="/exercise-diary/:diaryId/log-exercise" component={ExerciseSearchContainer} />
       <ProtectedRoute path="/exercise-diary/:diaryId" component={ExerciseDiaryContainer} />
       <ProtectedRoute path="/" component={HomePageContainer} />
     </Switch>
