@@ -50,6 +50,11 @@ class FoodDiaryIndex extends React.Component {
     const { totalMacros, breakfastMacros, lunchMacros, dinnerMacros } = this.props.diary;
     const { currentUser, diary } = this.props;
 
+    const calorieColor = currentUser.calorie_allowance >= totalMacros.calories ? "green" : "red";
+    const fatColor = currentUser.fat_allowance >= totalMacros.fats ? "green" : "red";
+    const carbColor = currentUser.carb_allowance >= totalMacros.carbs ? "green" : "red";
+    const proteinColor = currentUser.protein_allowance >= totalMacros.protein ? "green" : "red";
+
     return (
       <div>
         <table>
@@ -122,10 +127,18 @@ class FoodDiaryIndex extends React.Component {
 
             <tr className="diary-totals">
               <td className="total-category">Remaining</td>
-              <td className="diary-row">{currentUser.calorie_allowance - totalMacros.calories}</td>
-              <td className="diary-row">{currentUser.carb_allowance - totalMacros.carbs}</td>
-              <td className="diary-row">{currentUser.fat_allowance - totalMacros.fats}</td>
-              <td className="diary-row">{currentUser.protein_allowance - totalMacros.protein}</td>
+              <td className={`${calorieColor} diary-row`}>
+                {currentUser.calorie_allowance - totalMacros.calories}
+              </td>
+              <td className={`${carbColor} diary-row`}>
+                {currentUser.carb_allowance - totalMacros.carbs}
+              </td>
+              <td className={`${fatColor} diary-row`}>
+                {currentUser.fat_allowance - totalMacros.fats}
+              </td>
+              <td className={`${proteinColor} diary-row`}>
+                {currentUser.protein_allowance - totalMacros.protein}
+              </td>
             </tr>
 
             <tr className="meal-category">

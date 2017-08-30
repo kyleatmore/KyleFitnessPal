@@ -187,3 +187,11 @@ th > span {
 .add-form.edit {
   background-color: white;
 }
+
+.diary-row.red {
+  color: red;
+}
+
+.diary-row.green {
+  color: #197910;
+}
