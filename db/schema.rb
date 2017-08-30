@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170829154021) do
+ActiveRecord::Schema.define(version: 20170830162555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "exercise_diaries", force: :cascade do |t|
+    t.date     "date",       null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "date"], name: "index_exercise_diaries_on_user_id_and_date", unique: true, using: :btree
+  end
+
+  create_table "exercise_loggings", force: :cascade do |t|
+    t.integer  "minutes",           null: false
+    t.integer  "exercise_id",       null: false
+    t.integer  "exercise_diary_id", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["exercise_diary_id"], name: "index_exercise_loggings_on_exercise_diary_id", using: :btree
+    t.index ["exercise_id"], name: "index_exercise_loggings_on_exercise_id", using: :btree
+  end
+
+  create_table "exercises", force: :cascade do |t|
+    t.string   "name",                null: false
+    t.integer  "cals_burned_per_min", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
   create_table "food_diaries", force: :cascade do |t|
     t.date     "date",       null: false
