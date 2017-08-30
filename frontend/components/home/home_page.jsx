@@ -10,8 +10,10 @@ class HomePage extends React.Component {
 
   componentDidMount() {
     this.props.requestAllFoods();
+    this.props.requestAllExercises();
     const today = new Date();
     this.props.findDiary(today);
+    this.props.findExerciseDiary(today);
   }
 
   updateFile(e) {

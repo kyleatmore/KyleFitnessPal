@@ -53,7 +53,7 @@ export const deleteExerciseEntry = (diary, exerciseLogging) => (dispatch) => {
     );
 };
 
-export const findDiary = (date) => (dispatch) => {
+export const findExerciseDiary = (date) => (dispatch) => {
   return APIUtil.findDiary(date)
     .then(
       diary => {
