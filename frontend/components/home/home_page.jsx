@@ -18,7 +18,6 @@ class HomePage extends React.Component {
     var imageFile = e.currentTarget.files[0];
     const formData = new FormData ();
     formData.append("user[avatar]", imageFile);
-    debugger
 
     if (imageFile) {
       this.props.addAvatar(formData, this.props.currentUser);

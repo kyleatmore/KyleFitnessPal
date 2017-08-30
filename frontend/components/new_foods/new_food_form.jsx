@@ -13,7 +13,7 @@ class NewFoodForm extends React.Component {
       protein: "",
       fats: "",
       serving_size: "",
-      addToDiary: false,
+      addToDiary: "",
       servings: "1.0",
       meal: "breakfast"
     };
@@ -36,7 +36,7 @@ class NewFoodForm extends React.Component {
       food_diary_id: this.props.diary.id
     };
 
-    if (this.state.addToDiary) {
+    if (this.state.addToDiary === "true") {
       this.props.addNewFood(this.props.diary, this.state)
       .then(
         () => {
@@ -52,9 +52,6 @@ class NewFoodForm extends React.Component {
         }
       );
     }
-
-
-
   }
 
   render() {
@@ -177,7 +174,6 @@ class NewFoodForm extends React.Component {
                   value={false}
                   className="radio"
                   onChange={this.handleInput('addToDiary')}
-                  checked
                   />
                 <label className="radio diary-add">
                   No, do not add this food to my food diary at this time.
