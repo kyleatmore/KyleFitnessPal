@@ -9,8 +9,14 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestAllFoods();
-    this.props.requestAllExercises();
+    if (Object.keys(this.props.foods).length === 0) {
+      this.props.requestAllFoods();
+    }
+
+    if (Object.keys(this.props.exercises).length === 0) {
+      this.props.requestAllExercises();
+    }
+    
     const today = new Date();
     this.props.findDiary(today);
     this.props.findExerciseDiary(today);

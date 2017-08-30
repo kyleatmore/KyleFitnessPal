@@ -12,6 +12,8 @@ const mapStateToProps = (state) => {
     currentUser: state.session.currentUser,
     diary: state.entities.foodDiaries[state.ui.currentDiary],
     exerciseDiary: state.entities.exerciseDiaries[state.ui.currentExerciseDiary],
+    foods: state.entities.foods,
+    exercises: state.entities.exercises,
   };
 };
 
