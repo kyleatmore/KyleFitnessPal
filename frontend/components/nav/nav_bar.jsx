@@ -12,11 +12,12 @@ class NavBar extends React.Component {
       <Link className="nav-link" to="/">MY HOME</Link>
       <Link
         className="nav-link"
-        to={`/food-diary/${this.props.currentDiary}`}
-      >
+        to={`/food-diary/${this.props.currentDiary}`}>
         FOOD
       </Link>
-      <Link className="nav-link" to="/">EXERCISE</Link>
+      <Link
+        className="nav-link"
+        to={`/exercise-diary/${this.props.currentExerciseDiary}`}>EXERCISE</Link>
       <Link className="nav-link" to="/goalsummary">GOALS</Link>
       </nav>
     );

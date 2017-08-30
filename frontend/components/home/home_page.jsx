@@ -16,7 +16,7 @@ class HomePage extends React.Component {
     if (Object.keys(this.props.exercises).length === 0) {
       this.props.requestAllExercises();
     }
-    
+
     const today = new Date();
     this.props.findDiary(today);
     this.props.findExerciseDiary(today);
@@ -33,9 +33,9 @@ class HomePage extends React.Component {
   }
 
   render() {
-    const { currentUser, diary } = this.props;
+    const { currentUser, diary, exerciseDiary } = this.props;
 
-    if (!diary) { return null; }
+    if (!diary || !exerciseDiary) { return null; }
     const caloriesPercent = Math.round((diary.totalMacros.calories / currentUser.calorie_allowance) * 100);
     const progressStyle = { width: `${caloriesPercent}%` }
 
@@ -63,7 +63,7 @@ class HomePage extends React.Component {
                 <li>
                   <ul className="add-buttons">
                     <li>
-                      <Link to="/">
+                      <Link to={`/exercise-diary/${exerciseDiary.id}`}>
                         Add Exercise
                       </Link>
                     </li>

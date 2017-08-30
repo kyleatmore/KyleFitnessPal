@@ -8,6 +8,7 @@ const mapStateToProps = (state) => {
   return {
     currentUser: state.session.currentUser,
     currentDiary: state.ui.currentDiary,
+    currentExerciseDiary: state.ui.currentExerciseDiary,
   };
 };
 

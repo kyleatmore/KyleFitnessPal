@@ -1,5 +1,5 @@
 import React from 'react';
-import FoodDiaryHeader from './food_diary_header';
+import DiaryHeader from './diary_header';
 import FoodDiaryIndex from './food_diary_index';
 import SearchContainer from '../search/search_container';
 
@@ -30,12 +30,12 @@ class FoodDiary extends React.Component {
 
     return (
       <div className="food-diary-container">
-        <FoodDiaryHeader
+        <DiaryHeader
           diaryDate={this.props.diary.date_string}
           currentUser={this.props.currentUser}
           diary={this.props.diary}
-          foodDiaries={this.props.foodDiaries}
           findDiary={this.props.findDiary}
+          type="Food"
         />
         <FoodDiaryIndex
           currentUser={this.props.currentUser}

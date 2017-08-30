@@ -17,6 +17,10 @@ class ExerciseDiary < ApplicationRecord
   has_many :exercise_loggings
   has_many :exercises, through: :exercise_loggings
 
+  def date_string
+    self.date.strftime('%A, %B %d, %Y')
+  end
+  
   def daily_summary
     summary = { minutes: 0, cals_burned: 0 }
     loggings = self.exercise_loggings.includes(:exercise)
