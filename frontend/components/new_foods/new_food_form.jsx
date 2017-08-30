@@ -30,15 +30,20 @@ class NewFoodForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // const food = {
-    //   servings: this.state.servings,
-    //   meal: this.state.meal,
-    //   food_id: this.props.food.id,
-    //   food_diary_id: this.props.diary.id
-    // };
+    const foodLogging = {
+      servings: this.state.servings,
+      meal: this.state.meal,
+      food_diary_id: this.props.diary.id
+    };
 
     if (this.state.addToDiary) {
-
+      this.props.addNewFood(this.props.diary, this.state)
+      .then(
+        () => {
+          foodLogging.food_id = this.props.food.id;
+          this.props.addFoodEntry(this.props.diary, foodLogging);
+        }
+      ).then(() => this.props.history.push(`/food-diary/${this.props.diary.id}`));
     } else {
       this.props.addNewFood(this.props.diary, this.state)
       .then(
@@ -55,6 +60,7 @@ class NewFoodForm extends React.Component {
   render() {
     return (
       <div className="new-form">
+
         <form>
           <h1>Enter Nutritional Information</h1>
 

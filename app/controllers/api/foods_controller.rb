@@ -1,6 +1,5 @@
 class Api::FoodsController < ApplicationController
   def create
-    debugger
     @food = Food.new(food_params)
 
     if @food.save
