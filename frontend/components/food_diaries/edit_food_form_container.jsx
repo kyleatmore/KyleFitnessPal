@@ -5,7 +5,9 @@ import EditFoodForm from './edit_food_form';
 
 
 const mapStateToProps = (state) => {
-
+  return {
+    errors: state.ui.errors,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -16,4 +18,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(EditFoodForm);
+export default connect(mapStateToProps, mapDispatchToProps)(EditFoodForm);

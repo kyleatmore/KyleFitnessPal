@@ -48,13 +48,21 @@ class EditFoodForm extends React.Component {
   }
 
   render() {
-    const { selectedEntry } = this.props;
+    const { selectedEntry, errors } = this.props;
     if (!selectedEntry) {
       return null;
     }
+
+    const errorItems = errors.map((error, idx) => {
+      return(<li key={idx}>{error}</li>);
+    });
+    
     return (
       <div className="add-form edit">
+
         <section className="add-form modal">
+          <ul className="errors">{errorItems}</ul>
+
           <span className="modal-close" onClick={this.clearModal}>&times;</span>
           <form>
             <p className="food-name">{`${selectedEntry.brand} - ${selectedEntry.name}`}</p>
@@ -80,7 +88,7 @@ class EditFoodForm extends React.Component {
             </select>
 
             <input
-              className="add-food button"
+              className="edit-food button"
               type="submit"
               value="Save"
               onClick={this.handleSubmit}

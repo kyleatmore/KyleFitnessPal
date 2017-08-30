@@ -68,6 +68,7 @@ export const updateFoodEntry = (diary, foodLogging) => (dispatch) => {
     .then(
       diary => {
         dispatch(receiveSingleDiary(diary));
-      }
-    )
-}
+      },
+      errors => dispatch(receiveDiaryErrors(errors.responseJSON))
+    );
+};

@@ -182,6 +182,7 @@ th > span {
 .add-form.modal {
   height: 200px;
   padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .add-form.edit {
@@ -194,4 +195,8 @@ th > span {
 
 .diary-row.green {
   color: #197910;
+}
+
+.edit-food.button {
+  margin: 20px 45px;
 }

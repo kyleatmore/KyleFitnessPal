@@ -40,7 +40,7 @@ class AddFoodForm extends React.Component {
     if (!food) {
       return(<div className="add-form"></div>);
     }
-    
+
     const errorItems = errors.map((error, idx) => {
       return(<li key={idx}>{error}</li>);
     });
