@@ -31,7 +31,7 @@ class ExerciseDiaryIndex extends React.Component {
                 selectEntry={this.selectEntry}/>;
     });
     const { currentUser, exerciseDiary } = this.props;
-    const { dailySummary} = exerciseDiary;
+    const { dailySummary, weeklySummary } = exerciseDiary;
 
     return (
       <div>
@@ -70,10 +70,10 @@ class ExerciseDiaryIndex extends React.Component {
 
             <tr className="diary-totals">
               <td className="total-category">Weekly Total / <span className="exercise-target">Goal</span></td>
-              <td className="diary-row">{`TBD / `}
+              <td className="diary-row">{`${weeklySummary.minutes} / `}
                 <span className="exercise-target">90</span>
               </td>
-              <td className="diary-row">{`TBD / `}
+              <td className="diary-row">{`${weeklySummary.cals_burned} / `}
                 <span className="exercise-target">600</span>
               </td>
             </tr>
