@@ -69,7 +69,7 @@
 }
 
 .diary-row {
-  max-width: 40px;
+  width: 40px;
   font-size: 12px;
   text-align: center;
   padding: 5px 10px;
@@ -77,13 +77,20 @@
   border-right: 1px solid white;
 }
 
-.macro-header {
+.macro-header, .exercise-header {
   background-color: #00548f;
   color: white;
   font-weight: bold;
   border: 1px solid white;
   vertical-align: middle;
+}
+
+.macro-header {
   width: 60px;
+}
+
+.exercise-header {
+  width: 120px;
 }
 
 th > span {
@@ -199,4 +206,9 @@ th > span {
 
 .edit-food.button {
   margin: 20px 45px;
+}
+
+.exercise-target {
+  color: #0a5282;
+  font-size: 14px;
 }

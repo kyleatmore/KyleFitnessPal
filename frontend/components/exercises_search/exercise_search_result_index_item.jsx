@@ -10,6 +10,10 @@ const ExerciseSearchResultIndexItem = ({ exercise, selectExercise }) => {
             {exercise.name}
           </button>
         </li>
+
+        <li className="food-description">
+          {`${exercise.cals_burned_per_min} cals per min`}
+        </li>
       </ul>
     </li>
   );

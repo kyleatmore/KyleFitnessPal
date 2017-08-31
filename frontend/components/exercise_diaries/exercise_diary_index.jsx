@@ -39,8 +39,8 @@ class ExerciseDiaryIndex extends React.Component {
           <tbody>
             <tr className="meal-category">
               <th className="diary category first">Exercise</th>
-              <th className="macro-header diary-row">Minutes</th>
-              <th className="macro-header diary-row">Calories Burned</th>
+              <th className="exercise-header diary-row">Minutes</th>
+              <th className="exercise-header diary-row">Calories Burned</th>
             </tr>
 
             {exerciseItems}
@@ -59,15 +59,23 @@ class ExerciseDiaryIndex extends React.Component {
             </tr>
 
             <tr className="diary-totals">
-              <td className="total-category">Daily Total / Goal</td>
-              <td className="diary-row">{`${dailySummary.minutes} / 30`}</td>
-              <td className="diary-row">{`${dailySummary.cals_burned} / 200`}</td>
+              <td className="total-category">Daily Total / <span className="exercise-target">Goal</span></td>
+              <td className="diary-row">{`${dailySummary.minutes} / `}
+                <span className="exercise-target">30</span>
+              </td>
+              <td className="diary-row">{`${dailySummary.cals_burned} / `}
+                <span className="exercise-target">200</span>
+              </td>
             </tr>
 
             <tr className="diary-totals">
-              <td className="total-category">Weekly Total / Goal</td>
-              <td className="diary-row">{`TBD / 90`}</td>
-              <td className="diary-row">{`TBD / 600`}</td>
+              <td className="total-category">Weekly Total / <span className="exercise-target">Goal</span></td>
+              <td className="diary-row">{`TBD / `}
+                <span className="exercise-target">90</span>
+              </td>
+              <td className="diary-row">{`TBD / `}
+                <span className="exercise-target">600</span>
+              </td>
             </tr>
           </tbody>
         </table>
