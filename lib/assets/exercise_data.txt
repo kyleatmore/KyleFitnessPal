@@ -1,0 +1,1206 @@
+accordion	music playing
+2
+aerobic, general	dancing
+8
+aerobic, high impact	dancing
+9
+aerobic, low impact	dancing
+6
+aerobic, step, with 10 - 12 inch step	dancing
+13
+aerobic, step, with 6 - 8 inch step	dancing
+11
+airplane repair	home repair
+4
+Anishinaabe Jingle Dancing or other traditional American Indian dancing	dancing
+7
+archery (non-hunting)	sports	
+4
+automobile body work	home repair
+5
+automobile or light truck (not a semi) driving	transportation
+3
+automobile repair	home repair
+4
+backpacking (Taylor Code 050)	walking
+9
+badminton, competitive (Taylor Code 450)	sports
+9
+badminton, social singles and doubles, general	sports
+6
+bakery, general, moderate effort	occupation
+5
+bakery, light effort	occupation
+3
+ballet or modern, twist, jazz, tap, jitterbug	dancing
+6
+ballroom, dancing fast (Taylor Code 125)	dancing
+7
+ballroom, fast (disco, folk, square), line dancing, Irish step dancing, polka, contra, country	dancing
+6
+ballroom, slow (e.g. waltz, foxtrot, slow dancing), samba, tango, 19th C, mambo, chacha	dancing
+4
+basketball, game (Taylor Code 490)	sports
+10
+basketball, non-game, general (Taylor Code 480)	sports
+8
+basketball, officiating (Taylor Code 500)	sports
+9
+basketball, shooting baskets	sports
+6
+bathing (sitting)	self care
+2
+bicycling, >20 mph, racing, not drafting	bicycling
+20
+bicycling, <10 mph, leisure, to work or for pleasure (Taylor Code 115)	bicycling
+5
+bicycling, 10-11.9 mph, leisure, slow, light effort	bicycling
+8
+bicycling, 12-13.9 mph, leisure, moderate effort	bicycling
+10
+bicycling, 14-15.9 mph, racing or leisure, fast, vigorous effort	bicycling
+13
+bicycling, 16-19 mph, racing/not drafting or >19 mph drafting, very fast, racing general	bicycling
+15
+bicycling, general	bicycling
+10
+bicycling, stationary, 100 watts, light effort	conditioning exercise
+7
+bicycling, stationary, 150 watts, moderate effort	conditioning exercise
+9
+bicycling, stationary, 200 watts, vigorous effort	conditioning exercise
+13
+bicycling, stationary, 250 watts, very vigorous effort	conditioning exercise
+16
+bicycling, stationary, 50 watts, very light effort	conditioning exercise
+4
+bicycling, stationary, general	conditioning exercise
+9
+billiards	sports
+3
+bird watching	walking
+3
+boating, power	water activities
+3
+bookbinding	occupation
+3
+bowling (Taylor Code 390)	sports
+4
+boxing, in ring, general	sports
+15
+boxing, punching bag	sports
+8
+boxing, sparring	sports
+11
+broomball	sports
+9
+building a fire inside	home activities
+3
+building road (including hauling debris, driving heavy machinery)	occupation
+8
+building road, directing traffic (standing)	occupation
+3
+butchering animals	home activities
+8
+calisthenics (e.g. pushups, situps, pullups, jumping jacks), heavy, vigorous effort	conditioning exercise
+10
+calisthenics, home exercise, light or moderate effort, general (example: back exercises), going up & down from floor (Taylor Code 150)	conditioning exercise
+4
+camping involving standing, walking, sitting, light-to-moderate effort	inactivity quiet
+3
+canoeing, harvesting wild rice, knocking rice off the stalks	water activities
+4
+canoeing, on camping trip (Taylor Code 270)	water activities
+5
+canoeing, portaging	water activities
+9
+canoeing, rowing, >6 mph, vigorous effort	water activities
+15
+canoeing, rowing, 2.0-3.9 mph, light effort	water activities
+4
+canoeing, rowing, 4.0-5.9 mph, moderate effort	water activities
+9
+canoeing, rowing, for pleasure, general (Taylor Code 250)	water activities
+4
+canoeing, rowing, in competition, or crew or sculling (Taylor Code 260)	water activities
+15
+carpentry, finishing or refinishing cabinets or furniture	home repair
+6
+carpentry, general	occupation
+4
+carpentry, general, workshop (Taylor Code 620)	home repair
+4
+carpentry, outside house, installing rain gutters, building a fence, (Taylor Code 640)	home repair
+8
+carpentry, sawing hardwood	home repair
+10
+carpet sweeping, sweeping floors	home activities
+4
+carrying 1 to 15 lb load, upstairs	walking
+6
+carrying 16 to 24 lb load, upstairs	walking
+8
+carrying 25 to 49 lb load, upstairs	walking
+10
+carrying 50 to 74 lb load, upstairs	walking
+13
+carrying 74+ lb load, upstairs	walking
+15
+carrying groceries upstairs	home activities
+10
+carrying heavy loads, such as bricks	occupation
+10
+carrying infant or 15 pound load (e.g. suitcase), level ground or downstairs	walking
+4
+carrying load upstairs, general	walking
+11
+carrying moderate loads up stairs, moving boxes (16-40 pounds)	occupation
+10
+carrying small children	home activities
+4
+carrying, loading or stacking wood, loading/unloading or carrying lumber	lawn and garden
+6
+caulking, chinking log cabin	home repair
+6
+caulking, except log cabin	home repair
+6
+cello	music playing
+3
+chambermaid, making bed (nursing)	occupation
+3
+child care: sitting/kneeling - dressing, bathing, grooming, feeding, occasional lifting of child-light effort, general	home activities
+3
+child care: standing - dressing, bathing, grooming, feeding, occasional lifting of child-light effort	home activities
+4
+children's games (hopscotch, 4-square, dodge ball, playground apparatus, t-ball, tetherball, marbles, jacks, acrace games)	sports
+6
+chopping wood, splitting logs	lawn and garden
+8
+circuit training, including some aerobic movement with minimal rest, general	conditioning exercise
+10
+cleaning church	religious activities
+4
+cleaning gutters	home repair
+6
+cleaning, heavy or major (e.g. wash car, wash windows, clean garage), vigorous effort	home acivities
+4
+cleaning, house or cabin, general	home activities
+4
+cleaning, light (dusting, straightening up, changing linen, carrying out trash)	home activities
+3
+clearing land, hauling branches, wheelbarrow chores	lawn and garden
+6
+climbing hills with 0 to 9 pound load	walking
+9
+climbing hills with 10 to 20 pound load	walking
+10
+climbing hills with 21 to 42 pound load	walking
+10
+climbing hills with 42+ pound load	walking
+11
+coaching: football, soccer, basketball, baseball, swimming, etc.	sports
+5
+coal mining, drilling coal, rock	occupation
+8
+coal mining, erecting supports	occupation
+8
+coal mining, general	occupation
+8
+coal mining, shoveling coal	occupation
+9
+conducting	music playing
+3
+construction, outside, remodeling	occupation
+7
+cooking Indian bread on an outside stove	home activities
+4
+cooking or food preparation - standing or sitting or in general (not broken into stand/walk components), manual appliances	home activities
+3
+cooking or food preparation - walking	home activities
+3
+cricket (batting, bowling)	sports
+6
+croquet	sports
+3
+curling	sports
+5
+custodial work - buffing the floor with electric buffer	occupation
+4
+custodial work - cleaning sink and toilet, light effort	occupation
+3
+custodial work - dusting, light effort	occupation
+3
+custodial work - general cleaning, moderate effort	occupation
+4
+custodial work - mopping, moderate effort	occupation
+4
+custodial work - take out trash, moderate effort	occupation
+4
+custodial work - vacuuming, light effort	occupation
+3
+custodial work - vacuuming, moderate effort	occupation
+4
+custodial work - feathering arena floor, moderate effort	occupation
+5
+darts, wall or lawn	sports
+3
+digging sandbox	lawn and garden
+6
+digging worms, with shovel	fishing and hunting
+5
+digging, spading, filling garden, composting, (Taylor Code 590)	lawn and garden
+6
+diving, springboard or platform	water activities
+4
+downstairs	walking
+4
+drag racing, pushing or driving a car	sports
+8
+dressing, undressing (standing or sitting)	self care
+3
+driving heavy truck, tractor, bus	transportation
+4
+drums	music playing
+5
+eating (sitting)	self care
+2
+eating at church	religious activities
+2
+eating/talking at church or standing eating, American Indian Feast days	religious activities
+3
+elder care, disabled adult, only active periods	home activities
+5
+electrical work, plumbing	occupation
+4
+excavating garage	home repair
+6
+farming, baling hay, cleaning barn, poultry work, vigorous effort	occupation
+10
+farming, chasing cattle or other livestock on horseback, moderate effort	occupation
+5
+farming, chasing cattle or other livestock, driving, light effort	occupation
+3
+farming, chasing cattle, non-strenuous (walking), moderate effort	occupation
+4
+farming, driving harvester, cutting hay, irrigation work	occupation
+3
+farming, driving tractor	occupation
+3
+farming, feeding cattle, horses	occupation
+6
+farming, feeding small animals	occupation
+5
+farming, forking straw bales, cleaning corral or barn, vigorous effort	occupation
+10
+farming, hauling water for animals, general hauling water	occupation
+6
+farming, milking by hand, moderate effort	occupation
+4
+farming, milking by machine, light effort	occupation
+2
+farming, shoveling grain, moderate effort	occupation
+7
+farming, taking care of animals (grooming, brushing, shearing sheep, assisting with birthing, medical care, branding)	occupation
+8
+feeding animals	home activities
+3
+fencing	sports
+8
+fire fighter, climbing ladder with full gear	occupation
+14
+fire fighter, general	occupation
+15
+fire fighter, hauling hoses on ground	occupation
+10
+fishing from boat, sitting	fishing and hunting
+3
+fishing from river bank and walking	fishing and hunting
+5
+fishing from river bank, standing (Taylor Code 660)	fishing and hunting
+4
+fishing in stream, in waders (Taylor Code 670)	fishing and hunting
+8
+fishing, general	fishing and hunting
+4
+fishing, ice, sitting	fishing and hunting
+3
+flute (sitting)	music playing
+3
+flying airplane	transportation
+3
+food shopping with or without a grocery cart, standing or walking	home activities
+3
+football or baseball, playing catch	sports
+3
+football, competitive	sports
+11
+football, touch, flag, general (Taylor Code 510)	sports
+10
+forestry, ax chopping, fast	occupation
+22
+forestry, ax chopping, slow	occupation
+6
+forestry, barking trees	occupation
+9
+forestry, carrying logs	occupation
+14
+forestry, felling trees	occupation
+10
+forestry, general	occupation
+10
+forestry, hoeing	occupation
+6
+forestry, planting by hand	occupation
+8
+forestry, sawing by hand	occupation
+9
+forestry, sawing, power	occupation
+6
+forestry, trimming trees	occupation
+11
+forestry, weeding	occupation
+5
+frisbee playing, general	sports
+4
+frisbee, ultimate	sports
+10
+furriery	occupation
+6
+gardening with heavy power tools, tilling a garden, chain saw	lawn and garden
+8
+gardening, general	lawn and garden
+5
+general yard work at church	religious activities
+6
+general, Greek, Middle Eastern, hula, flamenco, belly, and swing dancing	dancing
+6
+general, moderate effort	sexual activity
+2
+golf, general	sports
+6
+golf, miniature, driving range	sports
+4
+golf, using power cart (Taylor Code 070)	sports
+4
+golf, walking and carrying clubs (See footnote at end of the Compendium)	sports
+6
+golf, walking and pulling clubs (See footnote at end of the Compendium)	sports
+5
+grooming (washing, shaving, brushing teeth, urinating, washing hands, putting on make-up), sitting or standing	self care
+3
+guitar, classical, folk (sitting)	music playing
+3
+guitar, rock and roll band (standing)	music playing
+4
+gymnastics, general	sports
+5
+hacky sack	sports
+5
+hairstyling	self care
+3
+hand gliding	sports
+4
+handball, general (Taylor Code 520)	sports
+15
+handball, team	sports
+10
+hanging storm windows	home repair
+6
+having hair or nails done by someone else, sitting	self care
+1
+health club exercise, general (Taylor Code 160)	conditioning exercise
+7
+hiking, cross country (Taylor Code 040)	walking
+8
+hockey, field	sports
+10
+hockey, ice	sports
+10
+horn	music playing
+3
+horse grooming	occupation
+8
+horse racing, galloping	occupation
+10
+horse racing, trotting	occupation
+8
+horse racing, walking	occupation
+3
+horseback riding, general	sports
+5
+horseback riding, saddling horse, grooming horse	sports
+4
+horseback riding, trotting	sports
+8
+horseback riding, walking	sports
+3
+horseshoe pitching, quoits	sports
+4
+hunting, bow and arrow or crossbow	fishing and hunting
+3
+hunting, deer, elk, large game (Taylor Code 170)	fishing and hunting
+8
+hunting, duck, wading	fishing and hunting
+3
+hunting, general	fishing and hunting
+6
+hunting, pheasants or grouse (Taylor Code 680)	fishing and hunting
+8
+hunting, rabbit, squirrel, prairie chick, raccoon, small game (Taylor Code 690)	fishing and hunting
+6
+implied standing - laundry, fold or hang clothes, put clothes in washer or dryer, packing suitcase	home activities
+3
+implied walking - putting away clothes, gathering clothes to pack, putting away laundry	home activities
+3
+implied walking - putting away household items - moderate effort	home activities
+4
+implied walking/standing - picking up yard, light, picking flowers or vegetables	lawn and garden
+4
+ironing	home activities
+3
+jai alai	sports
+15
+jog/walk combination (jogging component of less than 10 minutes) (Taylor Code 180)	running
+8
+jogging on a mini-tramp	running
+6
+jogging, general	running
+9
+jogging, in place	running
+10
+judo, jujitsu, karate, kick boxing, tae kwan do	sports
+13
+juggling	sports
+5
+kayaking	water activities
+6
+kickball	sports
+9
+kneeling in church/at home (praying)	religious activities
+1
+lacrosse	sports
+10
+laying crushed rock	lawn and garden
+6
+laying or removing carpet	home repair
+6
+laying sod	lawn and garden
+6
+laying tile or linoleum, repairing appliances	home repair
+6
+lifting items continuously, 10 - 20 lbs, with limited walking or resting	occupation
+5
+loading /unloading a car	walking
+4
+locksmith	occupation
+4
+lying quietly, doing nothing, lying in bed awake, listening to music (not talking or reading)	inactivity quiet
+1
+lying quietly, watching television	inactivity quiet
+1
+machine tooling, machining, working sheet metal	occupation
+3
+machine tooling, operating lathe	occupation
+4
+machine tooling, operating punch press	occupation
+6
+machine tooling, tapping and drilling	occupation
+5
+machine tooling, welding	occupation
+4
+making bed	home activities
+3
+maple syruping/sugar bushing (including carrying buckets, carrying wood)	home activities
+6
+marching band, drum major (walking)	music playing
+4
+marching band, playing an instrument, baton twirling (walking)	music playing
+5
+marching, rapidly, military	walking
+8
+masonry, concrete	occupation
+9
+masseur, masseuse (standing)	occupation
+5
+meditating	inactivity quiet
+1
+mild stretching	conditioning exercise
+3
+mopping	home activities
+4
+motor scooter, motorcycle	transportation
+3
+motor-cross	sports
+5
+moving furniture, household items, carrying boxes	home activities
+8
+moving household items upstairs, carrying boxes or furniture	home activities
+11
+moving ice house (set up/drill holes, etc.)	winter activities
+8
+moving, pushing heavy objects, 75 lbs or more (desks, moving van work)	occupation
+10
+mowing lawn, general	lawn and garden
+7
+mowing lawn, power mower (Taylor Code 590)	lawn and garden
+6
+mowing lawn, riding mower (Taylor Code 550)	lawn and garden
+3
+mowing lawn, walk, hand mower (Taylor Code 570)	lawn and garden
+8
+mowing lawn, walk, power mower	lawn and garden
+7
+multiple household tasks all at once, light effort	home activities
+3
+multiple household tasks all at once, moderate effort	home activities
+4
+multiple household tasks all at once, vigorous effort	home activities
+5
+non-food shopping, standing or walking	home activities
+3
+operating heavy duty equipment/automated, not driving	occupation
+3
+operating snow blower, walking	lawn and garden
+6
+orange grove work	occupation
+6
+orienteering	sports
+11
+paddle boat	water activities
+5
+paddleball, casual, general (Taylor Code 460)	sports
+8
+paddleball, competitive	sports
+13
+painting, (Taylor Code 630)	home repair
+6
+painting, outside home (Taylor Code 650)	home repair
+6
+painting, papering, plastering, scraping, inside house, hanging sheet rock, remodeling	home repair
+4
+passive, light effort, kissing, hugging	sexual activity
+1
+piano or organ	music playing
+3
+picking fruit off trees, picking fruits/vegetables, moderate effort	lawn and garden
+4
+pistol shooting or trap shooting, standing	fishing and hunting
+3
+planting seedlings, shrubs	lawn and garden
+6
+planting trees	lawn and garden
+6
+police, directing traffic (standing)	occupation
+3
+police, driving a squad car (sitting)	occupation
+3
+police, making an arrest (standing)	occupation
+5
+police, riding in a squad car (sitting)	occupation
+2
+polo	sports
+10
+praise with dance or run, spiritual dancing in church	religious activities
+6
+preparing food at church	religious activities
+3
+printing (standing)	occupation
+3
+pushing a wheelchair, non-occupational setting	walking
+5
+pushing or pulling stroller with child or walking with children	walking
+3
+pushing plane in and out of hangar	transportation
+8
+put on and removal of tarp - sailboat	home repair
+4
+putting away groceries (e.g. carrying groceries, shopping without a grocery cart), carrying packages	home activities
+3
+race walking	walking
+8
+racquetball, casual, general (Taylor Code 470)	sports
+9
+racquetball, competitive	sports
+13
+raking lawn	lawn and garden
+5
+raking lawn (Taylor Code 600)	lawn and garden
+5
+raking roof with snow rake	lawn and garden
+5
+reclining - reading	inactivity quiet
+1
+reclining - talking or talking on phone	inactivity quiet
+1
+reclining - writing	inactivity quiet
+1
+reclining with baby	home activities
+2
+retreat/family reunion activities involving sitting, relaxing, talking, eating	inactivity quiet
+2
+riding in a bus	transportation
+1
+riding in a car or truck	transportation
+1
+riding snow blower	lawn and garden
+4
+rock climbing, ascending rock	sports
+14
+rock climbing, rappelling	sports
+10
+rock or mountain climbing (Taylor Code 060)	walking
+10
+roller blading (in-line skating)	sports
+15
+roofing	home repair
+8
+rope jumping, fast	sports
+15
+rope jumping, moderate, general	sports
+13
+rope jumping, slow	sports
+10
+rowing, stationary ergometer, general	conditioning exercise
+9
+rowing, stationary, 100 watts, moderate effort	conditioning exercise
+9
+rowing, stationary, 150 watts, vigorous effort	conditioning exercise
+11
+rowing, stationary, 200 watts, very vigorous effort	conditioning exercise
+15
+rowing, stationary, 50 watts, light effort	conditioning exercise
+4
+rugby	sports
+13
+running (Taylor Code 200)	running
+10
+running, 10 mph (6 min/mile)	running
+20
+running, 10.9 mph (5.5 min/mile)	running
+23
+running, 5 mph (12 min/mile)	running
+10
+running, 5.2 mph (11.5 min/mile)	running
+11
+running, 6 mph (10 min/mile)	running
+13
+running, 6.7 mph (9 min/mile)	running
+14
+running, 7 mph (8.5 min/mile)	running
+15
+running, 7.5 mph (8 min/mile)	running
+16
+running, 8 mph (7.5 min/mile)	running
+17
+running, 8.6 mph (7 min/mile)	running
+18
+running, 9 mph (6.5 min/mile)	running
+19
+running, cross country	running
+11
+running, on a track, team practice	running
+13
+running, stairs, up	running
+19
+running, training, pushing a wheelchair	running
+10
+sacking grass, leaves	lawn and garden
+5
+sailing, boat and board sailing, windsurfing, ice sailing, general (Taylor Code 235)	water activities
+4
+sailing, in competition	water activities
+6
+sailing, Sunfish/Laser/Hobby Cat, Keel boats, ocean sailing, yachting	water activities
+4
+sanding floors with a power sander	home repair
+6
+scraping and painting sailboat or powerboat	home repair
+6
+scrubbing floors, on hands and knees, scrubbing bathroom, bathtub	home activities
+5
+serving food at church	religious activities
+3
+serving food, setting table - implied walking or standing	home activities
+3
+shoe repair, general	occupation
+3
+shoveling snow, by hand (Taylor Code 610)	lawn and garden
+8
+shoveling, digging ditches	occupation
+11
+shoveling, heavy (more than 16 pounds/minute)	occupation
+11
+shoveling, light (less than 10 pounds/minute)	occupation
+8
+shoveling, moderate (10 to 15 pounds/minute)	occupation
+9
+showering, toweling off (standing)	self care
+3
+shuffleboard, lawn bowling	sports
+4
+sit, play ing with animals, light, only active periods	home activities
+3
+sitting - arts and crafts, light effort	inactivity quiet
+2
+sitting - arts and crafts, moderate effort	inactivity quiet
+3
+sitting - card playing, playing board games	inactivity quiet
+2
+sitting - in class, general, including note-taking or class discussion	inactivity quiet
+2
+sitting - knitting, sewing, lt. wrapping (presents)	home activities
+2
+sitting - light office work, general (chemistry lab work, light use of hand tools, watch repair or micro-assembly, light assembly/repair), sitting, reading, driving at wo	occupation
+2
+sitting - light office work, in general	volunteer activities
+2
+sitting - meeting, general, and/or with talking involved	volunteer activities
+2
+sitting - moderate work	volunteer activities
+3
+sitting - playing with child(ren) - light, only active periods	home activities
+3
+sitting - reading, book, newspaper, etc.	inactivity quiet
+2
+sitting - studying, general, including reading and/or writing	inactivity quiet
+2
+sitting - talking or talking on the phone	inactivity quiet
+2
+sitting - writing, desk work, typing	inactivity quiet
+2
+sitting at a sporting event, spectator	inactivity quiet
+2
+sitting in church, in service, attending a ceremony, sitting quietly	religious activities
+1
+sitting in church, talking or singing, attending a ceremony, sitting, active participation	religious activities
+2
+sitting meetings, general, and/or with talking involved, eatting at a business meeting	occupation
+2
+sitting on toilet	self care
+1
+sitting quietly and watching television	inactivity quiet
+1
+sitting quietly, sitting smoking, listening to music (not talking or reading), watching a movie in a theater	inactivity quiet
+1
+sitting, child care, only active periods	volunteer activities
+3
+sitting, playing an instrument at church	religious activities
+3
+sitting, reading religious materials at home	religious activities
+2
+sitting; moderate (heavy levers, riding mower/forklift, crane operation), teaching stretching or yoga	occupation
+3
+skateboarding	sports
+6
+skating, ice, 9 mph or less	winter activities
+7
+skating, ice, general (Taylor Code 360)	winter activities
+9
+skating, ice, rapidly, more than 9 mph	winter activities
+11
+skating, roller (Taylor Code 360)	sports
+9
+skating, speed, competitive	winter activities
+19
+ski jumping (climb up carrying skis)	winter activities
+9
+ski machine, general	conditioning exercise
+9
+skiing, cross country, >8.0 mph, racing	winter activities
+18
+skiing, cross country, 2.5 mph, slow or light effort, ski walking	winter activities
+9
+skiing, cross country, 4.0-4.9 mph, moderate speed and effort, general	winter activities
+10
+skiing, cross country, 5.0-7.9 mph, brisk speed, vigorous effort	winter activities
+11
+skiing, cross country, hard snow, uphill, maximum, snow mountaineering	winter activities
+21
+skiing, downhill, light effort	winter activities
+6
+skiing, downhill, moderate effort, general	winter activities
+8
+skiing, downhill, vigorous effort, racing	winter activities
+10
+skiing, general	winter activities
+9
+skiing, water (Taylor Code 220)	water activities
+8
+skimobiling	water activities
+9
+skindiving or SCUBA diving as a frogman (Navy Seal)	occupation
+15
+skindiving, fast	water activities
+20
+skindiving, moderate	water activities
+16
+skindiving, scuba diving, general (Taylor Code 310)	water activities
+9
+sky diving	sports
+4
+sledding, tobogganing, bobsledding, luge (Taylor Code 370)	winter activities
+9
+sleeping	inactivity quiet
+1
+slimnastics, jazzercise	conditioning exercise
+8
+snorkeling (Taylor Code 320)	water activities
+6
+snow shoeing	winter activities
+10
+snowmobiling	winter activities
+4
+soccer, casual, general (Taylor Code 540)	sports
+9
+soccer, competitive	sports
+13
+softball or baseball, fast or slow pitch, general (Taylor Code 440)	sports
+6
+softball, officiating	sports
+5
+softball, pitching	sports
+8
+spreading dirt with a shovel	home repair
+6
+squash (Taylor Code 530)	sports
+15
+stair-treadmill ergometer, general	conditioning exercise
+11
+stand, playing with animals, light, only active periods	home activities
+4
+standing - arts and crafts, light effort	inactivity quiet
+2
+standing - arts and crafts, moderate effort	inactivity quiet
+4
+standing - arts and crafts, vigorous effort	inactivity quiet
+4
+standing - bathing dog	home activities
+4
+standing - drawing (writing), casino gambling, duplicating machine	inactivity quiet
+3
+standing - getting ready for bed, in general	self care
+3
+standing - light (pump gas, change light bulb, etc.)	home activities
+3
+standing - light work (filing, talking, assembling)	volunteer activities
+3
+standing - light/moderate work (pack boxes, assemble/repair, set up chairs/furniture)	volunteer activities
+4
+standing - miscellaneous	inactivity quiet
+3
+standing - moderate (lifting 50 lbs., assembling at fast rate)	volunteer activities
+4
+standing - moderate (lifting 50 lbs., assembling at fast rate)	religious activities
+3
+standing - moderate/heavy work	volunteer activities
+5
+standing - moderate/heavy work	religious activities
+5
+standing - packing/unpacking boxes, occasional lifting of household items light - moderate effort	home activities
+4
+standing - playing with child(ren) - light, only active periods	home activities
+4
+standing - reading	inactivity quiet
+2
+standing - talking or talking on the phone	inactivity quiet
+2
+standing in church (quietly), attending a ceremony, standing quietly	religious activities
+2
+standing quietly (standing in a line)	inactivity quiet
+2
+standing, child care, only active periods	volunteer activities
+4
+standing, singing in church, attending a ceremony, standing, active participation	religious activities
+3
+standing, talking in church	religious activities
+2
+standing; light (bartending, store clerk, assembling, filing, duplicating, putting up a Christmas tree), standing and talking at work, changing clothes when teaching p	occupation
+3
+standing; light/moderate (assemble/repair heavy parts, welding, stocking, auto repair, pack boxes for moving, etc.), patient care (as in nursing)	occupation
+4
+standing; moderate (assembling at fast rate, intermittent, lifting 50 lbs, hitch/twisting ropes)	occupation
+4
+standing; moderate/heavy (lifting more than 50 lbs, masonry, painting, paper hanging)	occupation
+5
+steel mill, fettling	occupation
+6
+steel mill, forging	occupation
+7
+steel mill, hand rolling	occupation
+10
+steel mill, merchant mill rolling	occupation
+10
+steel mill, removing slag	occupation
+14
+steel mill, tending furnace	occupation
+10
+steel mill, tipping molds	occupation
+7
+steel mill, working in general	occupation
+10
+stretching, hatha yoga	conditioning exercise
+3
+surfing, body or board	water activities
+4
+sweeping garage, sidewalk or outside of house	home activities
+5
+swimming laps, freestyle, fast, vigorous effort	water activities
+13
+swimming laps, freestyle, slow, moderate or light effort	water activities
+9
+swimming, backstroke, general	water activities
+9
+swimming, breaststroke, general	water activities
+13
+swimming, butterfly, general	water activities
+14
+swimming, crawl, fast (75 yards/minute), vigorous effort	water activities
+14
+swimming, crawl, slow (50 yards/minute), moderate or light effort	water activities
+10
+swimming, lake, ocean, river (Taylor Codes 280, 295)	water activities
+8
+swimming, leisurely, not lap swimming, general	water activities
+8
+swimming, sidestroke, general	water activities
+10
+swimming, synchronized	water activities
+10
+swimming, treading water, fast vigorous effort	water activities
+13
+swimming, treading water, moderate effort, general	water activities
+5
+table tennis, ping pong (Taylor Code 410)	sports
+5
+tai chi	sports
+5
+tailoring, cutting	occupation
+3
+tailoring, general	occupation
+3
+tailoring, hand sewing	occupation
+3
+tailoring, machine sewing	occupation
+3
+tailoring, pressing	occupation
+5
+tailoring, weaving	occupation
+4
+taking medication, sitting or standing	self care
+1
+talking and eating or eating only (standing)	self care
+3
+teach physical education, exercise, sports classes (non-sport play)	occupation
+5
+teach physical education, exercise, sports classes (participate in the class)	occupation
+8
+teaching aerobic exercise class	conditioning exercise
+8
+tennis, doubles	sports
+6
+tennis, doubles (Taylor Code 430)	sports
+8
+tennis, general	sports
+9
+tennis, singles (Taylor Code 420)	sports
+10
+touring/traveling/vacation involving walking and riding	inactivity quiet
+3
+track and field (high jump, long jump, triple jump, javelin, pole vault)	sports
+8
+track and field (shot, discus, hammer throw)	sports
+5
+track and field (steeplechase, hurdles)	sports
+13
+trampoline	sports
+4
+trimming shrubs or trees, manual cutter	lawn and garden
+6
+trimming shrubs or trees, power cutter, using leaf blower, edger	lawn and garden
+4
+trombone	music playing
+4
+truck driving, loading and unloading truck (standing)	occupation
+8
+trumpet	music playing
+3
+typing, electric, manual or computer	occupation
+2
+typing, electric, manual, or computer	religious activities
+2
+typing, electric, manual, or computer	volunteer activities
+2
+unicycling	bicycling
+6
+up stairs, using or climbing up ladder (Taylor Code 030)	walking
+10
+using crutches	walking
+6
+using heavy power tools such as pneumatic tools (jackhammers, drills, etc.)	occupation
+8
+using heavy tools (not power) such as shovel, pick, tunnel bar, spade	occupation
+10
+vacuuming	home activities
+4
+violin	music playing
+3
+volleyball (Taylor Code 400)	sports
+5
+volleyball, beach	sports
+10
+volleyball, competitive, in gymnasium	sports
+10
+volleyball, non-competitive, 6 - 9 member team, general	sports
+4
+walk/run - playing with child(ren) - moderate, only active periods	home activities
+5
+walk/run - playing with child(ren) - vigorous, only active periods	home activities
+6
+walk/run play with children, moderate, only active periods	volunteer activities
+5
+walk/run play with children, vigorous, only active periods	volunteer activities
+6
+walk/run, playing with animals, light, only active periods	home activities
+4
+walk/run, playing with animals, moderate, only active periods	home activities
+5
+walk/run, playing with animals, vigorous, only active periods	home activities
+6
+walk/stand combination for religious purposes, usher	religious activities
+3
+walk/stand combination, for volunteer purposes	volunteer activities
+4
+walking - light, non-cleaning (readying to leave, shut/lock doors, close windows, etc.)	home activities
+4
+walking for pleasure (Taylor Code 010)	walking
+4
+walking from house to car or bus, from car or bus to go places, from car or bus to and from the worksite	walking
+3
+walking in church	religious activities
+3
+walking on job, 3.0 mph, in office, moderate speed, not carrying anything	occupation
+4
+walking on job, 3.5 mph, in office, brisk speed, not carrying anything	occupation
+5
+walking on job, less than 2.0 mph (in office or lab area), very slow	occupation
+3
+walking or walk downstairs or standing, carrying objects about 100 pounds or over	occupation
+11
+walking or walk downstairs or standing, carrying objects about 25 to 49 pounds	occupation
+6
+walking or walk downstairs or standing, carrying objects about 50 to 74 pounds	occupation
+8
+walking or walk downstairs or standing, carrying objects about 75 to 99 pounds	occupation
+10
+walking the dog	walking
+4
+walking to and from an outhouse	walking
+3
+walking to neighbor's house or family's house for social reasons	walking
+3
+walking, 2.0 mph, level, slow pace, firm surface	walking
+3
+walking, 2.5 mph slowly and carrying objects less than 25 pounds	volunteer activities
+4
+walking, 2.5 mph, downhill	walking
+4
+walking, 2.5 mph, firm surface	walking
+4
+walking, 2.5 mph, slowly and carrying light objects less than 25 pounds	occupation
+4
+walking, 3.0 mph moderately and carrying objects less than 25 pounds, pushing something	volunteer activities
+5
+walking, 3.0 mph, level, moderate pace, firm surface	walking
+4
+walking, 3.0 mph, moderate speed, not carrying anything	religious activities
+4
+walking, 3.0 mph, moderate speed, not carrying anything	volunteer activities
+4
+walking, 3.0 mph, moderately and carrying light objects less than 25 lbs	occupation
+5
+walking, 3.5 mph, brisk speed, not carrying anything	religious activities
+5
+walking, 3.5 mph, brisk speed, not carrying anything	volunteer activities
+5
+walking, 3.5 mph, briskly and carrying objects less than 25 pounds	volunteer activities
+6
+walking, 3.5 mph, briskly and carrying objects less than 25 pounds	occupation
+6
+walking, 3.5 mph, level, brisk, firm surface, walking for exercise	walking
+5
+walking, 3.5 mph, uphill	walking
+8
+walking, 4.0 mph, level, firm surface, very brisk pace	walking
+6
+walking, 4.5 mph, level, firm surface, very, very brisk	walking
+8
+walking, 5.0 mph	walking
+10
+walking, applying fertilizer or seeding a lawn	lawn and garden
+3
+walking, for pleasure, work break	walking
+4
+walking, gathering gardening tools	lawn and garden
+4
+walking, gathering things at work, ready to leave	occupation
+4
+walking, grass track	walking
+6
+walking, household walking	walking
+3
+walking, less than 2.0 mph - very slow	religious activities
+3
+walking, less than 2.0 mph, level ground, strolling, very slow	walking
+3
+walking, less than 2.0 mph, very slow	volunteer activities
+3
+walking, pushing a wheelchair	occupation
+5
+walking, to work or class (Taylor Code 015)	walking
+5
+wallyball, general	sports
+9
+wash dishes - standing or in general (not broken into stand/walk components)	home activities
+3
+wash dishes; clearing dishes from table - walking	home activities
+3
+washing and waxing hull of sailboat, car, powerboat, airplane	home repair
+6
+washing dishes/cleaning kitchen at church	religious activities
+3
+washing fence, painting fence	home repair
+6
+water aerobics, water calisthenics	conditioning exercise
+5
+water aerobics, water calisthenics	water activities
+5
+water jogging	water activities
+10
+water polo	water activities
+13
+water volleyball	water activities
+4
+watering plants	home activities
+3
+watering lawn or garden, standing or walking	lawn and garden
+2
+weeding, cultivating garden (Taylor Code 580)	lawn and garden
+6
+weight lifting (free weight, nautilus or universal-type), power lifting or body building, vigorous effort (Taylor Code 210)	conditioning exercise
+8
+weight lifting (free, nautilus or universal-type), light or moderate effort, light workout, general	conditioning exercise
+4
+wheelchair	sports
+8
+whirlpool, sitting	conditioning exercise
+1
+whitewater rafting, kayaking, or canoeing	water activities
+6
+wiring, plumbing	home repair
+4
+woodwind	music playing
+3
+working in scene shop, theater actor, backstage employee	occupation
+4
+wrestling (one match = 5 minutes)	sports
+8

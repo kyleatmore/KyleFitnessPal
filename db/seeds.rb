@@ -1,15 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Goal.destroy_all
 FoodDiary.destroy_all
 FoodLogging.destroy_all
 Food.destroy_all
+ExerciseDiary.destroy_all
+ExerciseLogging.destroy_all
+Exercise.destroy_all
 
 kyle = User.new(
   email: "kyledemo@gmail.com",
@@ -32,7 +28,7 @@ kyle.save!
 
 File.open("lib/assets/food_data.txt", "r") do |file|
   food_data = JSON.parse(file.read)
-  
+
   food_data.each do |food|
     Food.create(
     brand: "Generic",
@@ -43,5 +39,17 @@ File.open("lib/assets/food_data.txt", "r") do |file|
     fats: food["nutrients"][2]["value"],
     serving_size: food["measure"]
     )
+  end
+end
+
+File.open("lib/assets/exercise_data.txt", "r") do |file|
+  exercise_data = file.readlines
+  i = 0
+
+  while i < exercise_data.length
+    name = exercise_data[i].strip.split("\t").join(' ')
+    calories = Integer(exercise_data[i + 1])
+    Exercise.create(name: name, cals_burned_per_min: calories)
+    i += 2
   end
 end
