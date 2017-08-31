@@ -11,7 +11,6 @@ class ExerciseSearchResultsIndex extends React.Component {
 
   selectExercise(exercise) {
     return (e) => {
-      debugger
       this.setState({ selectedExercise: exercise });
     };
   }

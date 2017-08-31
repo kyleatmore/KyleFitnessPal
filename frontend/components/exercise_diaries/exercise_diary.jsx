@@ -26,7 +26,7 @@ class ExerciseDiary extends React.Component {
 
   render() {
     if (!this.props.exerciseDiary) return null;
-    debugger
+
     return (
       <div className="food-diary-container">
         <DiaryHeader
