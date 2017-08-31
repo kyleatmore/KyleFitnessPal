@@ -1,6 +1,6 @@
 import React from 'react';
 import ExerciseDiaryIndexItem from './exercise_diary_index_item';
-// import EditFoodFormContainer from './edit_food_form_container';
+import EditExerciseFormContainer from './edit_exercise_form_container';
 import { Link } from 'react-router-dom';
 
 class ExerciseDiaryIndex extends React.Component {
@@ -80,7 +80,11 @@ class ExerciseDiaryIndex extends React.Component {
           </tbody>
         </table>
 
-
+        <EditExerciseFormContainer
+          selectedEntry={this.state.selectedEntry}
+          clearSelectedEntry={this.clearSelectedEntry}
+          diary={exerciseDiary}
+        />
       </div>
     );
   }
