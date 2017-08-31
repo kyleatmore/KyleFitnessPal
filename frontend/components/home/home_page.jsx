@@ -34,11 +34,21 @@ class HomePage extends React.Component {
 
   render() {
     const { currentUser, diary, exerciseDiary } = this.props;
-
     if (!diary || !exerciseDiary) { return null; }
+
     const netCalories = diary.totalMacros.calories - exerciseDiary.dailySummary.cals_burned
     const caloriesPercent = Math.round((netCalories / currentUser.calorie_allowance) * 100);
-    const progressStyle = { width: `${caloriesPercent}%` }
+    let progressStyle, progressClass;
+    if (caloriesPercent <= 0) {
+      progressStyle = { width: "0%" };
+      progressClass = "under";
+    } else if (caloriesPercent > 100) {
+      progressStyle = { width: "100%" };
+      progressClass = "over";
+    } else {
+      progressStyle = { width: `${caloriesPercent}%` };
+      progressClass = "under";
+    }
 
     return (
       <div className="daily-summary">
@@ -59,7 +69,9 @@ class HomePage extends React.Component {
           <section className="summary-info">
             <span>Calories Remaining</span>
               <ul className="cals-remaining">
-                <li><strong>{currentUser.calorie_allowance - netCalories}</strong></li>
+                <li><strong className={progressClass}>
+                  {currentUser.calorie_allowance - netCalories}
+                </strong></li>
 
                 <li>
                   <ul className="add-buttons">
@@ -78,7 +90,7 @@ class HomePage extends React.Component {
               </ul>
 
             <ul className="net-calories">
-              <li>
+              <li className="home-page goal">
                 {currentUser.calorie_allowance}
                 <span>GOAL</span>
               </li>
@@ -86,12 +98,12 @@ class HomePage extends React.Component {
                 {diary.totalMacros.calories}
                 <span>FOOD</span>
               </li>
-              <li>-</li>
+              <li className="symbol">-</li>
               <li>
                 {exerciseDiary.dailySummary.cals_burned}
                 <span>EXERCISE</span>
               </li>
-              <li>=</li>
+              <li className="symbol">=</li>
               <li>
                 {netCalories}
                 <span>NET</span>
@@ -99,7 +111,9 @@ class HomePage extends React.Component {
             </ul>
 
             <div className="progress-bar">
-              <div className="progress" style={progressStyle}></div>
+              <div
+                className={`progress ${progressClass}`} style={progressStyle}>
+              </div>
             </div>
           </section>
         </div>

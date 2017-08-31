@@ -33,10 +33,21 @@
   align-items: center;
 }
 
+.net-calories {
+  justify-content: flex-start;
+}
+
 .summary-info strong {
-  color: #85C400;
   font-size: 45px;
   font-weight: bold;
+}
+
+.summary-info .under {
+  color: #85C400;
+}
+
+.summary-info .over {
+  color: red;
 }
 
 .summary-info a {
@@ -65,6 +76,12 @@
 .net-calories li {
   display: flex;
   flex-direction: column;
+  width: 70px;
+}
+
+.net-calories li.symbol {
+  width: 30px;
+  margin: 0 10px;
 }
 
 .net-calories span {
@@ -83,8 +100,15 @@
 }
 
 .progress {
-  background-color: #85C400;
   height: 12px;
+}
+
+.progress.under {
+  background-color: #85C400;
+}
+
+.progress.over {
+  background-color: red;
 }
 
 .profile-pic {
@@ -103,4 +127,10 @@
 .file-input label {
   cursor: pointer;
   color: #0072BC
+}
+
+.home-page.goal {
+  border-right: 1px solid #e6e6e6;
+  padding-right: 20px;
+  margin-right: 15px;
 }
