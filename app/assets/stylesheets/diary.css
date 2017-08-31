@@ -212,3 +212,12 @@ th > span {
   color: #0a5282;
   font-size: 14px;
 }
+
+p.additional-exercise {
+  font-size: 12px;
+  padding-top: 5px;
+}
+
+p.additional-exercise.hidden {
+  display: none;
+}

@@ -12,10 +12,22 @@ class FoodDiary extends React.Component {
     if (Object.keys(this.props.foods).length === 0) {
       this.props.requestAllFoods()
       .then(() => {
-        this.props.requestSingleDiary(this.props.match.params.diaryId);
+        this.props.requestSingleDiary(this.props.match.params.diaryId)
+          .then(
+            () => {
+              const diaryDate = this.props.diary.date;
+              this.props.findExerciseDiary(diaryDate);
+            }
+          );
       });
     } else {
-      this.props.requestSingleDiary(this.props.match.params.diaryId);
+      this.props.requestSingleDiary(this.props.match.params.diaryId)
+        .then(
+          () => {
+            const diaryDate = this.props.diary.date;
+            this.props.findExerciseDiary(diaryDate);
+          }
+        );
     }
   }
 
@@ -26,7 +38,7 @@ class FoodDiary extends React.Component {
   }
 
   render() {
-    if (!this.props.diary) return null;
+    if (!this.props.diary || !this.props.exerciseDiary) return null;
 
     return (
       <div className="food-diary-container">
@@ -40,6 +52,7 @@ class FoodDiary extends React.Component {
         <FoodDiaryIndex
           currentUser={this.props.currentUser}
           diary={this.props.diary}
+          exerciseDiary={this.props.exerciseDiary}
           breakfastEntries={this.props.breakfastEntries}
           lunchEntries={this.props.lunchEntries}
           dinnerEntries={this.props.dinnerEntries}
