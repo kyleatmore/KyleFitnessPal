@@ -17,7 +17,7 @@ class SearchResultsIndex extends React.Component {
 
   render() {
     const { foods, diary } = this.props;
-    
+
     const foodItems = foods.map((food) => {
       return (
         <SearchResultIndexItem

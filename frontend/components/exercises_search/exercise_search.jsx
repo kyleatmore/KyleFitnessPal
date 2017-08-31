@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 class ExerciseSearch extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { inputVal: "", matchedExercises: this.props.exercises };
+    this.state = { inputVal: "" };
     this.handleInput = this.handleInput.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.matches = this.matches.bind(this);
   }
 
   componentDidMount() {
@@ -23,8 +23,8 @@ class ExerciseSearch extends React.Component {
     this.setState(nextState);
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
+  matches() {
+    if (!this.state.inputVal) { return this.props.exercises; }
 
     const matches = [];
     this.props.exercises.forEach((exercise) => {
@@ -33,8 +33,7 @@ class ExerciseSearch extends React.Component {
       }
     });
 
-    const nextState = Object.assign({}, this.state, { matchedExercises: matches });
-    this.setState(nextState);
+    return matches;
   }
 
   render() {
@@ -52,18 +51,11 @@ class ExerciseSearch extends React.Component {
                 onChange={this.handleInput}
                 value={this.state.inputVal}
               />
-
-              <input
-                className="search button"
-                type="submit"
-                value="Search"
-                onClick={this.handleSubmit}
-              />
             </form>
           </section>
 
         <ExerciseSearchResultsIndex
-          exercises={this.state.matchedExercises}
+          exercises={this.matches()}
           diary={this.props.diary}
         />
       </div>
