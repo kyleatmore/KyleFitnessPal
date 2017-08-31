@@ -58,6 +58,7 @@ class AddExerciseForm extends React.Component {
           value={this.state.minutes}
           className="food-quantity"
           />
+        <span>minutes</span>
 
           <h3 className="entry-option">
             Calories Burned: <p>{this.state.minutes * exercise.cals_burned_per_min}</p>

@@ -37,7 +37,7 @@ class HomePage extends React.Component {
     if (!diary || !exerciseDiary) { return null; }
 
     const netCalories = diary.totalMacros.calories - exerciseDiary.dailySummary.cals_burned
-    const caloriesPercent = Math.round((netCalories / currentUser.calorie_allowance) * 100);
+    const caloriesPercent = (netCalories / currentUser.calorie_allowance) * 100;
     let progressStyle, progressClass;
     if (caloriesPercent <= 0) {
       progressStyle = { width: "0%" };
