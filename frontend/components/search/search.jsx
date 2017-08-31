@@ -15,12 +15,11 @@ class Search extends React.Component {
       this.props.requestAllFoods();
     }
 
-    this.props.searchFoods("");
     this.props.requestSingleDiary(this.props.match.params.diaryId);
   }
 
   componentWillUnmount() {
-    this.props.searchFoods("");
+    this.props.clearSearchedFoods();
   }
 
   handleInput(e) {

@@ -4,6 +4,7 @@ export const RECEIVE_ALL_FOODS = "RECEIVE_ALL_FOODS";
 export const RECEIVE_SINGLE_FOOD = "RECEIVE_SINGLE_FOOD";
 export const RECEIVE_FOOD_ERRORS = "RECEIVE_FOOD_ERRORS";
 export const RECEIVE_SEARCHED_FOODS = "RECEIVE_SEARCHED_FOODS";
+export const CLEAR_SEARCHED_FOODS = "CLEAR_SEARCHED_FOODS";
 
 export const receiveAllFoods = (foods) => {
   return {
@@ -30,6 +31,12 @@ export const receiveSearchedFoods = (foods) => {
   return {
     type: RECEIVE_SEARCHED_FOODS,
     foods
+  };
+};
+
+export const clearSearchedFoods = () => {
+  return {
+    type: CLEAR_SEARCHED_FOODS,
   };
 };
 

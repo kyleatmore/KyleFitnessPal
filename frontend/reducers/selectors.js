@@ -54,6 +54,10 @@ export const selectExerciseDiaryEntries = (state, exerciseDiaryId) => {
 };
 
 export const selectSearchedFoods = (state) => {
+  if (state.search.searchedFoodIds.length === 0) {
+    return selectAllFoods(state);
+  }
+
   const searchedFoods = [];
 
   state.search.searchedFoodIds.forEach((id) => {

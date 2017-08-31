@@ -15,12 +15,7 @@ class Api::FoodsController < ApplicationController
   end
 
   def search
-    if params[:query] == ""
-      @foods = Food.all
-    else
-      @foods = Food.search_by_name(params[:query])
-    end
-    
+    @foods = Food.search_by_name(params[:query])
     render :index
   end
 
