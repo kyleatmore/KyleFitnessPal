@@ -12,3 +12,11 @@ export const addNewFood = (diaryId, food) => {
     data: { food }
   });
 };
+
+export const searchFoods = (searchVal) => {
+  return $.ajax({
+    method: "GET",
+    url: "api/foods/search",
+    data: { query: searchVal }
+  });
+};

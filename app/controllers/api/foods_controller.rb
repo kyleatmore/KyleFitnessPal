@@ -14,6 +14,16 @@ class Api::FoodsController < ApplicationController
     render :index
   end
 
+  def search
+    if params[:query] == ""
+      @foods = Food.all
+    else
+      @foods = Food.search_by_name(params[:query])
+    end
+    
+    render :index
+  end
+
   private
   def food_params
     params.require(:food).permit(:brand, :name, :calories, :carbohydrates, :protein, :fats, :serving_size)

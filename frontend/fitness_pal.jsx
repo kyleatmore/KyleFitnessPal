@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import { addNewFood } from './actions/food_actions';
+import { searchFoods } from './actions/food_actions';
 import merge from 'lodash/merge';
 
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.merge = merge;
-  window.addNewFood = addNewFood;
+  window.searchFoods = searchFoods;
   // testing
 
   ReactDOM.render(<Root store={store}/>, root);

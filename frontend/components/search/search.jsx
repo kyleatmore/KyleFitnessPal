@@ -8,32 +8,25 @@ class Search extends React.Component {
     super(props);
     this.state = { inputVal: "" };
     this.handleInput = this.handleInput.bind(this);
-    this.matches = this.matches.bind(this);
   }
 
   componentDidMount() {
-    this.props.requestAllFoods()
-      .then(() => {
-        this.props.requestSingleDiary(this.props.match.params.diaryId);
-      });
+    if (Object.keys(this.props.foods).length === 0) {
+      this.props.requestAllFoods();
+    }
+
+    this.props.searchFoods("");
+    this.props.requestSingleDiary(this.props.match.params.diaryId);
+  }
+
+  componentWillUnmount() {
+    this.props.searchFoods("");
   }
 
   handleInput(e) {
-    const nextState = merge({}, this.state, { inputVal: e.target.value });
-    this.setState(nextState);
-  }
-
-  matches() {
-    if (!this.state.inputVal) { return this.props.foods; }
-
-    const matches = [];
-    this.props.foods.forEach((food) => {
-      if (food.name.toLowerCase().startsWith(this.state.inputVal.toLowerCase())) {
-        matches.push(food);
-      }
+    this.setState({ inputVal: e.target.value }, () => {
+      this.props.searchFoods(this.state.inputVal);
     });
-
-    return matches;
   }
 
   render() {
@@ -55,7 +48,7 @@ class Search extends React.Component {
           </section>
 
         <SearchResultsIndex
-          foods={this.matches()}
+          foods={this.props.searchedFoods}
           diary={this.props.diary}
         />
 

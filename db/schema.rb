@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170830162555) do
+ActiveRecord::Schema.define(version: 20170831200914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "pg_trgm"
 
   create_table "exercise_diaries", force: :cascade do |t|
     t.date     "date",       null: false

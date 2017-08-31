@@ -52,3 +52,13 @@ export const selectExerciseDiaryEntries = (state, exerciseDiaryId) => {
 
   return entries;
 };
+
+export const selectSearchedFoods = (state) => {
+  const searchedFoods = [];
+
+  state.search.searchedFoodIds.forEach((id) => {
+    searchedFoods.push(state.entities.foods[id]);
+  });
+
+  return searchedFoods;
+};

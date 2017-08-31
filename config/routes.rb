@@ -18,5 +18,7 @@ Rails.application.routes.draw do
       resources :exercise_loggings, only: [:create, :update, :destroy]
     end
     post '/exercise_diaries/find_diary', to: 'exercise_diaries#find_diary'
+
+    get '/foods/search', to: 'foods#search'
   end
 end
