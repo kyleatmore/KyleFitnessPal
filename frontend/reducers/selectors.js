@@ -66,3 +66,17 @@ export const selectSearchedFoods = (state) => {
 
   return searchedFoods;
 };
+
+export const selectSearchedExercises = (state) => {
+  if (state.search.searchedExerciseIds.length === 0) {
+    return selectAllExercises(state);
+  }
+
+  const searchedExercises = [];
+
+  state.search.searchedExerciseIds.forEach((id) => {
+    searchedExercises.push(state.entities.exercises[id]);
+  });
+
+  return searchedExercises;
+};

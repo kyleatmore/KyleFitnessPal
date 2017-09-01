@@ -20,5 +20,6 @@ Rails.application.routes.draw do
     post '/exercise_diaries/find_diary', to: 'exercise_diaries#find_diary'
 
     get '/foods/search', to: 'foods#search'
+    get '/exercises/search', to: 'exercises#search'
   end
 end

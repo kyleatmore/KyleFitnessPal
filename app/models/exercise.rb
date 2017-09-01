@@ -10,6 +10,14 @@
 #
 
 class Exercise < ApplicationRecord
+  include PgSearch
+  pg_search_scope :search_by_name,
+                  :against => :name,
+                  :using => {
+                    :tsearch => {:prefix => true},
+                    :trigram => {:threshold => 0.2}
+                  }
+                  
   validates :name, :cals_burned_per_min, presence: true
 
   has_many :exercise_loggings

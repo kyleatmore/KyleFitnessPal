@@ -14,6 +14,11 @@ class Api::ExercisesController < ApplicationController
     render :index
   end
 
+  def search
+    @exercises = Exercise.search_by_name(params[:query])
+    render :index
+  end
+
   private
   def exercise_params
     params.require(:exercise).permit(:name, :cals_burned_per_min)

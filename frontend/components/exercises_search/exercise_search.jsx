@@ -8,32 +8,24 @@ class ExerciseSearch extends React.Component {
     super(props);
     this.state = { inputVal: "" };
     this.handleInput = this.handleInput.bind(this);
-    this.matches = this.matches.bind(this);
   }
 
   componentDidMount() {
-    this.props.requestAllExercises()
-      .then(() => {
-        this.props.requestSingleDiary(this.props.match.params.diaryId);
-      });
+    if (Object.keys(this.props.exercises).length === 0) {
+      this.props.requestAllExercises();
+    }
+
+    this.props.requestSingleDiary(this.props.match.params.diaryId);
+  }
+
+  componentWillUnmount() {
+    this.props.clearSearchedExercises();
   }
 
   handleInput(e) {
-    const nextState = merge({}, this.state, { inputVal: e.target.value });
-    this.setState(nextState);
-  }
-
-  matches() {
-    if (!this.state.inputVal) { return this.props.exercises; }
-
-    const matches = [];
-    this.props.exercises.forEach((exercise) => {
-      if (exercise.name.toLowerCase().startsWith(this.state.inputVal.toLowerCase())) {
-        matches.push(exercise);
-      }
+    this.setState({ inputVal: e.target.value }, () => {
+      this.props.searchExercises(this.state.inputVal);
     });
-
-    return matches;
   }
 
   render() {
@@ -55,7 +47,7 @@ class ExerciseSearch extends React.Component {
           </section>
 
         <ExerciseSearchResultsIndex
-          exercises={this.matches()}
+          exercises={this.props.searchedExercises}
           diary={this.props.diary}
         />
       </div>
