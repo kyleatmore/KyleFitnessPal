@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import { searchFoods } from './actions/food_actions';
 import merge from 'lodash/merge';
 
 
@@ -17,13 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-
-  // For testing
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.merge = merge;
-  window.searchFoods = searchFoods;
-  // testing
 
   ReactDOM.render(<Root store={store}/>, root);
 });
