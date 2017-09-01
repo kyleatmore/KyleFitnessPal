@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import ExerciseDiary from './exercise_diary';
 import { requestAllExercises } from '../../actions/exercise_actions';
 import { requestSingleDiary, deleteExerciseEntry, findExerciseDiary } from '../../actions/exercise_diary_actions';
+import { findDiary } from '../../actions/food_diary_actions';
 import { selectExerciseDiaryEntries } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
@@ -22,6 +23,7 @@ const mapDispatchToProps = (dispatch) => {
     requestSingleDiary: (diaryId) => dispatch(requestSingleDiary(diaryId)),
     deleteExerciseEntry: (diary, exerciseLogging) => dispatch(deleteExerciseEntry(diary, exerciseLogging)),
     findExerciseDiary: (date) => dispatch(findExerciseDiary(date)),
+    findDiary: (date) => dispatch(findDiary(date)),
   };
 };
 

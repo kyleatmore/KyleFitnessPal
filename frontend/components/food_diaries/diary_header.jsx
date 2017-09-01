@@ -19,6 +19,7 @@ class FoodDiaryHeader extends React.Component {
       }
 
       this.props.findDiary(nextDiaryDate);
+      this.props.findExerciseDiary(nextDiaryDate);
     };
   }
 

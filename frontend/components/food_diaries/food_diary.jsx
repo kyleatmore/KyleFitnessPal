@@ -47,6 +47,7 @@ class FoodDiary extends React.Component {
           currentUser={this.props.currentUser}
           diary={this.props.diary}
           findDiary={this.props.findDiary}
+          findExerciseDiary={this.props.findExerciseDiary}
           type="Food"
         />
         <FoodDiaryIndex

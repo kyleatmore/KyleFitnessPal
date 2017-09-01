@@ -33,7 +33,8 @@ class ExerciseDiary extends React.Component {
           diaryDate={this.props.exerciseDiary.date_string}
           currentUser={this.props.currentUser}
           diary={this.props.exerciseDiary}
-          findDiary={this.props.findExerciseDiary}
+          findDiary={this.props.findDiary}
+          findExerciseDiary={this.props.findExerciseDiary}
           type="Exercise"
         />
         <ExerciseDiaryIndex
