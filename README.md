@@ -10,7 +10,7 @@ kyleFitnessPal is a full-stack calorie and exercise tracking web application ins
 
 ### Goals
 
-When signing up for the first time, a user also creates a goal, which contains current and goal weight, activity level, and a weight loss/gain goal (i.e. 'Lose 1 pound per week'). The goal information is stored in a separate goals table. Currently, a user can only create a goal on signup. However, storing the goals in a separate table will allow users to create new goals and track their progression once implemented.
+When signing up for the first time, a user also creates a goal, which includes the user's current and goal weight, activity level, and weight loss/gain goal (i.e. 'Lose 1 pound per week'). The goal information is stored in a separate goals table. Currently, a user can only create a goal on signup. However once additional goals are implemented, storing them in a separate table will allow users track their progression over time.
 
 The user's goal information is used to calculate their total daily energy expenditure using the Harris-Benedict BMR equation. Based on the user's weight loss/gain goal, a daily recommended calorie amount is calculated and displayed after signup.
 
@@ -39,7 +39,7 @@ The FoodDiaryIndex component displays all the food loggings for the current diar
 
 ### Adding Goals
 
-I plan to allow users to update their goals, which will let me show users progress.
+I plan to allow users to add new goals and see their weight loss progression over time.
 
 ### Saved Foods / Exercises
 
