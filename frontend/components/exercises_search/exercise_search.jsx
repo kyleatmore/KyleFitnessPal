@@ -23,13 +23,26 @@ class ExerciseSearch extends React.Component {
   }
 
   handleInput(e) {
-    this.setState({ inputVal: e.target.value }, () => {
-      this.props.searchExercises(this.state.inputVal);
+    if (this.state.delayTimer) { clearTimeout(this.state.delayTimer); }
+    const nextState = merge({}, this.state, { inputVal: e.target.value });
+
+    this.setState(nextState, () => {
+      if (this.state.inputVal) {
+        const delayTimer = setTimeout(() => this.props.searchExercises(this.state.inputVal), 400);
+        this.setState({ inputVal: this.state.inputVal, delayTimer: delayTimer });
+      }
     });
   }
 
   render() {
     if (!this.props.diary) return null;
+
+    let searchResults;
+    if (this.state.inputVal) {
+      searchResults = this.props.searchedExercises;
+    } else {
+      searchResults = this.props.exercises;
+    }
 
     return (
       <div className="search">
@@ -47,7 +60,7 @@ class ExerciseSearch extends React.Component {
           </section>
 
         <ExerciseSearchResultsIndex
-          exercises={this.props.searchedExercises}
+          exercises={searchResults}
           diary={this.props.diary}
         />
       </div>

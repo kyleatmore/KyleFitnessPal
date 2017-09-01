@@ -54,10 +54,6 @@ export const selectExerciseDiaryEntries = (state, exerciseDiaryId) => {
 };
 
 export const selectSearchedFoods = (state) => {
-  if (state.search.searchedFoodIds.length === 0) {
-    return selectAllFoods(state);
-  }
-
   const searchedFoods = [];
 
   state.search.searchedFoodIds.forEach((id) => {
@@ -68,10 +64,6 @@ export const selectSearchedFoods = (state) => {
 };
 
 export const selectSearchedExercises = (state) => {
-  if (state.search.searchedExerciseIds.length === 0) {
-    return selectAllExercises(state);
-  }
-
   const searchedExercises = [];
 
   state.search.searchedExerciseIds.forEach((id) => {

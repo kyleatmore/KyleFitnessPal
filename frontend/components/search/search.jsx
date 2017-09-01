@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 class Search extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { inputVal: "" };
+    this.state = { inputVal: "", delayTimer: null };
     this.handleInput = this.handleInput.bind(this);
   }
 
@@ -23,13 +23,26 @@ class Search extends React.Component {
   }
 
   handleInput(e) {
-    this.setState({ inputVal: e.target.value }, () => {
-      this.props.searchFoods(this.state.inputVal);
+    if (this.state.delayTimer) { clearTimeout(this.state.delayTimer); }
+    const nextState = merge({}, this.state, { inputVal: e.target.value });
+
+    this.setState(nextState, () => {
+      if (this.state.inputVal) {
+        const delayTimer = setTimeout(() => this.props.searchFoods(this.state.inputVal), 400);
+        this.setState({ inputVal: this.state.inputVal, delayTimer: delayTimer });
+      }
     });
   }
 
   render() {
     if (!this.props.diary) return null;
+
+    let searchResults;
+    if (this.state.inputVal) {
+      searchResults = this.props.searchedFoods;
+    } else {
+      searchResults = this.props.foods;
+    }
 
     return (
       <div className="search">
@@ -47,7 +60,7 @@ class Search extends React.Component {
           </section>
 
         <SearchResultsIndex
-          foods={this.props.searchedFoods}
+          foods={searchResults}
           diary={this.props.diary}
         />
 
