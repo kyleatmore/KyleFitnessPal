@@ -23,21 +23,24 @@ class ExerciseDiary < ApplicationRecord
 
   def daily_summary
     summary = { minutes: 0, cals_burned: 0 }
-    loggings = self.exercise_loggings.includes(:exercise)
+    loggings = self.exercise_loggings
 
     loggings.each do |log|
       summary[:minutes] += log.minutes
       summary[:cals_burned] += (log.exercise.cals_burned_per_min * log.minutes).round
     end
 
-    return summary
+    summary
   end
 
   def weekly_summary
     summary = { minutes: 0, cals_burned: 0 }
     beginning = self.date.beginning_of_week
     ending = self.date.end_of_week
-    diaries = self.class.where('date >= ? and date <= ?', beginning, ending).includes(:exercise_loggings).includes(:exercises)
+    
+    diaries = user.exercise_diaries.select do |diary|
+      diary.date >= beginning && diary.date <= ending
+    end
 
     diaries.each do |diary|
       diary.exercise_loggings.each do |log|
@@ -46,6 +49,6 @@ class ExerciseDiary < ApplicationRecord
       end
     end
 
-    return summary
+    summary
   end
 end

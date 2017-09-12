@@ -23,7 +23,7 @@ class FoodDiary < ApplicationRecord
 
   def total_macros
     macros = { calories: 0, carbs: 0, fats: 0, protein: 0 }
-    loggings = self.food_loggings.includes(:food)
+    loggings = self.food_loggings
 
     loggings.each do |log|
       macros[:calories] += (log.food.calories * log.servings).round
@@ -35,9 +35,9 @@ class FoodDiary < ApplicationRecord
     return macros
   end
 
-  def subtotal(meal)
+  def self.subtotal(diary, meal)
     macros = { calories: 0, carbs: 0, fats: 0, protein: 0 }
-    loggings = self.food_loggings.where(meal: meal).includes(:food)
+    loggings = diary.food_loggings.select { |logging| logging.meal == meal }
 
     loggings.each do |log|
       macros[:calories] += (log.food.calories * log.servings).round
