@@ -4,8 +4,8 @@
 
 [Trello link][trello]
 
-[heroku]: https://kylefitnesspal.herokuapp.com/#/
-[trello]: https://trello.com/b/iF4HIIVo/kylefitnesspal
+[heroku]: http://kylefitnesspal.herokuapp.com/#/
+[trello]: http://trello.com/b/iF4HIIVo/kylefitnesspal
 
 ## Minimum Viable Product
 

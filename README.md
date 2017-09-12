@@ -2,7 +2,7 @@
 
 [kyleFitnessPal live][heroku]
 
-[heroku]: https://kylefitnesspal.herokuapp.com/#/
+[heroku]: http://kylefitnesspal.herokuapp.com/#/
 
 kyleFitnessPal is a full-stack calorie and exercise tracking web application inspired by myFitnessPal. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React with a Redux architectural framework on the frontend.
 
