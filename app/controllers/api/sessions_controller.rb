@@ -1,8 +1,11 @@
 class Api::SessionsController < ApplicationController
   def create
-    @user = User.find_by_credentials(
-    params[:user][:email],
-    params[:user][:password]
+    @user = User
+    .includes(
+      food_diaries: [:food_loggings], exercise_diaries: [:exercise_loggings]
+    ).find_by_credentials(
+      params[:user][:email],
+      params[:user][:password]
     )
 
     if @user
