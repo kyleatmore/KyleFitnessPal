@@ -7,6 +7,19 @@ class Header extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  componentDidMount() {
+    const steps = [
+      {
+        title: 'Welcome to kyleFitnessPal!',
+        text: 'Thanks for using it blah blah',
+        selector: '.logout-button',
+        position: 'bottom',
+        type: 'hover',
+      },
+    ];
+    this.props.addSteps(steps);
+  }
+
   handleClick(e) {
     this.props.logout();
   }
