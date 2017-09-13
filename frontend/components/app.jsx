@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import HeaderContainer from './header/header_container';
 import NavBarContainer from './nav/nav_bar_container';
@@ -17,24 +18,32 @@ import Joyride from 'react-joyride';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { steps: [] };
+    this.state = { steps: [], runTour: false };
     this.addSteps = this.addSteps.bind(this);
+    this.nextStep = this.nextStep.bind(this);
   }
 
   addSteps(steps) {
     this.setState((currentState) => {
-      currentState.steps = currentState.steps.concat(steps);
-      return currentState;
+      const newSteps = currentState.steps.concat(steps);
+      return Object.assign({}, this.state, { steps: newSteps });
     });
   }
 
+  nextStep(stepParam) {
+    if (stepParam.type === "step:after") {
+      this.props.history.push(`/food-diary/${this.props.currentDiary}`);
+    }
+  }
+
+
+
   render() {
-    debugger
     return (
       <div>
         <Joyride
           ref={c => (this.joyride = c)}
-          callback={this.callback}
+          callback={this.nextStep}
           debug={true}
           run={true}
           showSkipButton={true}
@@ -59,4 +68,12 @@ class App extends React.Component {
   }
 }
 
-export default App;
+
+const mapStateToProps = (state) => {
+  return {
+    dcurrentDiary: state.ui.currentDiary,
+    currentExerciseDiary: state.ui.currentExerciseDiary,
+  };
+};
+
+export default withRouter(connect(mapStateToProps, null)(App));

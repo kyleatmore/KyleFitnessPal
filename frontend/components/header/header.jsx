@@ -12,9 +12,9 @@ class Header extends React.Component {
       {
         title: 'Welcome to kyleFitnessPal!',
         text: 'Thanks for using it blah blah',
-        selector: '.logout-button',
+        selector: '.tour-button',
         position: 'bottom',
-        type: 'hover',
+        nextStep: 'diary',
       },
     ];
     this.props.addSteps(steps);
@@ -30,11 +30,19 @@ class Header extends React.Component {
       return (
         <header>
           <Link to="/"><h1>kyleFitnessPal</h1></Link>
+
           <h3>Hi, {currentUser.username}</h3>
+
+          <button className="header-links tour-button">
+            Take Tour
+          </button>
+
           <button
             className="header-links logout-button"
             onClick={this.handleClick}
-          >Log Out</button>
+          >
+            Log Out
+          </button>
         </header>
       );
     } else if (location.pathname === "/signup") {

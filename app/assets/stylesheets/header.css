@@ -29,7 +29,7 @@ header p {
   font-size: 14px;
 }
 
-a, .logout-button {
+a, .logout-button, .tour-button {
   text-decoration: none;
   color: #0072BC;
 }
@@ -37,7 +37,7 @@ a, .logout-button {
   border-right: 1px solid #e6e6e6;
 }
 
-.logout-button {
+.tour-button, .logout-button {
   border: none;
   outline: none;
   background: none;
