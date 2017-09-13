@@ -9,7 +9,7 @@ class NavBar extends React.Component {
   render() {
     return (
       <nav className="nav-bar">
-      <Link className="nav-link" to="/">MY HOME</Link>
+      <Link className="nav-link home" to="/">MY HOME</Link>
       <Link
         className="nav-link food"
         to={`/food-diary/${this.props.currentDiary}`}>
@@ -18,7 +18,7 @@ class NavBar extends React.Component {
       <Link
         className="nav-link exercise"
         to={`/exercise-diary/${this.props.currentExerciseDiary}`}>EXERCISE</Link>
-      <Link className="nav-link" to="/goalsummary">GOALS</Link>
+      <Link className="nav-link goals" to="/goalsummary">GOALS</Link>
       </nav>
     );
   }

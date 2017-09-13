@@ -19,6 +19,7 @@ class HomePage extends React.Component {
     const today = new Date();
     this.props.findDiary(today);
     this.props.findExerciseDiary(today);
+    this.props.resumeJoyride();
   }
 
   updateFile(e) {

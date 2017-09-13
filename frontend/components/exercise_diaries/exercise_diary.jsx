@@ -16,6 +16,8 @@ class ExerciseDiary extends React.Component {
     } else {
       this.props.requestSingleDiary(this.props.match.params.diaryId);
     }
+    
+    this.props.resumeJoyride();
   }
 
   componentWillReceiveProps(newProps) {

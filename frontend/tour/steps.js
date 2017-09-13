@@ -66,6 +66,45 @@ const steps = [
     position: 'bottom',
     nextPage: 'exercise_diary',
   },
+  {
+    title: 'Adding Exercise Entries',
+    text: 'Exercise diaries work the same as food diaries. Click \'Add \
+    Exercise\' to search our exercise databse and log your workouts',
+    selector: '.diary-item.first.add-food',
+    position: 'left',
+    nextPage: null,
+  },
+  {
+    title: 'Home Page',
+    text: 'Click here to return to the home page',
+    selector: '.nav-link.home',
+    position: 'bottom',
+    nextPage: 'home',
+  },
+  {
+    title: 'Daily Summary',
+    text: 'On your home page, you can track your daily progression towards \
+    your calorie goals. Remember that exercise subtracts from calories \
+    consumed, letting you eat more!',
+    selector: '.daily-summary',
+    position: 'right',
+    nextPage: null,
+  },
+  {
+    title: 'Goals Page',
+    text: 'Click here to review your suggested nutritional and fitness goals',
+    selector: '.nav-link.goals',
+    position: 'bottom',
+    nextPage: null,
+  },
+  {
+    title: 'Thanks For Using kyleFitnessPal!',
+    text: 'Enjoy using kyleFitnessPal. If you\'d like to take the tour \
+    again, please click here.',
+    selector: '.tour-button',
+    position: 'bottom',
+    nextPage: null,
+  },
 ];
 
 export default steps;

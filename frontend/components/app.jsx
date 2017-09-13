@@ -47,6 +47,9 @@ class App extends React.Component {
         case 'exercise_diary':
           this.props.history.push(`/exercise-diary/${this.props.currentExerciseDiary}`);
           break;
+        case 'home':
+          this.props.history.push(`/`);
+          break;
         default:
           break;
       }
@@ -113,10 +116,12 @@ class App extends React.Component {
           <ProtectedRoute
             path="/exercise-diary/:diaryId"
             component={ExerciseDiaryContainer}
+            otherProps={{resumeJoyride: this.resumeJoyride}}
           />
           <ProtectedRoute
             path="/"
             component={HomePageContainer}
+            otherProps={{resumeJoyride: this.resumeJoyride}}
           />
         </Switch>
       </div>
