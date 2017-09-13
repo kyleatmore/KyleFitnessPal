@@ -6,6 +6,7 @@ import SearchContainer from '../search/search_container';
 class FoodDiary extends React.Component {
   constructor(props) {
     super(props);
+    this.resumeTour = this.resumeTour.bind(this);
   }
 
   componentDidMount() {
@@ -29,6 +30,29 @@ class FoodDiary extends React.Component {
           }
         );
     }
+
+    this.resumeTour();
+  }
+
+  resumeTour() {
+    const steps = [
+      {
+        title: 'Food Diaries',
+        text: 'Click here to switch between diaries on different days',
+        selector: '.food-diary.date',
+        position: 'right',
+        nextPage: null,
+      },
+      {
+        title: 'Adding Food Entries',
+        text: 'Click here to add a food to today\'s diary',
+        selector: '.diary-item.first.add-food',
+        position: 'left',
+        nextPage: null,
+      },
+    ];
+    this.props.addSteps(steps);
+    this.props.resumeJoyride();
   }
 
   componentWillReceiveProps(newProps) {

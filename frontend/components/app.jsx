@@ -18,9 +18,10 @@ import Joyride from 'react-joyride';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { steps: [], runTour: false };
+    this.state = { steps: [], runTour: true, autoStart: false };
     this.addSteps = this.addSteps.bind(this);
-    this.nextStep = this.nextStep.bind(this);
+    this.joyrideCallback = this.joyrideCallback.bind(this);
+    this.resumeJoyride = this.resumeJoyride.bind(this);
   }
 
   addSteps(steps) {
@@ -30,17 +31,23 @@ class App extends React.Component {
     });
   }
 
-  nextStep(stepParam) {
+  joyrideCallback(stepParam) {
     if (stepParam.type === "step:after") {
       const nextPage = stepParam.step.nextPage;
+
       switch(nextPage) {
         case 'diary':
+          this.setState({ runTour: false, autoStart: false });
           this.props.history.push(`/food-diary/${this.props.currentDiary}`);
           break;
         default:
           break;
       }
     }
+  }
+
+  resumeJoyride() {
+    this.setState({ runTour: true, autoStart: true });
   }
 
 
@@ -50,13 +57,20 @@ class App extends React.Component {
       <div>
         <Joyride
           ref={c => (this.joyride = c)}
-          callback={this.nextStep}
+          callback={this.joyrideCallback}
           debug={true}
-          run={true}
+          run={this.state.runTour}
+          autoStart={this.state.autoStart}
           showSkipButton={true}
-          showStepsProgress={true}
           steps={this.state.steps}
           type='continuous'
+          locale={{
+              back: (<span>Back</span>),
+              close: (<span>Close</span>),
+              last: (<span>Next</span>),
+              next: (<span>Next</span>),
+              skip: (<span>Skip</span>),
+            }}
           />
         <HeaderContainer addSteps={this.addSteps}/>
         <ProtectedRoute
@@ -70,7 +84,12 @@ class App extends React.Component {
           <ProtectedRoute path="/goalsummary" component={GoalSummaryContainer} />
           <ProtectedRoute path="/food-diary/:diaryId/log-food" component={SearchContainer} />
           <ProtectedRoute path="/food-diary/:diaryId/add-food" component={NewFoodFormContainer} />
-          <ProtectedRoute path="/food-diary/:diaryId" component={FoodDiaryContainer} />
+          <ProtectedRoute
+            path="/food-diary/:diaryId"
+            component={FoodDiaryContainer}
+            otherProps={
+              {addSteps: this.addSteps, resumeJoyride: this.resumeJoyride}
+          }/>
           <ProtectedRoute path="/exercise-diary/:diaryId/log-exercise" component={ExerciseSearchContainer} />
           <ProtectedRoute path="/exercise-diary/:diaryId" component={ExerciseDiaryContainer} />
           <ProtectedRoute path="/" component={HomePageContainer} />
