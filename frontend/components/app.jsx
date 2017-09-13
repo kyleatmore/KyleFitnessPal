@@ -32,7 +32,14 @@ class App extends React.Component {
 
   nextStep(stepParam) {
     if (stepParam.type === "step:after") {
-      this.props.history.push(`/food-diary/${this.props.currentDiary}`);
+      const nextPage = stepParam.step.nextPage;
+      switch(nextPage) {
+        case 'diary':
+          this.props.history.push(`/food-diary/${this.props.currentDiary}`);
+          break;
+        default:
+          break;
+      }
     }
   }
 
@@ -49,9 +56,14 @@ class App extends React.Component {
           showSkipButton={true}
           showStepsProgress={true}
           steps={this.state.steps}
+          type='continuous'
           />
         <HeaderContainer addSteps={this.addSteps}/>
-        <ProtectedRoute path="/" component={NavBarContainer} />
+        <ProtectedRoute
+          path="/"
+          component={NavBarContainer}
+          otherProps={{addSteps: this.addSteps}}
+        />
         <Switch>
           <AuthRoute path="/signup" component={SignupFormContainer} />
           <AuthRoute path="/login" component={LoginFormContainer} />
@@ -71,7 +83,7 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    dcurrentDiary: state.ui.currentDiary,
+    currentDiary: state.ui.currentDiary,
     currentExerciseDiary: state.ui.currentExerciseDiary,
   };
 };

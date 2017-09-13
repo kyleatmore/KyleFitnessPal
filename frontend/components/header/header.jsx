@@ -11,10 +11,11 @@ class Header extends React.Component {
     const steps = [
       {
         title: 'Welcome to kyleFitnessPal!',
-        text: 'Thanks for using it blah blah',
+        text: 'kyleFitnessPal allows you to create food and exercise \
+        diaires to track your daily calorie burn',
         selector: '.tour-button',
         position: 'bottom',
-        nextStep: 'diary',
+        nextPage: null,
       },
     ];
     this.props.addSteps(steps);

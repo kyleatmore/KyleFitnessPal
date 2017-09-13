@@ -6,12 +6,25 @@ class NavBar extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    const steps = [
+      {
+        title: 'Food Diaries',
+        text: 'Clicking here takes you to today\'s food diary',
+        selector: '.nav-link.food',
+        position: 'bottom',
+        nextPage: 'diary',
+      },
+    ];
+    this.props.addSteps(steps);
+  }
+
   render() {
     return (
       <nav className="nav-bar">
       <Link className="nav-link" to="/">MY HOME</Link>
       <Link
-        className="nav-link"
+        className="nav-link food"
         to={`/food-diary/${this.props.currentDiary}`}>
         FOOD
       </Link>
