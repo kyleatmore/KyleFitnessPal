@@ -14,28 +14,26 @@ import NewFoodFormContainer from './new_foods/new_food_form_container';
 import ExerciseDiaryContainer from './exercise_diaries/exercise_diary_container';
 import ExerciseSearchContainer from './exercises_search/exercises_search_container';
 import Joyride from 'react-joyride';
+import steps from '../tour/steps';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { steps: [], runTour: true, autoStart: false };
-    this.addSteps = this.addSteps.bind(this);
+    this.state = {
+      steps: [],
+      runTour: false,
+      autoStart: false,
+    };
     this.joyrideCallback = this.joyrideCallback.bind(this);
     this.resumeJoyride = this.resumeJoyride.bind(this);
-  }
-
-  addSteps(steps) {
-    this.setState((currentState) => {
-      const newSteps = currentState.steps.concat(steps);
-      return Object.assign({}, this.state, { steps: newSteps });
-    });
+    this.startJoyride = this.startJoyride.bind(this);
   }
 
   joyrideCallback(stepParam) {
     if (stepParam.type === "step:after") {
       const nextPage = stepParam.step.nextPage;
       if (nextPage === null) return;
-      this.setState({ runTour: false, autoStart: false });
+      this.setState({ runTour: false });
 
       switch(nextPage) {
         case 'diary':
@@ -56,8 +54,14 @@ class App extends React.Component {
     }
   }
 
+  startJoyride() {
+    this.joyride.reset(true);
+    const newSteps = steps;
+    this.setState({ runTour: true, steps: newSteps, autoStart: true });
+  }
+
   resumeJoyride() {
-    this.setState({ runTour: true, autoStart: true });
+    this.setState({ runTour: true });
   }
 
 
@@ -68,12 +72,11 @@ class App extends React.Component {
         <Joyride
           ref={c => (this.joyride = c)}
           callback={this.joyrideCallback}
-          debug={true}
           run={this.state.runTour}
           autoStart={this.state.autoStart}
-          showSkipButton={true}
           steps={this.state.steps}
           type='continuous'
+          debug={true}
           locale={{
               back: (<span>Back</span>),
               close: (<span>Close</span>),
@@ -82,7 +85,9 @@ class App extends React.Component {
               skip: (<span>Skip</span>),
             }}
           />
-        <HeaderContainer addSteps={this.addSteps}/>
+        <HeaderContainer
+          startJoyride={this.startJoyride}
+        />
         <ProtectedRoute
           path="/"
           component={NavBarContainer}

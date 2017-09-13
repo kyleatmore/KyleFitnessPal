@@ -1,15 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import steps from '../../tour/steps';
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-  }
-
-  componentDidMount() {
-    this.props.addSteps(steps);
   }
 
   handleClick(e) {
@@ -25,7 +20,10 @@ class Header extends React.Component {
 
           <h3>Hi, {currentUser.username}</h3>
 
-          <button className="header-links tour-button">
+          <button
+            className="header-links tour-button"
+            onClick={this.props.startJoyride}
+          >
             Take Tour
           </button>
 
