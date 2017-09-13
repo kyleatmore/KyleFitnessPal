@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import steps from '../../tour/steps';
 
 class Header extends React.Component {
   constructor(props) {
@@ -8,16 +9,6 @@ class Header extends React.Component {
   }
 
   componentDidMount() {
-    const steps = [
-      {
-        title: 'Welcome to kyleFitnessPal!',
-        text: 'kyleFitnessPal allows you to create food and exercise \
-        diaires to track your daily calorie burn',
-        selector: '.tour-button',
-        position: 'bottom',
-        nextPage: null,
-      },
-    ];
     this.props.addSteps(steps);
   }
 

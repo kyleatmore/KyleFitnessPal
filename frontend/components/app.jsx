@@ -34,11 +34,18 @@ class App extends React.Component {
   joyrideCallback(stepParam) {
     if (stepParam.type === "step:after") {
       const nextPage = stepParam.step.nextPage;
+      if (nextPage === null) return;
+      this.setState({ runTour: false, autoStart: false });
 
       switch(nextPage) {
         case 'diary':
-          this.setState({ runTour: false, autoStart: false });
           this.props.history.push(`/food-diary/${this.props.currentDiary}`);
+          break;
+        case 'log-food':
+          this.props.history.push(`/food-diary/${this.props.currentDiary}/log-food`);
+          break;
+        case 'exercise_diary':
+          this.props.history.push(`/exercise-diary/${this.props.currentExerciseDiary}`);
           break;
         default:
           break;
@@ -81,18 +88,36 @@ class App extends React.Component {
         <Switch>
           <AuthRoute path="/signup" component={SignupFormContainer} />
           <AuthRoute path="/login" component={LoginFormContainer} />
-          <ProtectedRoute path="/goalsummary" component={GoalSummaryContainer} />
-          <ProtectedRoute path="/food-diary/:diaryId/log-food" component={SearchContainer} />
-          <ProtectedRoute path="/food-diary/:diaryId/add-food" component={NewFoodFormContainer} />
+          <ProtectedRoute
+            path="/goalsummary"
+            component={GoalSummaryContainer}
+          />
+          <ProtectedRoute
+            path="/food-diary/:diaryId/log-food"
+            component={SearchContainer}
+            otherProps={{resumeJoyride: this.resumeJoyride}}
+          />
+          <ProtectedRoute
+            path="/food-diary/:diaryId/add-food"
+            component={NewFoodFormContainer}
+          />
           <ProtectedRoute
             path="/food-diary/:diaryId"
             component={FoodDiaryContainer}
-            otherProps={
-              {addSteps: this.addSteps, resumeJoyride: this.resumeJoyride}
-          }/>
-          <ProtectedRoute path="/exercise-diary/:diaryId/log-exercise" component={ExerciseSearchContainer} />
-          <ProtectedRoute path="/exercise-diary/:diaryId" component={ExerciseDiaryContainer} />
-          <ProtectedRoute path="/" component={HomePageContainer} />
+            otherProps={{resumeJoyride: this.resumeJoyride}}
+          />
+          <ProtectedRoute
+            path="/exercise-diary/:diaryId/log-exercise"
+            component={ExerciseSearchContainer}
+          />
+          <ProtectedRoute
+            path="/exercise-diary/:diaryId"
+            component={ExerciseDiaryContainer}
+          />
+          <ProtectedRoute
+            path="/"
+            component={HomePageContainer}
+          />
         </Switch>
       </div>
     );

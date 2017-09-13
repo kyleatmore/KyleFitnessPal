@@ -16,6 +16,7 @@ class Search extends React.Component {
     }
 
     this.props.requestSingleDiary(this.props.match.params.diaryId);
+    this.props.resumeJoyride();
   }
 
   componentWillUnmount() {
@@ -64,7 +65,7 @@ class Search extends React.Component {
           diary={this.props.diary}
         />
 
-      <p>
+      <p className="new-food link">
         Can't find what you're looking for? <Link to={`/food-diary/${this.props.diary.id}/add-food`}>Add a food to the database</Link>
       </p>
       </div>
