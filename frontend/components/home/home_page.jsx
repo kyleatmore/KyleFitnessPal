@@ -85,6 +85,14 @@ class HomePage extends React.Component {
                         Add Food
                       </Link>
                     </li>
+                    <li>
+                      <button
+                        className='tour'
+                        onClick={this.props.startJoyride}
+                      >
+                        Tour
+                      </button>
+                    </li>
                   </ul>
                 </li>
               </ul>

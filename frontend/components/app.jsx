@@ -29,16 +29,17 @@ class App extends React.Component {
     this.startJoyride = this.startJoyride.bind(this);
   }
 
-  joyrideCallback(stepParam) {
-    if (stepParam.type === "step:after") {
-      const nextPage = stepParam.step.nextPage;
+  joyrideCallback(data) {
+    if (data.action === "close") {
+      this.joyride.reset(true);
+      this.setState({ runTour: false, autoStart: false, steps: [] });
+    } else if (data.type === "step:after" && data.action) {
+      const nextPage = data.step.nextPage;
       if (nextPage === null) return;
       this.setState({ runTour: false });
 
       switch(nextPage) {
         case 'diary':
-          this.props.history.push(`/food-diary/${this.props.currentDiary}`);
-          break;
         case 'log-food':
           this.props.history.push(`/food-diary/${this.props.currentDiary}/log-food`);
           break;
@@ -75,6 +76,7 @@ class App extends React.Component {
           run={this.state.runTour}
           autoStart={this.state.autoStart}
           steps={this.state.steps}
+          showBackButton={false}
           type='continuous'
           debug={true}
           locale={{
@@ -85,9 +87,7 @@ class App extends React.Component {
               skip: (<span>Skip</span>),
             }}
           />
-        <HeaderContainer
-          startJoyride={this.startJoyride}
-        />
+        <HeaderContainer />
         <ProtectedRoute
           path="/"
           component={NavBarContainer}
@@ -126,7 +126,9 @@ class App extends React.Component {
           <ProtectedRoute
             path="/"
             component={HomePageContainer}
-            otherProps={{resumeJoyride: this.resumeJoyride}}
+            otherProps={
+              {resumeJoyride: this.resumeJoyride, startJoyride: this.startJoyride}
+            }
           />
         </Switch>
       </div>

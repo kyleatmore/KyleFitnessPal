@@ -3,8 +3,8 @@ const steps = [
     title: 'Welcome to kyleFitnessPal!',
     text: 'kyleFitnessPal allows you to create food and exercise \
     diaires to track your daily calorie burn',
-    selector: '.tour-button',
-    position: 'bottom',
+    selector: '.logo',
+    position: 'right',
     nextPage: null,
   },
   {
@@ -101,8 +101,8 @@ const steps = [
     title: 'Thanks For Using kyleFitnessPal!',
     text: 'Enjoy using kyleFitnessPal. If you\'d like to take the tour \
     again, please click here.',
-    selector: '.tour-button',
-    position: 'bottom',
+    selector: '.tour',
+    position: 'right',
     nextPage: null,
   },
 ];

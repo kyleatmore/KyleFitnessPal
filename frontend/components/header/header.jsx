@@ -16,16 +16,9 @@ class Header extends React.Component {
     if (currentUser) {
       return (
         <header>
-          <Link to="/"><h1>kyleFitnessPal</h1></Link>
+          <Link to="/"><h1 className="logo">kyleFitnessPal</h1></Link>
 
           <h3>Hi, {currentUser.username}</h3>
-
-          <button
-            className="header-links tour-button"
-            onClick={this.props.startJoyride}
-          >
-            Take Tour
-          </button>
 
           <button
             className="header-links logout-button"
