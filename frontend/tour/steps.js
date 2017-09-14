@@ -83,7 +83,7 @@ const steps = [
   {
     title: 'Daily Summary',
     text: 'On your home page, you can track your daily progression towards \
-    your calorie goals. Remember that exercise subtracts from net calories \
+    your calorie goals. Remember that exercise subtracts from calories \
     consumed, letting you eat more!',
     selector: '.daily-summary',
     position: 'right',
@@ -99,7 +99,7 @@ const steps = [
   },
   {
     title: 'Thanks For Using kyleFitnessPal!',
-    text: 'Enjoy using kyleFitnessPal. If you\'d like to take the tour \
+    text: 'If you\'d like to take the tour \
     again, please click here.',
     selector: '.tour',
     position: 'right',
