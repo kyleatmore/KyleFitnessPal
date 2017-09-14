@@ -30,6 +30,8 @@ class App extends React.Component {
   }
 
   joyrideCallback(data) {
+    const { history } = this.props;
+
     if (data.action === "close") {
       this.joyride.reset(true);
       this.setState({ runTour: false, autoStart: false, steps: [] });
@@ -40,16 +42,16 @@ class App extends React.Component {
 
       switch(nextPage) {
         case 'diary':
-          this.props.history.push(`/food-diary/${this.props.currentDiary}`);
+          history.push(`/food-diary/${this.props.currentDiary}`);
           break;
         case 'log-food':
-          this.props.history.push(`/food-diary/${this.props.currentDiary}/log-food`);
+          history.push(`/food-diary/${this.props.currentDiary}/log-food`);
           break;
         case 'exercise_diary':
-          this.props.history.push(`/exercise-diary/${this.props.currentExerciseDiary}`);
+          history.push(`/exercise-diary/${this.props.currentExerciseDiary}`);
           break;
         case 'home':
-          this.props.history.push(`/`);
+          history.push(`/`);
           break;
         default:
           break;
@@ -80,7 +82,6 @@ class App extends React.Component {
           steps={this.state.steps}
           showBackButton={false}
           type='continuous'
-          debug={true}
           locale={{
               back: (<span>Back</span>),
               close: (<span>Close</span>),
