@@ -40,6 +40,8 @@ class App extends React.Component {
 
       switch(nextPage) {
         case 'diary':
+          this.props.history.push(`/food-diary/${this.props.currentDiary}`);
+          break;
         case 'log-food':
           this.props.history.push(`/food-diary/${this.props.currentDiary}/log-food`);
           break;

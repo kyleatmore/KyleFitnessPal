@@ -1,82 +1,81 @@
 const steps = [
   {
     title: 'Welcome to kyleFitnessPal!',
-    text: 'kyleFitnessPal allows you to create food and exercise \
-    diaires to track your daily calorie burn',
+    text: 'kyleFitnessPal is a calorie tracking application that allows \
+    you to create food and exercise diaires to track the amount of calories \
+    you\'re burning each day.',
     selector: '.logo',
     position: 'right',
     nextPage: null,
   },
   {
     title: 'Food Diaries',
-    text: 'Clicking here takes you to today\'s food diary',
+    text: 'Click here to view today\'s food diary.',
     selector: '.nav-link.food',
     position: 'bottom',
     nextPage: 'diary',
   },
   {
     title: 'Food Diaries',
-    text: 'Click here to switch between diaries on different days',
+    text: 'Click here to toggle between food diaries for different days. \
+    You can view your old diaries or make diaries for dates in the future.',
     selector: '.food-diary.date',
     position: 'right',
     nextPage: null,
   },
   {
     title: 'Adding Food Entries',
-    text: 'Click here to add a food to today\'s diary',
+    text: 'Click here to add a food entry to today\'s diary.',
     selector: '.diary-item.first.add-food',
     position: 'left',
     nextPage: 'log-food',
   },
   {
     title: 'Searching For Foods',
-    text: 'Type here to search our food database for your favorite foods',
+    text: 'Type here to search our food database for the food you want to add. \
+    Once you find the food you\'re looking for, you can specify \
+    the amount you ate and for which meal (breakfast, lunch, or dinner) \
+    and then add it to your food diary.',
     selector: '.food-search',
     position: 'left',
     nextPage: null,
   },
   {
-    title: 'Adding Food To Diary',
-    text: 'Specify the amount of servings you ate and which meal. \
-    Then add the food to your diary.',
-    selector: '.add-form',
-    position: 'right',
-    nextPage: null,
-  },
-  {
     title: 'Adding Foods To Our Databse',
-    text: 'If you can\'t find your food by searching above, no worries! \
-    Click here to add a new food to our database.',
+    text: 'If you can\'t find the food you\'re looking for, no worries! \
+    Click here and you can add a new food to our database.',
     selector: '.new-food.link',
     position: 'top',
     nextPage: 'diary',
   },
   {
-    title: 'Diary Totals',
-    text: 'The total caloric info of all your food entries are summed \
-    here and compared with your daily calorie allowance.',
+    title: 'Food Diary Totals',
+    text: 'Once you\'ve made some entries to your diary, the macronutrient \
+    totals will be here. You\'ll be able to compare these with your daily \
+    calorie allowance and view your remaining calories.',
     selector: '.total-category',
     position: 'left',
     nextPage: null,
   },
   {
     title: 'Exercise Diaries',
-    text: 'Clicking here takes you to today\'s exercise diary',
+    text: 'Click here to view today\'s exercise diary.',
     selector: '.nav-link.exercise',
     position: 'bottom',
     nextPage: 'exercise_diary',
   },
   {
     title: 'Adding Exercise Entries',
-    text: 'Exercise diaries work the same as food diaries. Click \'Add \
-    Exercise\' to search our exercise databse and log your workouts',
+    text: 'Exercise diaries work the same way as food diaries. Clicking \'Add \
+    Exercise\' will let you search our exercise database and log your \
+    workouts.',
     selector: '.diary-item.first.add-food',
     position: 'left',
     nextPage: null,
   },
   {
     title: 'Home Page',
-    text: 'Click here to return to the home page',
+    text: 'Click here to return to the home page.',
     selector: '.nav-link.home',
     position: 'bottom',
     nextPage: 'home',
@@ -84,15 +83,16 @@ const steps = [
   {
     title: 'Daily Summary',
     text: 'On your home page, you can track your daily progression towards \
-    your calorie goals. Remember that exercise subtracts from calories \
+    your calorie goals. Remember that exercise subtracts from net calories \
     consumed, letting you eat more!',
     selector: '.daily-summary',
     position: 'right',
     nextPage: null,
   },
   {
-    title: 'Goals Page',
-    text: 'Click here to review your suggested nutritional and fitness goals',
+    title: 'Goals Summary',
+    text: 'Click here if you want to review your suggested nutritional \
+    and fitness goals.',
     selector: '.nav-link.goals',
     position: 'bottom',
     nextPage: null,
